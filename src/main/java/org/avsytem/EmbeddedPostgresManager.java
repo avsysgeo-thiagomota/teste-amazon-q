@@ -1,6 +1,6 @@
 package org.avsytem;
 
-import com.opentable.db.postgres.embedded.EmbeddedPostgres;
+import io.zonky.test.db.postgres.embedded.EmbeddedPostgres;
 
 import java.io.File;
 import java.io.IOException;

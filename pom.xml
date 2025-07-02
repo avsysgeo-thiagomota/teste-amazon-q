@@ -21,9 +21,9 @@
           <version>42.7.2</version>
       </dependency>
       <dependency>
-          <groupId>com.opentable.components</groupId>
-          <artifactId>otj-pg-embedded</artifactId>
-          <version>1.0.1</version>
+          <groupId>io.zonky.test</groupId>
+          <artifactId>embedded-postgres</artifactId>
+          <version>2.1.0</version>
       </dependency>
   </dependencies>
 
