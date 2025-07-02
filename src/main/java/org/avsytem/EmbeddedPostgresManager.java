@@ -11,7 +11,8 @@ import java.sql.SQLException;
 /**
  * Utility class that manages a local embedded PostgreSQL instance.
  */
-public class EmbeddedPostgresManager {
+public class EmbeddedPostgresManager
+{
     private EmbeddedPostgres postgres;
     private Connection connection;
 
@@ -20,13 +21,13 @@ public class EmbeddedPostgresManager {
      * created when it does not exist.
      */
     public void start(String directory) throws IOException, SQLException {
-        if (postgres != null) {
+        if (postgres != null)
             return;
-        }
+
         File dir = new File(directory);
-        if (!dir.exists()) {
+        if (!dir.exists())
+            //noinspection ResultOfMethodCallIgnored
             dir.mkdirs();
-        }
 
         postgres = EmbeddedPostgres.builder()
                 .setDataDirectory(dir.toPath())
@@ -40,14 +41,16 @@ public class EmbeddedPostgresManager {
     /**
      * Returns a connection to the embedded database.
      */
-    public Connection getConnection() {
+    public Connection getConnection()
+    {
         return connection;
     }
 
     /**
      * Stops the embedded PostgreSQL and closes the connection.
      */
-    public void stop() throws IOException, SQLException {
+    public void stop() throws IOException, SQLException
+    {
         if (connection != null && !connection.isClosed()) {
             connection.close();
         }
