@@ -1,0 +1,1301 @@
+[
+    {
+        "id": 1,
+        "nome": "Bolo de Cenoura",
+        "descricao": "Um clássico bolo de cenoura com cobertura de chocolate.",
+        "tempoDePreparo": 60,
+        "porcoes": 10,
+        "dificuldade": "Fácil",
+        "categorias": [
+            "Sobremesa",
+            "Bolo"
+        ],
+        "ingredientes": [
+            {
+                "nome": "cenoura ralada",
+                "quantidade": 3,
+                "unidade": "unidades"
+            },
+            {
+                "nome": "açúcar",
+                "quantidade": 2,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "óleo",
+                "quantidade": 1,
+                "unidade": "xícara"
+            },
+            {
+                "nome": "ovos",
+                "quantidade": 4,
+                "unidade": "unidades"
+            },
+            {
+                "nome": "farinha de trigo",
+                "quantidade": 2.5,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "fermento em pó",
+                "quantidade": 1,
+                "unidade": "colher de sopa"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Bata a cenoura, ovos e óleo no liquidificador."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Misture o restante dos ingredientes."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Despeje em uma forma untada."
+            },
+            {
+                "ordem": 4,
+                "descricao": "Asse em forno médio por 40 minutos."
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nome": "Arroz de Carreteiro",
+        "descricao": "Receita tradicional gaúcha feita com carne seca.",
+        "tempoDePreparo": 50,
+        "porcoes": 6,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "carne seca",
+                "quantidade": 500,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "arroz",
+                "quantidade": 2,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "cebola picada",
+                "quantidade": 1,
+                "unidade": "unidade"
+            },
+            {
+                "nome": "alho picado",
+                "quantidade": 2,
+                "unidade": "dentes"
+            },
+            {
+                "nome": "óleo",
+                "quantidade": 2,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "água",
+                "quantidade": 4,
+                "unidade": "xícaras"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Dessalgue e cozinhe a carne seca."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Refogue a carne com cebola e alho."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Adicione o arroz e a água."
+            },
+            {
+                "ordem": 4,
+                "descricao": "Cozinhe até o arroz ficar macio."
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "nome": "Brigadeiro",
+        "descricao": "Receita deliciosa de brigadeiro tradicional.",
+        "tempoDePreparo": 43,
+        "porcoes": 4,
+        "dificuldade": "Fácil",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Leite condensado",
+                "quantidade": 2.99,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Chocolate em pó",
+                "quantidade": 1.84,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Manteiga",
+                "quantidade": 2.73,
+                "unidade": "colheres de sopa"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) leite condensado."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) chocolate em pó."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "nome": "Cuscuz Nordestino",
+        "descricao": "Receita deliciosa de cuscuz nordestino tradicional.",
+        "tempoDePreparo": 43,
+        "porcoes": 6,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Flocão de milho",
+                "quantidade": 1.34,
+                "unidade": "unidades"
+            },
+            {
+                "nome": "Água",
+                "quantidade": 1.94,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Sal",
+                "quantidade": 2.71,
+                "unidade": "xícaras"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) flocão de milho."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) água."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "nome": "Moqueca Baiana",
+        "descricao": "Receita deliciosa de moqueca baiana tradicional.",
+        "tempoDePreparo": 59,
+        "porcoes": 8,
+        "dificuldade": "Fácil",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Peixe",
+                "quantidade": 0.82,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Leite de coco",
+                "quantidade": 2.86,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Azeite de dendê",
+                "quantidade": 1.46,
+                "unidade": "xícaras"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) peixe."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) leite de coco."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "nome": "Macarrão à Bolonhesa",
+        "descricao": "Receita deliciosa de macarrão à bolonhesa tradicional.",
+        "tempoDePreparo": 82,
+        "porcoes": 6,
+        "dificuldade": "Difícil",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Macarrão",
+                "quantidade": 2.17,
+                "unidade": "unidades"
+            },
+            {
+                "nome": "Carne moída",
+                "quantidade": 2.03,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Molho de tomate",
+                "quantidade": 0.77,
+                "unidade": "gramas"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) macarrão."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) carne moída."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "nome": "Pão de Queijo",
+        "descricao": "Receita deliciosa de pão de queijo tradicional.",
+        "tempoDePreparo": 75,
+        "porcoes": 8,
+        "dificuldade": "Fácil",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Polvilho",
+                "quantidade": 1.45,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Queijo ralado",
+                "quantidade": 2.8,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Ovos",
+                "quantidade": 1.5,
+                "unidade": "colheres de sopa"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) polvilho."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) queijo ralado."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "nome": "Vatapá",
+        "descricao": "Receita deliciosa de vatapá tradicional.",
+        "tempoDePreparo": 39,
+        "porcoes": 8,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Pão amanhecido",
+                "quantidade": 2.49,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Leite de coco",
+                "quantidade": 2.5,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Camarão seco",
+                "quantidade": 2.0,
+                "unidade": "colheres de sopa"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) pão amanhecido."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) leite de coco."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "nome": "Cuscuz Nordestino",
+        "descricao": "Receita deliciosa de cuscuz nordestino tradicional.",
+        "tempoDePreparo": 40,
+        "porcoes": 8,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Flocão de milho",
+                "quantidade": 1.11,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Água",
+                "quantidade": 2.43,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Sal",
+                "quantidade": 0.87,
+                "unidade": "gramas"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) flocão de milho."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) água."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "nome": "Brigadeiro",
+        "descricao": "Receita deliciosa de brigadeiro tradicional.",
+        "tempoDePreparo": 62,
+        "porcoes": 5,
+        "dificuldade": "Fácil",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Leite condensado",
+                "quantidade": 1.72,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Chocolate em pó",
+                "quantidade": 2.1,
+                "unidade": "unidades"
+            },
+            {
+                "nome": "Manteiga",
+                "quantidade": 0.84,
+                "unidade": "colheres de sopa"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) leite condensado."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) chocolate em pó."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "nome": "Lasanha",
+        "descricao": "Receita deliciosa de lasanha tradicional.",
+        "tempoDePreparo": 32,
+        "porcoes": 7,
+        "dificuldade": "Fácil",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Massa de lasanha",
+                "quantidade": 1.11,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Carne moída",
+                "quantidade": 2.15,
+                "unidade": "unidades"
+            },
+            {
+                "nome": "Molho branco",
+                "quantidade": 2.44,
+                "unidade": "xícaras"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) massa de lasanha."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) carne moída."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "nome": "Pão de Queijo",
+        "descricao": "Receita deliciosa de pão de queijo tradicional.",
+        "tempoDePreparo": 64,
+        "porcoes": 8,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Polvilho",
+                "quantidade": 1.92,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Queijo ralado",
+                "quantidade": 2.78,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Ovos",
+                "quantidade": 2.39,
+                "unidade": "colheres de sopa"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) polvilho."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) queijo ralado."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "nome": "Macarrão à Bolonhesa",
+        "descricao": "Receita deliciosa de macarrão à bolonhesa tradicional.",
+        "tempoDePreparo": 56,
+        "porcoes": 8,
+        "dificuldade": "Fácil",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Macarrão",
+                "quantidade": 3.0,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Carne moída",
+                "quantidade": 2.27,
+                "unidade": "unidades"
+            },
+            {
+                "nome": "Molho de tomate",
+                "quantidade": 1.96,
+                "unidade": "gramas"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) macarrão."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) carne moída."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "nome": "Vatapá",
+        "descricao": "Receita deliciosa de vatapá tradicional.",
+        "tempoDePreparo": 67,
+        "porcoes": 5,
+        "dificuldade": "Difícil",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Pão amanhecido",
+                "quantidade": 1.99,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Leite de coco",
+                "quantidade": 1.76,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Camarão seco",
+                "quantidade": 0.74,
+                "unidade": "gramas"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) pão amanhecido."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) leite de coco."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "nome": "Brigadeiro",
+        "descricao": "Receita deliciosa de brigadeiro tradicional.",
+        "tempoDePreparo": 55,
+        "porcoes": 4,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Leite condensado",
+                "quantidade": 1.26,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Chocolate em pó",
+                "quantidade": 1.77,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Manteiga",
+                "quantidade": 1.96,
+                "unidade": "colheres de sopa"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) leite condensado."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) chocolate em pó."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "nome": "Brigadeiro",
+        "descricao": "Receita deliciosa de brigadeiro tradicional.",
+        "tempoDePreparo": 75,
+        "porcoes": 8,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Leite condensado",
+                "quantidade": 0.92,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Chocolate em pó",
+                "quantidade": 2.34,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Manteiga",
+                "quantidade": 1.79,
+                "unidade": "gramas"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) leite condensado."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) chocolate em pó."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "nome": "Brigadeiro",
+        "descricao": "Receita deliciosa de brigadeiro tradicional.",
+        "tempoDePreparo": 61,
+        "porcoes": 4,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Leite condensado",
+                "quantidade": 1.54,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Chocolate em pó",
+                "quantidade": 2.49,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Manteiga",
+                "quantidade": 2.99,
+                "unidade": "gramas"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) leite condensado."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) chocolate em pó."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "nome": "Pão de Queijo",
+        "descricao": "Receita deliciosa de pão de queijo tradicional.",
+        "tempoDePreparo": 54,
+        "porcoes": 4,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Polvilho",
+                "quantidade": 2.3,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Queijo ralado",
+                "quantidade": 2.95,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Ovos",
+                "quantidade": 2.48,
+                "unidade": "unidades"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) polvilho."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) queijo ralado."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "nome": "Brigadeiro",
+        "descricao": "Receita deliciosa de brigadeiro tradicional.",
+        "tempoDePreparo": 59,
+        "porcoes": 4,
+        "dificuldade": "Fácil",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Leite condensado",
+                "quantidade": 1.11,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Chocolate em pó",
+                "quantidade": 2.42,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Manteiga",
+                "quantidade": 2.54,
+                "unidade": "unidades"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) leite condensado."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) chocolate em pó."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "nome": "Cuscuz Nordestino",
+        "descricao": "Receita deliciosa de cuscuz nordestino tradicional.",
+        "tempoDePreparo": 84,
+        "porcoes": 5,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Flocão de milho",
+                "quantidade": 0.85,
+                "unidade": "unidades"
+            },
+            {
+                "nome": "Água",
+                "quantidade": 2.5,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Sal",
+                "quantidade": 1.11,
+                "unidade": "colheres de sopa"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) flocão de milho."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) água."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "nome": "Vatapá",
+        "descricao": "Receita deliciosa de vatapá tradicional.",
+        "tempoDePreparo": 44,
+        "porcoes": 7,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Pão amanhecido",
+                "quantidade": 1.45,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Leite de coco",
+                "quantidade": 1.39,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Camarão seco",
+                "quantidade": 1.95,
+                "unidade": "unidades"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) pão amanhecido."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) leite de coco."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "nome": "Vatapá",
+        "descricao": "Receita deliciosa de vatapá tradicional.",
+        "tempoDePreparo": 76,
+        "porcoes": 5,
+        "dificuldade": "Difícil",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Pão amanhecido",
+                "quantidade": 0.74,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Leite de coco",
+                "quantidade": 0.74,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Camarão seco",
+                "quantidade": 2.24,
+                "unidade": "colheres de sopa"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) pão amanhecido."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) leite de coco."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "nome": "Tapioca com Coco",
+        "descricao": "Receita deliciosa de tapioca com coco tradicional.",
+        "tempoDePreparo": 67,
+        "porcoes": 4,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Goma de tapioca",
+                "quantidade": 1.28,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Coco ralado",
+                "quantidade": 0.53,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Leite condensado",
+                "quantidade": 1.3,
+                "unidade": "gramas"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) goma de tapioca."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) coco ralado."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "nome": "Vatapá",
+        "descricao": "Receita deliciosa de vatapá tradicional.",
+        "tempoDePreparo": 64,
+        "porcoes": 7,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Pão amanhecido",
+                "quantidade": 2.62,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Leite de coco",
+                "quantidade": 1.62,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Camarão seco",
+                "quantidade": 0.94,
+                "unidade": "colheres de sopa"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) pão amanhecido."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) leite de coco."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "nome": "Estrogonofe de Frango",
+        "descricao": "Receita deliciosa de estrogonofe de frango tradicional.",
+        "tempoDePreparo": 68,
+        "porcoes": 8,
+        "dificuldade": "Fácil",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Frango",
+                "quantidade": 1.36,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Creme de leite",
+                "quantidade": 2.76,
+                "unidade": "unidades"
+            },
+            {
+                "nome": "Champignon",
+                "quantidade": 1.29,
+                "unidade": "unidades"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) frango."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) creme de leite."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "nome": "Lasanha",
+        "descricao": "Receita deliciosa de lasanha tradicional.",
+        "tempoDePreparo": 76,
+        "porcoes": 5,
+        "dificuldade": "Fácil",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Massa de lasanha",
+                "quantidade": 2.08,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Carne moída",
+                "quantidade": 0.83,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Molho branco",
+                "quantidade": 1.81,
+                "unidade": "unidades"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) massa de lasanha."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) carne moída."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "nome": "Moqueca Baiana",
+        "descricao": "Receita deliciosa de moqueca baiana tradicional.",
+        "tempoDePreparo": 72,
+        "porcoes": 6,
+        "dificuldade": "Difícil",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Peixe",
+                "quantidade": 2.23,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Leite de coco",
+                "quantidade": 0.66,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Azeite de dendê",
+                "quantidade": 0.64,
+                "unidade": "xícaras"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) peixe."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) leite de coco."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "nome": "Estrogonofe de Frango",
+        "descricao": "Receita deliciosa de estrogonofe de frango tradicional.",
+        "tempoDePreparo": 32,
+        "porcoes": 7,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Frango",
+                "quantidade": 0.52,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Creme de leite",
+                "quantidade": 2.47,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Champignon",
+                "quantidade": 2.03,
+                "unidade": "unidades"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) frango."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) creme de leite."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "nome": "Feijão Tropeiro",
+        "descricao": "Receita deliciosa de feijão tropeiro tradicional.",
+        "tempoDePreparo": 41,
+        "porcoes": 5,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Sobremesa"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Feijão",
+                "quantidade": 0.77,
+                "unidade": "xícaras"
+            },
+            {
+                "nome": "Bacon",
+                "quantidade": 2.48,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Farinha de mandioca",
+                "quantidade": 1.22,
+                "unidade": "unidades"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) feijão."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) bacon."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "nome": "Estrogonofe de Frango",
+        "descricao": "Receita deliciosa de estrogonofe de frango tradicional.",
+        "tempoDePreparo": 59,
+        "porcoes": 8,
+        "dificuldade": "Médio",
+        "categorias": [
+            "Prato Principal"
+        ],
+        "ingredientes": [
+            {
+                "nome": "Frango",
+                "quantidade": 0.63,
+                "unidade": "colheres de sopa"
+            },
+            {
+                "nome": "Creme de leite",
+                "quantidade": 2.85,
+                "unidade": "gramas"
+            },
+            {
+                "nome": "Champignon",
+                "quantidade": 2.69,
+                "unidade": "colheres de sopa"
+            }
+        ],
+        "passos": [
+            {
+                "ordem": 1,
+                "descricao": "Prepare o(a) frango."
+            },
+            {
+                "ordem": 2,
+                "descricao": "Adicione o(a) creme de leite."
+            },
+            {
+                "ordem": 3,
+                "descricao": "Misture bem e cozinhe."
+            }
+        ]
+    }
+]

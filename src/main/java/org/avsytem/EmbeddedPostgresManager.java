@@ -8,55 +8,71 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- * Utility class that manages a local embedded PostgreSQL instance.
- */
-public class EmbeddedPostgresManager
-{
+public class EmbeddedPostgresManager {
+
     private EmbeddedPostgres postgres;
     private Connection connection;
 
     /**
-     * Starts the embedded PostgreSQL using the given directory. The directory is
-     * created when it does not exist.
+     * Inicia uma instância do Embedded Postgres, usando o diretório especificado para persistência.
+     *
+     * @param directory Caminho para o diretório de dados do Postgres.
+     * @throws IOException Se o diretório não puder ser criado ou o Postgres não iniciar.
+     * @throws SQLException Se a conexão com o banco de dados falhar.
      */
     public void start(String directory) throws IOException, SQLException {
-        if (postgres != null)
+        if (postgres != null) {
+            System.out.println("[INFO] Embedded Postgres já está iniciado.");
             return;
+        }
 
         File dir = new File(directory);
-        if (!dir.exists())
-            //noinspection ResultOfMethodCallIgnored
-            dir.mkdirs();
+        if (!dir.exists()) {
+            boolean created = dir.mkdirs();
+            if (created) {
+                System.out.println("[INFO] Diretório criado com sucesso: " + dir.getAbsolutePath());
+            } else {
+                throw new IOException("[ERROR] Falha ao criar o diretório: " + dir.getAbsolutePath());
+            }
+        } else if (!dir.isDirectory()) {
+            throw new IOException("[ERROR] O caminho especificado não é um diretório válido: " + dir.getAbsolutePath());
+        } else {
+            System.out.println("[INFO] Diretório já existe: " + dir.getAbsolutePath());
+        }
 
-        postgres = EmbeddedPostgres.builder()
-                .setDataDirectory(dir.toPath())
-                .setCleanDataDirectory(false)
-                .start();
+        try {
+            System.out.println("[INFO] Iniciando Embedded Postgres...");
+            postgres = EmbeddedPostgres.builder()
+                    .setDataDirectory(dir.toPath())
+                    .setCleanDataDirectory(false)
+                    .start();
+            System.out.println("[INFO] Embedded Postgres iniciado com sucesso.");
+        } catch (IOException e) {
+            System.err.println("[ERROR] Falha ao iniciar o Embedded Postgres: " + e.getMessage());
+            throw e;
+        }
 
-        String url = postgres.getJdbcUrl("postgres", "postgres");
-        connection = DriverManager.getConnection(url);
+        try {
+            String url = postgres.getJdbcUrl("postgres", "postgres");
+            connection = DriverManager.getConnection(url);
+            System.out.println("[INFO] Conexão com banco de dados estabelecida: " + url);
+        } catch (SQLException e) {
+            System.err.println("[ERROR] Falha ao conectar com o banco de dados: " + e.getMessage());
+            throw e;
+        }
     }
 
-    /**
-     * Returns a connection to the embedded database.
-     */
-    public Connection getConnection()
-    {
+    public Connection getConnection() {
         return connection;
     }
 
-    /**
-     * Stops the embedded PostgreSQL and closes the connection.
-     */
-    public void stop() throws IOException, SQLException
-    {
-        if (connection != null && !connection.isClosed()) {
-            connection.close();
-        }
+    public void stop() throws IOException {
         if (postgres != null) {
+            System.out.println("[INFO] Parando Embedded Postgres...");
             postgres.close();
             postgres = null;
+            connection = null;
+            System.out.println("[INFO] Embedded Postgres parado com sucesso.");
         }
     }
 }
