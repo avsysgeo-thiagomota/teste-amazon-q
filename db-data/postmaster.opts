@@ -1,1 +1,0 @@
-C:/Users/THIAGO~1/AppData/Local/Temp/embedded-pg/PG-b95a81b3f867f51765631fc19cc132c3/bin/postgres.exe "-D" "db-data" "-p" "49964" "-F" "-c" "synchronous_commit=off" "-c" "max_connections=300" "-c" "timezone=UTC"
