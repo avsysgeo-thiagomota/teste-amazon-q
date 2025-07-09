@@ -30,12 +30,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>42.7.2</version>
-		</dependency>
-		<dependency>
-			<groupId>io.zonky.test</groupId>
-			<artifactId>embedded-postgres</artifactId>
-			<version>2.1.0</version>
+			<version>42.7.7</version>
 		</dependency>
 		<!--Conversor de Json-->
 		<dependency>

@@ -1,18 +1,19 @@
 <%@ page import="org.avsytem.dao.ReceitaDAO" %>
-<%@ page import="org.avsytem.DAOProvider" %>
+<%@ page import="org.avsytem.dao.ReceitaDAO" %>
 <%@ page import="org.avsytem.model.Receita" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.google.gson.Gson" %>
 <%@ page import="com.google.gson.JsonObject" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="org.avsytem.database.PostgresConnection"%>
 <%@ page contentType="application/json; charset=UTF-8" %>
 <%
-    // 1. Pega a instância ÚNICA do DAOProvider através do método estático getInstance().
-    // 2. A partir dela, pega o objeto DAO que foi inicializado uma única vez.
-    ReceitaDAO dao = DAOProvider.getInstance().getDao();
+    PostgresConnection pgConn = new PostgresConnection();
+    ReceitaDAO dao = new ReceitaDAO(pgConn.createConnection());
+    dao.criarEstruturaBanco();
+    dao.popularDadosIniciais();
 
-    // O resto do código permanece exatamente o mesmo da resposta anterior...
     Gson gson = new Gson();
     String action = request.getParameter("action");
 

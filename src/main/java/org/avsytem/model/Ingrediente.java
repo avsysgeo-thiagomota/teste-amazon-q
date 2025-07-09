@@ -13,6 +13,7 @@ public class Ingrediente {
 
     public Ingrediente() {}
 
+
     // Getters e Setters
     public String getNome() {
         return nome;

@@ -9,7 +9,8 @@ public class Passo {
         this.descricao = descricao;
     }
 
-    public Passo() {}
+    public Passo() {
+    }
 
     // Getters e Setters
     public int getOrdem() {
