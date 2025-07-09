@@ -1,15 +1,18 @@
+// ReceitaWindow.js
+
 Ext.ns('App.view');
 
 App.view.ReceitaWindow = Ext.extend(Ext.Window, {
+    title: 'Nova Receita',
+    width: 700,
+    height: 620,
+    layout: 'fit',
+    modal: true,
 
-    // Construtor da classe
-    constructor: function(config) {
-
-        // Stores locais para as grades editáveis
+    initComponent: function() {
         this.ingredientesStore = new Ext.data.JsonStore({ fields: App.model.Ingrediente });
         this.passosStore = new Ext.data.JsonStore({ fields: App.model.Passo, sortInfo: { field: 'ordem', direction: 'ASC' } });
 
-        // Grade de Ingredientes
         var ingredientesGrid = new Ext.grid.EditorGridPanel({
             store: this.ingredientesStore,
             title: 'Ingredientes',
@@ -20,11 +23,10 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
                 {header: 'Qtd.', dataIndex: 'quantidade', width: 60, align: 'right', editor: new Ext.form.NumberField({allowBlank: false, decimalPrecision: 2})},
                 {header: 'Unidade', dataIndex: 'unidade', width: 100, editor: new Ext.form.TextField({allowBlank: false})}
             ],
-            tbar: [{ text: 'Adicionar', iconCls: 'x-btn-text-icon-add', handler: this.onAddIngrediente, scope: this }, '-', { text: 'Remover', iconCls: 'x-btn-text-icon-delete', handler: this.onRemoveIngrediente, scope: this, grid: ingredientesGrid }],
+            tbar: [{ text: 'Adicionar', iconCls: 'x-btn-text-icon-add', handler: this.onAddIngrediente, scope: this }, '-', { text: 'Remover', iconCls: 'x-btn-text-icon-delete', handler: this.onRemoveIngrediente, scope: this }],
             viewConfig: { forceFit: true }
         });
 
-        // Grade de Passos
         var passosGrid = new Ext.grid.EditorGridPanel({
             store: this.passosStore,
             title: 'Passos de Preparo',
@@ -34,52 +36,61 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
                 {header: 'Ordem', dataIndex: 'ordem', width: 60, sortable: true, editor: new Ext.form.NumberField({allowBlank: false, allowDecimals: false})},
                 {header: 'Descrição', dataIndex: 'descricao', editor: new Ext.form.TextField({allowBlank: false})}
             ],
-            tbar: [{ text: 'Adicionar', iconCls: 'x-btn-text-icon-add', handler: this.onAddPasso, scope: this }, '-', { text: 'Remover', iconCls: 'x-btn-text-icon-delete', handler: this.onRemovePasso, scope: this, grid: passosGrid }],
+            tbar: [{ text: 'Adicionar', iconCls: 'x-btn-text-icon-add', handler: this.onAddPasso, scope: this }, '-', { text: 'Remover', iconCls: 'x-btn-text-icon-delete', handler: this.onRemovePasso, scope: this }],
             viewConfig: { forceFit: true }
         });
 
-        // Formulário principal
         this.formPanel = new Ext.form.FormPanel({
-            frame: true, bodyStyle: 'padding:10px', labelWidth: 100, defaults: { anchor: '98%' },
+            frame: true, bodyStyle: 'padding:10px', labelWidth: 80,
+            defaults: { anchor: '98%' },
             items: [
                 { xtype: 'hidden', name: 'id' },
-                { xtype: 'textfield', fieldLabel: 'Nome da Receita', name: 'nome', allowBlank: false },
+                { xtype: 'textfield', fieldLabel: 'Nome', name: 'nome', allowBlank: false },
                 { xtype: 'textarea', fieldLabel: 'Descrição', name: 'descricao', height: 60 },
-                { xtype: 'container', layout: 'hbox', defaultType: 'numberfield',
+                {
+                    xtype: 'container', layout:'column', border: false,
+                    defaults: { columnWidth: .33, layout: 'form', border: false },
                     items: [
-                        { fieldLabel: 'Tempo (min)', name: 'tempoDePreparo', allowBlank: false, width: 200, style: 'margin-right:15px;' },
-                        { fieldLabel: 'Porções', name: 'porcoes', allowBlank: false, width: 200, style: 'margin-right:15px;' },
-                        { xtype:'textfield', fieldLabel: 'Dificuldade', name: 'dificuldade', allowBlank: false, flex: 1 }
+                        { items: { xtype: 'numberfield', fieldLabel: 'Tempo (min)', name: 'tempoDePreparo', anchor:'95%' } },
+                        { items: { xtype: 'numberfield', fieldLabel: 'Porções', name: 'porcoes', anchor:'95%' } },
+                        { items: { xtype: 'textfield', fieldLabel: 'Dificuldade', name: 'dificuldade', anchor:'95%' } }
                     ]
                 },
+                // *** PARTE ALTERADA: Campo de Categorias Adicionado ***
+                { xtype: 'textfield', fieldLabel: 'Categorias', name: 'categorias', anchor: '98%', helpText: 'Separe as categorias por vírgula (,)' },
                 ingredientesGrid,
                 passosGrid
             ]
         });
 
-        // Configurações da Janela
-        config = Ext.apply({
-            title: 'Nova Receita', width: 700, height: 620, layout: 'fit', modal: true,
+        Ext.apply(this, {
             items: this.formPanel,
             buttons: [
                 { text: 'Salvar', handler: this.onSave, scope: this },
                 { text: 'Cancelar', handler: function() { this.close(); }, scope: this }
             ]
-        }, config);
+        });
 
-        // Chama o construtor da classe pai (Ext.Window)
-        App.view.ReceitaWindow.superclass.constructor.call(this, config);
+        // *** PARTE ALTERADA: Adiciona um evento que a grid pode "ouvir" ***
+        this.addEvents('receitasalva');
 
-        // Carrega dados se for o modo de edição
+        App.view.ReceitaWindow.superclass.initComponent.call(this);
+
         if (this.record) {
             this.setTitle('Editar Receita');
             this.formPanel.getForm().loadRecord(this.record);
-            if(this.record.data.ingredientes) this.ingredientesStore.loadData(this.record.get('ingredientes'));
-            if(this.record.data.passos) this.passosStore.loadData(this.record.get('passos'));
+
+            var ingredientesData = this.record.get('ingredientes');
+            if (ingredientesData) { this.ingredientesStore.loadData(ingredientesData); }
+
+            var passosData = this.record.get('passos');
+            if (passosData) { this.passosStore.loadData(passosData); }
+
+            var categoriasData = this.record.get('categorias');
+            if (Ext.isArray(categoriasData)) { this.formPanel.getForm().findField('categorias').setValue(categoriasData.join(', ')); }
         }
     },
 
-    // Métodos para manipulação das grades
     onAddIngrediente: function(btn) {
         var grid = btn.findParentByType('editorgrid');
         var Ingrediente = grid.getStore().recordType;
@@ -91,9 +102,10 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
     },
 
     onRemoveIngrediente: function(btn) {
-        var grid = btn.grid; // Pega a referência da grid passada no handler
-        var sm = grid.getSelectionModel();
-        if (sm.hasSelection()) grid.getStore().remove(sm.getSelected());
+        var grid = btn.findParentByType('editorgrid');
+        var record = grid.getSelectionModel().getSelected();
+        if (record) { grid.getStore().remove(record); }
+        else { Ext.Msg.alert('Atenção', 'Selecione um ingrediente para remover.'); }
     },
 
     onAddPasso: function(btn){
@@ -108,41 +120,35 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
     },
 
     onRemovePasso: function(btn) {
-        var grid = btn.grid;
-        var sm = grid.getSelectionModel();
-        if (sm.hasSelection()) grid.getStore().remove(sm.getSelected());
+        var grid = btn.findParentByType('editorgrid');
+        var record = grid.getSelectionModel().getSelected();
+        if (record) { grid.getStore().remove(record); }
+        else { Ext.Msg.alert('Atenção', 'Selecione um passo para remover.'); }
     },
 
-    // Método para salvar o formulário
     onSave: function() {
         var form = this.formPanel.getForm();
         if (form.isValid()) {
-
-            // Função auxiliar para extrair dados de um store
             var getStoreData = function(store) {
-                var data = [];
-                store.each(function(rec) { data.push(rec.data); });
-                return data;
+                return store.getRange().map(function(rec) { return rec.data; });
             };
-
-            // Coleta dados das grades e os codifica como JSON
-            var params = {
-                ingredientes: Ext.encode(getStoreData(this.ingredientesStore)),
-                passos: Ext.encode(getStoreData(this.passosStore))
-            };
+            var formValues = form.getValues();
+            formValues.ingredientes = getStoreData(this.ingredientesStore);
+            formValues.passos = getStoreData(this.passosStore);
+            var categoriasStr = formValues.categorias || "";
+            formValues.categorias = categoriasStr.split(',').map(function(item) { return item.trim(); }).filter(function(item) { return item !== ""; });
 
             form.submit({
                 url: 'receitas.jsp?action=salvar',
-                params: params,
+                params: { jsonData: Ext.encode(formValues) },
                 waitMsg: 'Salvando a receita...',
                 success: function(form, action) {
                     Ext.Msg.alert('Sucesso', 'Receita salva com sucesso!');
-                    App.receitasStore.reload();
+                    this.fireEvent('receitasalva', this, action.result);
                     this.close();
                 }.createDelegate(this),
                 failure: function(form, action) {
-                    var msg = action.result ? action.result.message : 'Erro desconhecido no servidor.';
-                    Ext.Msg.alert('Erro', 'Ocorreu um erro ao salvar:<br/>' + msg);
+                    Ext.Msg.alert('Erro', 'Ocorreu um erro ao salvar:<br/>' + (action.result ? action.result.message : 'Erro desconhecido.'));
                 }
             });
         }

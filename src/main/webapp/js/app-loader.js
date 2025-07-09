@@ -1,23 +1,28 @@
+// app.js
 Ext.onReady(function() {
     // Carrega os arquivos da aplicação na ordem correta de dependência
     Ext.Loader.load([
-        'js/app/model/Receita.js',
-        'js/app/store/Receitas.js',
+        'js/app/model/models.js',
+        'js/app/store/ReceitaStore.js',
         'js/app/view/ReceitaWindow.js',
         'js/app/view/ReceitaGrid.js'
-    ], function() {
+    ], function()
+    {
         // Namespace principal da aplicação
-        Ext.ns('App');
+        // Registra um 'apelido' para a sua grid
+        Ext.reg('receitagrid', App.view.ReceitaGrid);
 
-        // Inicializa o sistema de dicas (tooltips)
+        // Inicia o Quicktips para os tooltips dos ícones funcionarem
         Ext.QuickTips.init();
 
-        // Imagem transparente padrão do ExtJS
-        Ext.BLANK_IMAGE_URL = 'extjs/resources/images/default/s.gif';
-
-        // Cria a instância principal da nossa View (a Grid)
-        var grid = new App.view.ReceitaGrid({
-            renderTo: 'grid-receitas-container'
+        // Cria o Viewport que ocupa 100% da tela
+        new Ext.Viewport({
+            layout: 'fit', // Faz o item filho (a grid) ocupar todo o espaço
+            items: [
+                {
+                    xtype: 'receitagrid' // Cria a sua grid principal
+                }
+            ]
         });
     }, this, true); // O 'true' no final preserva a ordem de carregamento
 });

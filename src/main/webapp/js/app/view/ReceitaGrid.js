@@ -1,17 +1,14 @@
+// ReceitaGrid.js
+
 Ext.ns('App.view');
 
 App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
-
-    constructor: function(config){
-        config = config || {};
-
-        // Instancia o store
+    initComponent: function(){
         this.store = new App.store.Receitas({ autoLoad: true });
 
-        App.view.ReceitaGrid.superclass.constructor.call(this, Ext.apply({
+        Ext.apply(this, {
             title: 'Gerenciador de Receitas',
-            width: '100%',
-            height: Ext.getBody().getViewSize().height,
+            store: this.store,
             loadMask: true,
             stripeRows: true,
             columns: [
@@ -21,90 +18,63 @@ App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
                 {header: 'Tempo (min)', width: 120, dataIndex: 'tempoDePreparo', sortable: true, align: 'right'},
                 {header: 'Porções', width: 100, dataIndex: 'porcoes', sortable: true, align: 'right'},
                 {
-                    xtype: 'actioncolumn', width: 50,
+                    xtype: 'actioncolumn', width: 50, align: 'center',
                     items: [
-                        // *** CORREÇÃO: Voltamos a usar a propriedade 'icon' ***
-                        {
-                            icon: 'extjs/resources/images/default/dd/drop-add.gif', // Caminho para o ícone de edição
-                            tooltip: 'Editar Receita',
-                            handler: this.onEdit,
-                            scope: this,
-                            iconCls: 'action-icon-custom'
-                        },
-                        {
-                            icon: 'extjs/resources/images/default/dd/drop-no.gif', // Caminho para o ícone de exclusão
-                            tooltip: 'Deletar Receita',
-                            handler: this.onDelete,
-                            scope: this,
-                            iconCls: 'action-icon-custom'
-                        }
+                        { icon: 'extjs/resources/images/default/dd/drop-add.gif', tooltip: 'Editar Receita', handler: this.onEdit, scope: this },
+                        { xtype: 'spacer', width: 5 },
+                        { icon: 'extjs/resources/images/default/dd/drop-no.gif', tooltip: 'Deletar Receita', handler: this.onDelete, scope: this }
                     ]
                 }
             ],
-            viewConfig: {
-                forceFit: true,
-                autoExpandColumn: 'nome_col'
-            },
-            tbar: [{
-                text: 'Nova Receita',
-                iconCls: 'x-btn-text-icon-add',
-                handler: this.onNew,
-                scope: this,
-                cls: 'x-btn-over',
-                listeners:{
-                    'afterrender': function(button) {
-                        button.addClass('x-btn-over');
-                        button.onMouseOver = Ext.emptyFn;
-                        button.onMouseOut = Ext.emptyFn;
-                    }
-                }
-            }],
+            viewConfig: { forceFit: true, autoExpandColumn: 'nome_col' },
+            tbar: [{ text: 'Nova Receita', iconCls: 'x-btn-text-icon-add', handler: this.onNew, scope: this }],
             bbar: new Ext.PagingToolbar({
-                pageSize: 30,
-                store: this.store,
-                displayInfo: true
+                pageSize: 30, store: this.store, displayInfo: true,
+                displayMsg: 'Mostrando receitas {0} - {1} de {2}',
+                emptyMsg: "Nenhuma receita para mostrar"
             })
-        }, config));
+        });
 
-        // Listener para redimensionar a grid com a janela
-        Ext.EventManager.onWindowResize(this.onWindowResize, this);
+        App.view.ReceitaGrid.superclass.initComponent.call(this);
     },
 
-    // Handlers para as ações
+    // *** PARTE ALTERADA: Lógica de atualização adicionada ***
     onNew: function() {
-        new App.view.ReceitaWindow().show();
+        var win = new App.view.ReceitaWindow();
+        win.on('receitasalva', function() { this.store.reload(); }, this);
+        win.show();
     },
 
+    // *** PARTE ALTERADA: Lógica de atualização adicionada ***
     onEdit: function(grid, rowIndex) {
         var record = grid.getStore().getAt(rowIndex);
-        new App.view.ReceitaWindow({ record: record }).show();
+        var win = new App.view.ReceitaWindow({ record: record });
+        win.on('receitasalva', function() { this.store.reload(); }, this);
+        win.show();
     },
 
     onDelete: function(grid, rowIndex) {
         var record = grid.getStore().getAt(rowIndex);
         Ext.Msg.confirm('Confirmar Exclusão', 'Tem certeza que deseja deletar a receita "' + record.get('nome') + '"?', function(btn) {
             if (btn === 'yes') {
+                grid.loadMask.show();
                 Ext.Ajax.request({
                     url: 'receitas.jsp?action=deletar',
                     params: { id: record.get('id') },
                     success: function(response) {
-                        var result = Ext.decode(response.responseText);
-                        if (result.success) {
+                        grid.loadMask.hide();
+                        if (Ext.decode(response.responseText).success) {
                             grid.getStore().reload();
                         } else {
-                            Ext.Msg.alert('Erro', result.message || 'Falha ao deletar.');
+                            Ext.Msg.alert('Erro', 'Falha ao deletar a receita.');
                         }
                     },
-                    failure: function(response) {
-                        Ext.Msg.alert('Erro', 'Erro de comunicação: ' + response.statusText);
+                    failure: function() {
+                        grid.loadMask.hide();
+                        Ext.Msg.alert('Erro', 'Erro de comunicação com o servidor.');
                     }
                 });
             }
         });
-    },
-
-    onWindowResize: function() {
-        var size = Ext.getBody().getViewSize();
-        this.setSize(size.width, size.height);
     }
 });
