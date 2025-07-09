@@ -49,7 +49,15 @@ App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
                 text: 'Nova Receita',
                 iconCls: 'x-btn-text-icon-add',
                 handler: this.onNew,
-                scope: this
+                scope: this,
+                cls: 'x-btn-over',
+                listeners:{
+                    'afterrender': function(button) {
+                        button.addClass('x-btn-over');
+                        button.onMouseOver = Ext.emptyFn;
+                        button.onMouseOut = Ext.emptyFn;
+                    }
+                }
             }],
             bbar: new Ext.PagingToolbar({
                 pageSize: 30,
