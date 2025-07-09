@@ -1,23 +1,22 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Receitas Manager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Gerenciador de Receitas</title>
 
-    <link rel="stylesheet" type="text/css" href="./extjs/resources/css/ext-all.css" />
-    <link rel="stylesheet" type="text/css" href="./extjs/resources/css/xtheme-gray.css" />
-    <link rel="stylesheet" type="text/css" href="./extjs/ux/css/ux-all.css" />
+    <link rel="stylesheet" type="text/css" href="extjs/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="extjs/resources/css/xtheme-gray.css" />
 
-    <script type="text/javascript" src="./extjs/adapter/ext/ext-base-debug.js"></script>
-    <script type="text/javascript" src="./extjs/ext-all-debug.js"></script>
-    <script type="text/javascript" src="./extjs/locale/ext-lang-pt_BR.js"></script>
-    <script type="text/javascript" src="./extjs/ux/ux-all-debug.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/app-styles.css" />
 
-    <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="extjs/adapter/ext/ext-base-debug.js"></script>
+    <script type="text/javascript" src="extjs/ext-all-debug.js"></script>
+    <script type="text/javascript" src="extjs/locale/ext-lang-pt_BR.js"></script>
 
+    <script type="text/javascript" src="js/app-loader.js"></script>
 </head>
-
-    <body>
-        <div id="grid-receitas"></div>
-    </body>
+<body>
+<div id="grid-receitas-container"></div>
+</body>
 </html>

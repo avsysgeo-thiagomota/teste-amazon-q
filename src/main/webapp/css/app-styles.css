@@ -1,0 +1,9 @@
+/*
+ * Estilos customizados para a aplicação de Receitas
+ */
+
+/* Adiciona uma margem horizontal aos ícones na ActionColumn */
+.action-icon-custom {
+    margin-right: 6px;
+    margin-left: 6px; /* 0 para cima/baixo, 3px para esquerda/direita */
+}
