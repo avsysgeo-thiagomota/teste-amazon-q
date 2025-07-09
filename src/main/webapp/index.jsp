@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Gerenciador de Receitas</title>
+    <title>Receitas Manager</title>
 
-    <link rel="stylesheet" type="text/css" href="ext-3.4.0/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="./extjs/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="./extjs/resources/css/xtheme-gray.css" />
+    <link rel="stylesheet" type="text/css" href="./extjs/ux/css/ux-all.css" />
 
-    <script type="text/javascript" src="ext-3.4.0/adapter/ext/ext-base.js"></script>
-    <script type="text/javascript" src="ext-3.4.0/ext-all.js"></script>
-    <script type="text/javascript" src="ext-3.4.0/src/locale/ext-lang-pt_BR.js"></script>
+    <script type="text/javascript" src="./extjs/adapter/ext/ext-base-debug.js"></script>
+    <script type="text/javascript" src="./extjs/ext-all-debug.js"></script>
+    <script type="text/javascript" src="./extjs/locale/ext-lang-pt_BR.js"></script>
+    <script type="text/javascript" src="./extjs/ux/ux-all-debug.js"></script>
 
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
 
 </head>
-<body>
-<div id="grid-receitas"></div>
-</body>
+
+    <body>
+        <div id="grid-receitas"></div>
+    </body>
 </html>

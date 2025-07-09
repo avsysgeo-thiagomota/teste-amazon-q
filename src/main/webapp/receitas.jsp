@@ -11,8 +11,8 @@
 <%
     PostgresConnection pgConn = new PostgresConnection();
     ReceitaDAO dao = new ReceitaDAO(pgConn.createConnection());
-    dao.criarEstruturaBanco();
-    dao.popularDadosIniciais();
+//    dao.criarEstruturaBanco();
+//    dao.popularDadosIniciais();
 
     Gson gson = new Gson();
     String action = request.getParameter("action");
