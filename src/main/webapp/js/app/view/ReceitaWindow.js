@@ -1,4 +1,4 @@
-// ReceitaWindow.js
+// Arquivo: ReceitaWindow.js
 
 Ext.ns('App.view');
 
@@ -9,10 +9,14 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
     layout: 'fit',
     modal: true,
 
+    // O construtor do componente.
     initComponent: function() {
+
+        // 1. Stores locais para as grades são criadas
         this.ingredientesStore = new Ext.data.JsonStore({ fields: App.model.Ingrediente });
         this.passosStore = new Ext.data.JsonStore({ fields: App.model.Passo, sortInfo: { field: 'ordem', direction: 'ASC' } });
 
+        // 2. As grades editáveis são definidas
         var ingredientesGrid = new Ext.grid.EditorGridPanel({
             store: this.ingredientesStore,
             title: 'Ingredientes',
@@ -40,6 +44,7 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
             viewConfig: { forceFit: true }
         });
 
+        // 3. O formulário principal é criado
         this.formPanel = new Ext.form.FormPanel({
             frame: true, bodyStyle: 'padding:10px', labelWidth: 80,
             defaults: { anchor: '98%' },
@@ -56,13 +61,13 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
                         { items: { xtype: 'textfield', fieldLabel: 'Dificuldade', name: 'dificuldade', anchor:'95%' } }
                     ]
                 },
-                // *** PARTE ALTERADA: Campo de Categorias Adicionado ***
-                { xtype: 'textfield', fieldLabel: 'Categorias', name: 'categorias', anchor: '98%', helpText: 'Separe as categorias por vírgula (,)' },
+                { xtype: 'textfield', fieldLabel: 'Categorias', name: 'categorias', helpText: 'Separe as categorias por vírgula (,)' },
                 ingredientesGrid,
                 passosGrid
             ]
         });
 
+        // 4. A configuração final da janela é montada
         Ext.apply(this, {
             items: this.formPanel,
             buttons: [
@@ -71,26 +76,40 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
             ]
         });
 
-        // *** PARTE ALTERADA: Adiciona um evento que a grid pode "ouvir" ***
         this.addEvents('receitasalva');
 
+        // 5. O construtor da classe pai (Ext.Window) é chamado. Essencial!
         App.view.ReceitaWindow.superclass.initComponent.call(this);
 
+        // 6. *** A LÓGICA DE CARREGAMENTO CRÍTICA VEM AQUI ***
+        // Este bloco só é executado se um 'record' foi passado na criação da janela.
         if (this.record) {
-            this.setTitle('Editar Receita');
+            this.setTitle('Editar Receita: ' + this.record.get('nome'));
+
+            // Carrega os campos simples do formulário (id, nome, descricao, etc)
             this.formPanel.getForm().loadRecord(this.record);
 
+            // Carrega os dados da grade de INGREDIENTES
             var ingredientesData = this.record.get('ingredientes');
-            if (ingredientesData) { this.ingredientesStore.loadData(ingredientesData); }
+            if (ingredientesData) {
+                this.ingredientesStore.loadData(ingredientesData);
+            }
 
+            // Carrega os dados da grade de PASSOS
             var passosData = this.record.get('passos');
-            if (passosData) { this.passosStore.loadData(passosData); }
+            if (passosData) {
+                this.passosStore.loadData(passosData);
+            }
 
+            // Carrega o campo de texto de CATEGORIAS (que é um array no model)
             var categoriasData = this.record.get('categorias');
-            if (Ext.isArray(categoriasData)) { this.formPanel.getForm().findField('categorias').setValue(categoriasData.join(', ')); }
+            if (Ext.isArray(categoriasData)) {
+                this.formPanel.getForm().findField('categorias').setValue(categoriasData.join(', '));
+            }
         }
     },
 
+    // Demais métodos (Handlers de botões)
     onAddIngrediente: function(btn) {
         var grid = btn.findParentByType('editorgrid');
         var Ingrediente = grid.getStore().recordType;
