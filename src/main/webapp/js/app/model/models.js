@@ -20,8 +20,7 @@ App.model.Receita = Ext.data.Record.create([
     'descricao',
     {name: 'tempoDePreparo', type: 'int'},
     {name: 'porcoes', type: 'int'},
-    'dificuldade',
-    'categorias',   // Armazena o array de categorias
+    'dificuldade', // Armazena o array de categorias
     'ingredientes', // Armazena o array de ingredientes
     'passos'        // Armazena o array de passos
 ]);

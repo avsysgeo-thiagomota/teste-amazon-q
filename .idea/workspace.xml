@@ -11,7 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7b76de36-28a8-4f22-b86c-14cc4cce369a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/ReceitaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/ReceitaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/model/Receita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/model/Receita.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/receitas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/receitas.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app/model/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app/model/models.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaWindow.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,30 +68,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Debug",
-    "JavaScript Debug.Unnamed JavaScript.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Tomcat Server.Tomcat 9.0.106.executor": "Debug",
-    "Tomcat Server.Toncat.executor": "Debug",
-    "Tomcat Server.Unnamed.executor": "Run",
-    "git-widget-placeholder": "ConnctBackAndFront",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;JavaScript Debug.Unnamed JavaScript.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.106.executor&quot;: &quot;Debug&quot;,
+    &quot;Tomcat Server.Toncat.executor&quot;: &quot;Debug&quot;,
+    &quot;Tomcat Server.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ConnctBackAndFront&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Thiago Mota\Documents\GitHub\teste-amazon-q\src\main\webapp\css" />

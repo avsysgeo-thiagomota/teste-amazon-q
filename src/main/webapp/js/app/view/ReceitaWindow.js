@@ -54,7 +54,6 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
                         { items: { xtype: 'textfield', fieldLabel: 'Dificuldade', name: 'dificuldade', anchor:'95%' } }
                     ]
                 },
-                { xtype: 'textfield', fieldLabel: 'Categorias', name: 'categorias', helpText: 'Separe as categorias por vírgula (,)' },
                 ingredientesGrid,
                 passosGrid
             ]
@@ -87,11 +86,6 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
             var passosData = this.record.get('passos');
             if (passosData) {
                 this.passosStore.loadData(passosData);
-            }
-
-            var categoriasData = this.record.get('categorias');
-            if (Ext.isArray(categoriasData)) {
-                this.formPanel.getForm().findField('categorias').setValue(categoriasData.join(', '));
             }
         }
     },
@@ -143,8 +137,6 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
             }
             formValues.ingredientes = getStoreData(this.ingredientesStore);
             formValues.passos = getStoreData(this.passosStore);
-            var categoriasStr = formValues.categorias || "";
-            formValues.categorias = categoriasStr.split(',').map(function(item) { return item.trim(); }).filter(function(item) { return item !== ""; });
 
             form.submit({
                 url: 'receitas',

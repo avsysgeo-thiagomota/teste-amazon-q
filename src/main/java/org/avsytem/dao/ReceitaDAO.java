@@ -31,7 +31,6 @@ public class ReceitaDAO {
     private static final String CREATE_TABLE_RECEITAS = "CREATE TABLE IF NOT EXISTS receitas (id SERIAL PRIMARY KEY, nome VARCHAR(255) NOT NULL, descricao TEXT, tempo_preparo_min INT, porcoes INT, dificuldade VARCHAR(50));";
     private static final String CREATE_TABLE_INGREDIENTES = "CREATE TABLE IF NOT EXISTS ingredientes (id SERIAL PRIMARY KEY, receita_id INT REFERENCES receitas(id) ON DELETE CASCADE, nome VARCHAR(255) NOT NULL, quantidade DOUBLE PRECISION, unidade VARCHAR(50));";
     private static final String CREATE_TABLE_PASSOS = "CREATE TABLE IF NOT EXISTS passos (id SERIAL PRIMARY KEY, receita_id INT REFERENCES receitas(id) ON DELETE CASCADE, ordem INT NOT NULL, descricao TEXT NOT NULL);";
-    private static final String CREATE_TABLE_CATEGORIAS = "CREATE TABLE IF NOT EXISTS categorias (id SERIAL PRIMARY KEY, receita_id INT REFERENCES receitas(id) ON DELETE CASCADE, nome VARCHAR(100) NOT NULL);";
 
     private Connection conn;
 
@@ -45,7 +44,6 @@ public class ReceitaDAO {
             stmt.execute(CREATE_TABLE_RECEITAS);
             stmt.execute(CREATE_TABLE_INGREDIENTES);
             stmt.execute(CREATE_TABLE_PASSOS);
-            stmt.execute(CREATE_TABLE_CATEGORIAS);
             conn.commit();
             LOGGER.info("Estrutura do banco de dados verificada/criada com sucesso.");
         } catch (SQLException e) {

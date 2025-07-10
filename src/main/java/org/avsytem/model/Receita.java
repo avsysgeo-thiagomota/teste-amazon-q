@@ -12,12 +12,10 @@ public class Receita {
     private int tempoDePreparo; // em minutos
     private int porcoes; // rende X porções
     private String dificuldade; // "Fácil", "Médio", "Difícil"
-    private List<String> categorias; // "Sobremesa", "Prato Principal", etc.
     private List<Ingrediente> ingredientes;
     private List<Passo> passos;
 
     public Receita() {
-        this.categorias = new ArrayList<>();
         this.ingredientes = new ArrayList<>();
         this.passos = new ArrayList<>();
     }
@@ -71,14 +69,6 @@ public class Receita {
         this.dificuldade = dificuldade;
     }
 
-    public List<String> getCategorias() {
-        return categorias;
-    }
-
-    public void setCategorias(List<String> categorias) {
-        this.categorias = categorias;
-    }
-
     public List<Ingrediente> getIngredientes() {
         return ingredientes;
     }
@@ -104,7 +94,6 @@ public class Receita {
                 ", tempoDePreparo=" + tempoDePreparo +
                 ", porcoes=" + porcoes +
                 ", dificuldade='" + dificuldade + '\'' +
-                ", categorias=" + categorias.stream().collect(Collectors.joining(", ")) +
                 ", ingredientes=" + ingredientes.stream().map(Ingrediente::toString).collect(Collectors.joining(", ")) +
                 ", passos=" + passos.stream().map(Passo::toString).collect(Collectors.joining(", ")) +
                 '}';

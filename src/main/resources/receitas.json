@@ -6,7 +6,7 @@
         "tempoDePreparo": 60,
         "porcoes": 12,
         "dificuldade": "Fácil",
-        "categorias": [ "Sobremesa", "Bolo", "Lanche" ],
+        
         "ingredientes": [
             { "nome": "cenoura média ralada", "quantidade": 3, "unidade": "unidades" },
             { "nome": "açúcar", "quantidade": 2, "unidade": "xícaras" },
@@ -30,7 +30,7 @@
         "tempoDePreparo": 50,
         "porcoes": 6,
         "dificuldade": "Médio",
-        "categorias": [ "Prato Principal", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "carne seca (charque)", "quantidade": 500, "unidade": "gramas" },
             { "nome": "arroz agulhinha", "quantidade": 2, "unidade": "xícaras" },
@@ -54,7 +54,7 @@
         "tempoDePreparo": 25,
         "porcoes": 20,
         "dificuldade": "Fácil",
-        "categorias": [ "Sobremesa", "Doce" ],
+        
         "ingredientes": [
             { "nome": "leite condensado", "quantidade": 1, "unidade": "lata (395g)" },
             { "nome": "chocolate em pó (50% cacau)", "quantidade": 4, "unidade": "colheres de sopa" },
@@ -75,7 +75,7 @@
         "tempoDePreparo": 20,
         "porcoes": 4,
         "dificuldade": "Fácil",
-        "categorias": [ "Acompanhamento", "Café da Manhã", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "flocão de milho", "quantidade": 2, "unidade": "xícaras" },
             { "nome": "água", "quantidade": 1, "unidade": "xícara" },
@@ -96,7 +96,7 @@
         "tempoDePreparo": 45,
         "porcoes": 5,
         "dificuldade": "Médio",
-        "categorias": [ "Prato Principal", "Frutos do Mar", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "postas de peixe branco (cação, badejo)", "quantidade": 800, "unidade": "gramas" },
             { "nome": "leite de coco", "quantidade": 400, "unidade": "ml" },
@@ -122,7 +122,7 @@
         "tempoDePreparo": 90,
         "porcoes": 6,
         "dificuldade": "Fácil",
-        "categorias": [ "Prato Principal", "Massa" ],
+        
         "ingredientes": [
             { "nome": "macarrão (espaguete ou talharim)", "quantidade": 500, "unidade": "gramas" },
             { "nome": "carne moída (patinho ou acém)", "quantidade": 500, "unidade": "gramas" },
@@ -148,7 +148,7 @@
         "tempoDePreparo": 50,
         "porcoes": 25,
         "dificuldade": "Médio",
-        "categorias": [ "Lanche", "Café da Manhã", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "polvilho azedo", "quantidade": 500, "unidade": "gramas" },
             { "nome": "leite integral", "quantidade": 1, "unidade": "xícara" },
@@ -173,7 +173,7 @@
         "tempoDePreparo": 60,
         "porcoes": 8,
         "dificuldade": "Médio",
-        "categorias": [ "Prato Principal", "Frutos do Mar", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "pão francês amanhecido", "quantidade": 5, "unidade": "unidades" },
             { "nome": "leite de coco", "quantidade": 500, "unidade": "ml" },
@@ -199,7 +199,7 @@
         "tempoDePreparo": 120,
         "porcoes": 8,
         "dificuldade": "Médio",
-        "categorias": [ "Prato Principal", "Massa" ],
+        
         "ingredientes": [
             { "nome": "massa de lasanha", "quantidade": 1, "unidade": "pacote (500g)" },
             { "nome": "molho à bolonhesa", "quantidade": 1, "unidade": "receita" },
@@ -225,7 +225,7 @@
         "tempoDePreparo": 30,
         "porcoes": 4,
         "dificuldade": "Fácil",
-        "categorias": [ "Prato Principal" ],
+        
         "ingredientes": [
             { "nome": "peito de frango em cubos", "quantidade": 500, "unidade": "gramas" },
             { "nome": "creme de leite", "quantidade": 1, "unidade": "lata" },
@@ -250,7 +250,7 @@
         "tempoDePreparo": 10,
         "porcoes": 1,
         "dificuldade": "Fácil",
-        "categorias": [ "Lanche", "Sobremesa", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "goma de tapioca hidratada", "quantidade": 4, "unidade": "colheres de sopa" },
             { "nome": "coco ralado fresco ou de pacote", "quantidade": 2, "unidade": "colheres de sopa" },
@@ -271,7 +271,7 @@
         "tempoDePreparo": 40,
         "porcoes": 6,
         "dificuldade": "Fácil",
-        "categorias": [ "Prato Principal", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "feijão cozido (sem caldo)", "quantidade": 2, "unidade": "xícaras" },
             { "nome": "farinha de mandioca crua", "quantidade": 1.5, "unidade": "xícaras" },
@@ -296,7 +296,7 @@
         "tempoDePreparo": 240,
         "porcoes": 10,
         "dificuldade": "Difícil",
-        "categorias": [ "Prato Principal", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "feijão preto", "quantidade": 1, "unidade": "kg" },
             { "nome": "carne seca", "quantidade": 300, "unidade": "gramas" },
@@ -322,7 +322,7 @@
         "tempoDePreparo": 90,
         "porcoes": 20,
         "dificuldade": "Médio",
-        "categorias": [ "Salgado", "Lanche", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "peito de frango cozido e desfiado", "quantidade": 500, "unidade": "gramas" },
             { "nome": "caldo do cozimento do frango", "quantidade": 2, "unidade": "xícaras" },
@@ -347,7 +347,7 @@
         "tempoDePreparo": 15,
         "porcoes": 8,
         "dificuldade": "Fácil",
-        "categorias": [ "Sobremesa" ],
+        
         "ingredientes": [
             { "nome": "leite condensado", "quantidade": 1, "unidade": "lata" },
             { "nome": "creme de leite", "quantidade": 1, "unidade": "lata" },
@@ -368,7 +368,7 @@
         "tempoDePreparo": 90,
         "porcoes": 10,
         "dificuldade": "Fácil",
-        "categorias": [ "Sobremesa" ],
+        
         "ingredientes": [
             { "nome": "leite condensado", "quantidade": 1, "unidade": "lata" },
             { "nome": "leite integral", "quantidade": 1, "unidade": "lata (mesma medida)" },
@@ -390,7 +390,7 @@
         "tempoDePreparo": 60,
         "porcoes": 6,
         "dificuldade": "Médio",
-        "categorias": [ "Prato Principal", "Frutos do Mar", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "mandioca cozida e amassada", "quantidade": 1, "unidade": "kg" },
             { "nome": "camarão fresco e limpo", "quantidade": 500, "unidade": "gramas" },
@@ -415,7 +415,7 @@
         "tempoDePreparo": 70,
         "porcoes": 8,
         "dificuldade": "Fácil",
-        "categorias": [ "Prato Principal", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "frango em pedaços (coxa e sobrecoxa)", "quantidade": 1, "unidade": "kg" },
             { "nome": "arroz agulhinha", "quantidade": 2, "unidade": "xícaras" },
@@ -440,7 +440,7 @@
         "tempoDePreparo": 80,
         "porcoes": 6,
         "dificuldade": "Médio",
-        "categorias": [ "Prato Principal", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "mandioca", "quantidade": 1, "unidade": "kg" },
             { "nome": "carne seca dessalgada e desfiada", "quantidade": 500, "unidade": "gramas" },
@@ -464,7 +464,7 @@
         "tempoDePreparo": 60,
         "porcoes": 12,
         "dificuldade": "Médio",
-        "categorias": [ "Sobremesa", "Doce" ],
+        
         "ingredientes": [
             { "nome": "gema de ovo peneirada", "quantidade": 10, "unidade": "unidades" },
             { "nome": "açúcar", "quantidade": 1.5, "unidade": "xícaras" },
@@ -487,7 +487,7 @@
         "tempoDePreparo": 15,
         "porcoes": 6,
         "dificuldade": "Fácil",
-        "categorias": [ "Acompanhamento", "Comida Brasileira" ],
+        
         "ingredientes": [
             { "nome": "banana nanica madura, mas firme", "quantidade": 3, "unidade": "unidades" },
             { "nome": "farinha de mandioca flocada", "quantidade": 2, "unidade": "xícaras" },
@@ -510,7 +510,7 @@
         "tempoDePreparo": 30,
         "porcoes": 8,
         "dificuldade": "Fácil",
-        "categorias": [ "Salada", "Acompanhamento" ],
+        
         "ingredientes": [
             { "nome": "peito de frango cozido e desfiado", "quantidade": 500, "unidade": "gramas" },
             { "nome": "maionese", "quantidade": 1, "unidade": "xícara" },
@@ -535,7 +535,7 @@
         "tempoDePreparo": 45,
         "porcoes": 4,
         "dificuldade": "Médio",
-        "categorias": [ "Prato Principal" ],
+        
         "ingredientes": [
             { "nome": "bife de alcatra ou contrafilé", "quantidade": 4, "unidade": "unidades" },
             { "nome": "molho de tomate caseiro", "quantidade": 2, "unidade": "xícaras" },
@@ -559,7 +559,7 @@
         "tempoDePreparo": 40,
         "porcoes": 4,
         "dificuldade": "Fácil",
-        "categorias": [ "Petisco", "Prato Principal" ],
+        
         "ingredientes": [
             { "nome": "frango em pedaços pequenos (passarinho)", "quantidade": 1, "unidade": "kg" },
             { "nome": "alho picado ou frito", "quantidade": 1, "unidade": "cabeça" },
@@ -583,7 +583,7 @@
         "tempoDePreparo": 50,
         "porcoes": 6,
         "dificuldade": "Fácil",
-        "categorias": [ "Sopa" ],
+        
         "ingredientes": [
             { "nome": "batata", "quantidade": 500, "unidade": "gramas" },
             { "nome": "couve manteiga fatiada finamente", "quantidade": 1, "unidade": "maço" },
@@ -607,7 +607,7 @@
         "tempoDePreparo": 90,
         "porcoes": 8,
         "dificuldade": "Médio",
-        "categorias": [ "Torta Salgada", "Lanche" ],
+        
         "ingredientes": [
             { "nome": "farinha de trigo", "quantidade": 3, "unidade": "xícaras" },
             { "nome": "manteiga gelada em cubos", "quantidade": 200, "unidade": "gramas" },
@@ -632,7 +632,7 @@
         "tempoDePreparo": 35,
         "porcoes": 4,
         "dificuldade": "Médio",
-        "categorias": [ "Prato Principal", "Massa" ],
+        
         "ingredientes": [
             { "nome": "arroz arbóreo ou carnaroli", "quantidade": 1.5, "unidade": "xícaras" },
             { "nome": "palmito em conserva picado", "quantidade": 300, "unidade": "gramas" },
@@ -657,7 +657,7 @@
         "tempoDePreparo": 40,
         "porcoes": 4,
         "dificuldade": "Fácil",
-        "categorias": [ "Sopa" ],
+        
         "ingredientes": [
             { "nome": "abóbora cabotiá em cubos", "quantidade": 800, "unidade": "gramas" },
             { "nome": "gengibre fresco ralado", "quantidade": 1, "unidade": "colher de sopa" },
@@ -680,7 +680,7 @@
         "tempoDePreparo": 30,
         "porcoes": 8,
         "dificuldade": "Fácil",
-        "categorias": [ "Salada", "Acompanhamento" ],
+        
         "ingredientes": [
             { "nome": "batata cozida em cubos", "quantidade": 4, "unidade": "unidades grandes" },
             { "nome": "cenoura cozida em cubos", "quantidade": 2, "unidade": "unidades" },
@@ -704,7 +704,7 @@
         "tempoDePreparo": 120,
         "porcoes": 10,
         "dificuldade": "Fácil",
-        "categorias": [ "Sobremesa", "Doce", "Festa Junina" ],
+        
         "ingredientes": [
             { "nome": "milho para canjica", "quantidade": 500, "unidade": "gramas" },
             { "nome": "leite", "quantidade": 1, "unidade": "litro" },
