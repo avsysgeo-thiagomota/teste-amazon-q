@@ -17,6 +17,5 @@
     <script type="text/javascript" src="js/app-loader.js"></script>
 </head>
 <body>
-<div id="grid-receitas-container"></div>
 </body>
 </html>

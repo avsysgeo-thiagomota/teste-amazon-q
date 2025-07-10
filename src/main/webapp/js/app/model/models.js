@@ -1,5 +1,3 @@
-// models.js
-
 Ext.ns('App.model');
 
 // Modelo para os ingredientes (usado na janela de edição)

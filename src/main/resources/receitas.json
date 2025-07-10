@@ -1,1301 +1,725 @@
 [
     {
         "id": 1,
-        "nome": "Bolo de Cenoura",
-        "descricao": "Um clássico bolo de cenoura com cobertura de chocolate.",
+        "nome": "Bolo de Cenoura com Cobertura de Chocolate",
+        "descricao": "Um clássico da culinária caseira brasileira. Fofinho, úmido e com uma generosa cobertura de brigadeiro mole.",
         "tempoDePreparo": 60,
-        "porcoes": 10,
+        "porcoes": 12,
         "dificuldade": "Fácil",
-        "categorias": [
-            "Sobremesa",
-            "Bolo"
-        ],
+        "categorias": [ "Sobremesa", "Bolo", "Lanche" ],
         "ingredientes": [
-            {
-                "nome": "cenoura ralada",
-                "quantidade": 3,
-                "unidade": "unidades"
-            },
-            {
-                "nome": "açúcar",
-                "quantidade": 2,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "óleo",
-                "quantidade": 1,
-                "unidade": "xícara"
-            },
-            {
-                "nome": "ovos",
-                "quantidade": 4,
-                "unidade": "unidades"
-            },
-            {
-                "nome": "farinha de trigo",
-                "quantidade": 2.5,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "fermento em pó",
-                "quantidade": 1,
-                "unidade": "colher de sopa"
-            }
+            { "nome": "cenoura média ralada", "quantidade": 3, "unidade": "unidades" },
+            { "nome": "açúcar", "quantidade": 2, "unidade": "xícaras" },
+            { "nome": "óleo vegetal", "quantidade": 1, "unidade": "xícara" },
+            { "nome": "ovo", "quantidade": 4, "unidade": "unidades" },
+            { "nome": "farinha de trigo", "quantidade": 2.5, "unidade": "xícaras" },
+            { "nome": "fermento em pó", "quantidade": 1, "unidade": "colher de sopa" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Bata a cenoura, ovos e óleo no liquidificador."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Misture o restante dos ingredientes."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Despeje em uma forma untada."
-            },
-            {
-                "ordem": 4,
-                "descricao": "Asse em forno médio por 40 minutos."
-            }
+            { "ordem": 1, "descricao": "No liquidificador, bata as cenouras, os ovos e o óleo até obter uma mistura homogênea." },
+            { "ordem": 2, "descricao": "Em uma tigela, misture a farinha e o açúcar. Despeje a mistura do liquidificador e mexa bem." },
+            { "ordem": 3, "descricao": "Adicione o fermento e incorpore delicadamente à massa." },
+            { "ordem": 4, "descricao": "Despeje em uma forma untada e enfarinhada. Asse em forno pré-aquecido a 180°C por cerca de 40 minutos." },
+            { "ordem": 5, "descricao": "Para a cobertura, misture 1 lata de leite condensado, 3 colheres de chocolate em pó e 1 colher de manteiga. Cozinhe em fogo baixo até engrossar e despeje sobre o bolo." }
         ]
     },
     {
         "id": 2,
         "nome": "Arroz de Carreteiro",
-        "descricao": "Receita tradicional gaúcha feita com carne seca.",
+        "descricao": "Receita tradicional gaúcha, forte e saborosa, feita com carne seca e arroz.",
         "tempoDePreparo": 50,
         "porcoes": 6,
         "dificuldade": "Médio",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "categorias": [ "Prato Principal", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "carne seca",
-                "quantidade": 500,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "arroz",
-                "quantidade": 2,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "cebola picada",
-                "quantidade": 1,
-                "unidade": "unidade"
-            },
-            {
-                "nome": "alho picado",
-                "quantidade": 2,
-                "unidade": "dentes"
-            },
-            {
-                "nome": "óleo",
-                "quantidade": 2,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "água",
-                "quantidade": 4,
-                "unidade": "xícaras"
-            }
+            { "nome": "carne seca (charque)", "quantidade": 500, "unidade": "gramas" },
+            { "nome": "arroz agulhinha", "quantidade": 2, "unidade": "xícaras" },
+            { "nome": "cebola picada", "quantidade": 1, "unidade": "unidade grande" },
+            { "nome": "alho picado", "quantidade": 3, "unidade": "dentes" },
+            { "nome": "tomate picado", "quantidade": 2, "unidade": "unidades" },
+            { "nome": "cheiro-verde picado", "quantidade": 0.5, "unidade": "xícara" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Dessalgue e cozinhe a carne seca."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Refogue a carne com cebola e alho."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Adicione o arroz e a água."
-            },
-            {
-                "ordem": 4,
-                "descricao": "Cozinhe até o arroz ficar macio."
-            }
+            { "ordem": 1, "descricao": "Dessalgue a carne seca, deixando-a de molho em água e trocando a água algumas vezes. Cozinhe na pressão até ficar macia e desfie." },
+            { "ordem": 2, "descricao": "Em uma panela grande, refogue a cebola e o alho em um fio de óleo ou banha. Adicione a carne desfiada e frite bem." },
+            { "ordem": 3, "descricao": "Acrescente o tomate e refogue mais um pouco. Junte o arroz e misture." },
+            { "ordem": 4, "descricao": "Cubra com cerca de 4 xícaras de água quente e tempere com sal (com cuidado, pois a carne já é salgada). Cozinhe até o arroz ficar macio e úmido." },
+            { "ordem": 5, "descricao": "Finalize com o cheiro-verde picado por cima." }
         ]
     },
     {
         "id": 3,
-        "nome": "Brigadeiro",
-        "descricao": "Receita deliciosa de brigadeiro tradicional.",
-        "tempoDePreparo": 43,
-        "porcoes": 4,
+        "nome": "Brigadeiro Tradicional",
+        "descricao": "O clássico docinho de festa brasileiro, perfeito para enrolar ou comer de colher.",
+        "tempoDePreparo": 25,
+        "porcoes": 20,
         "dificuldade": "Fácil",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "categorias": [ "Sobremesa", "Doce" ],
         "ingredientes": [
-            {
-                "nome": "Leite condensado",
-                "quantidade": 2.99,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Chocolate em pó",
-                "quantidade": 1.84,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Manteiga",
-                "quantidade": 2.73,
-                "unidade": "colheres de sopa"
-            }
+            { "nome": "leite condensado", "quantidade": 1, "unidade": "lata (395g)" },
+            { "nome": "chocolate em pó (50% cacau)", "quantidade": 4, "unidade": "colheres de sopa" },
+            { "nome": "manteiga sem sal", "quantidade": 1, "unidade": "colher de sopa" },
+            { "nome": "chocolate granulado", "quantidade": 1, "unidade": "xícara (para confeitar)" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) leite condensado."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) chocolate em pó."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Em uma panela, coloque o leite condensado, o chocolate em pó e a manteiga." },
+            { "ordem": 2, "descricao": "Cozinhe em fogo médio-baixo, mexendo continuamente com uma espátula, até a mistura desgrudar do fundo da panela (ponto de enrolar)." },
+            { "ordem": 3, "descricao": "Despeje em um prato untado com manteiga e deixe esfriar completamente." },
+            { "ordem": 4, "descricao": "Com as mãos untadas, enrole pequenas bolinhas e passe no chocolate granulado." }
         ]
     },
     {
         "id": 4,
-        "nome": "Cuscuz Nordestino",
-        "descricao": "Receita deliciosa de cuscuz nordestino tradicional.",
-        "tempoDePreparo": 43,
-        "porcoes": 6,
-        "dificuldade": "Médio",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "nome": "Cuscuz Nordestino Simples",
+        "descricao": "Base da culinária nordestina, perfeito para o café da manhã ou como acompanhamento, servido com manteiga ou leite.",
+        "tempoDePreparo": 20,
+        "porcoes": 4,
+        "dificuldade": "Fácil",
+        "categorias": [ "Acompanhamento", "Café da Manhã", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "Flocão de milho",
-                "quantidade": 1.34,
-                "unidade": "unidades"
-            },
-            {
-                "nome": "Água",
-                "quantidade": 1.94,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Sal",
-                "quantidade": 2.71,
-                "unidade": "xícaras"
-            }
+            { "nome": "flocão de milho", "quantidade": 2, "unidade": "xícaras" },
+            { "nome": "água", "quantidade": 1, "unidade": "xícara" },
+            { "nome": "sal", "quantidade": 1, "unidade": "colher de chá" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) flocão de milho."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) água."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Em uma tigela, misture o flocão de milho e o sal." },
+            { "ordem": 2, "descricao": "Adicione a água aos poucos, mexendo para hidratar a massa. Deixe descansar por 10 minutos." },
+            { "ordem": 3, "descricao": "Coloque água no fundo da cuscuzeira (sem atingir o nível do vaporizador)." },
+            { "ordem": 4, "descricao": "Transfira a massa hidratada para o vaporizador da cuscuzeira, sem compactar. Leve ao fogo e cozinhe por cerca de 10-15 minutos após o início do chiado." },
+            { "ordem": 5, "descricao": "Sirva quente com manteiga, queijo coalho, ovos ou leite." }
         ]
     },
     {
         "id": 5,
-        "nome": "Moqueca Baiana",
-        "descricao": "Receita deliciosa de moqueca baiana tradicional.",
-        "tempoDePreparo": 59,
-        "porcoes": 8,
-        "dificuldade": "Fácil",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "nome": "Moqueca Baiana de Peixe",
+        "descricao": "Um prato emblemático da Bahia, com peixe, leite de coco, azeite de dendê e pimentões.",
+        "tempoDePreparo": 45,
+        "porcoes": 5,
+        "dificuldade": "Médio",
+        "categorias": [ "Prato Principal", "Frutos do Mar", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "Peixe",
-                "quantidade": 0.82,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Leite de coco",
-                "quantidade": 2.86,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Azeite de dendê",
-                "quantidade": 1.46,
-                "unidade": "xícaras"
-            }
+            { "nome": "postas de peixe branco (cação, badejo)", "quantidade": 800, "unidade": "gramas" },
+            { "nome": "leite de coco", "quantidade": 400, "unidade": "ml" },
+            { "nome": "azeite de dendê", "quantidade": 3, "unidade": "colheres de sopa" },
+            { "nome": "pimentão vermelho em rodelas", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "pimentão amarelo em rodelas", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "tomate em rodelas", "quantidade": 2, "unidade": "unidades" },
+            { "nome": "cebola em rodelas", "quantidade": 1, "unidade": "unidade grande" },
+            { "nome": "coentro picado", "quantidade": 1, "unidade": "maço" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) peixe."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) leite de coco."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Tempere o peixe com sal, pimenta e suco de limão. Deixe marinar por 15 minutos." },
+            { "ordem": 2, "descricao": "Em uma panela de barro ou moqueca, faça uma camada com metade da cebola, dos tomates e dos pimentões." },
+            { "ordem": 3, "descricao": "Acomode as postas de peixe sobre essa camada. Cubra com o restante dos vegetais." },
+            { "ordem": 4, "descricao": "Regue com o leite de coco e o azeite de dendê. Cozinhe em fogo médio por cerca de 20-25 minutos." },
+            { "ordem": 5, "descricao": "Finalize com coentro picado e sirva com arroz branco, farofa de dendê e pirão." }
         ]
     },
     {
         "id": 6,
-        "nome": "Macarrão à Bolonhesa",
-        "descricao": "Receita deliciosa de macarrão à bolonhesa tradicional.",
-        "tempoDePreparo": 82,
+        "nome": "Macarrão à Bolonhesa Clássico",
+        "descricao": "Uma receita italiana que conquistou o mundo. Molho de carne cozido lentamente para apurar o sabor.",
+        "tempoDePreparo": 90,
         "porcoes": 6,
-        "dificuldade": "Difícil",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "dificuldade": "Fácil",
+        "categorias": [ "Prato Principal", "Massa" ],
         "ingredientes": [
-            {
-                "nome": "Macarrão",
-                "quantidade": 2.17,
-                "unidade": "unidades"
-            },
-            {
-                "nome": "Carne moída",
-                "quantidade": 2.03,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Molho de tomate",
-                "quantidade": 0.77,
-                "unidade": "gramas"
-            }
+            { "nome": "macarrão (espaguete ou talharim)", "quantidade": 500, "unidade": "gramas" },
+            { "nome": "carne moída (patinho ou acém)", "quantidade": 500, "unidade": "gramas" },
+            { "nome": "tomate pelado em lata", "quantidade": 2, "unidade": "latas" },
+            { "nome": "cebola picada", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "cenoura picada", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "salsão picado", "quantidade": 1, "unidade": "talo" },
+            { "nome": "vinho tinto seco", "quantidade": 1, "unidade": "xícara" },
+            { "nome": "manjericão fresco", "quantidade": 1, "unidade": "ramo" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) macarrão."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) carne moída."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Em uma panela, refogue a cebola, a cenoura e o salsão em azeite até amaciarem (soffritto)." },
+            { "ordem": 2, "descricao": "Aumente o fogo, adicione a carne moída e cozinhe até dourar, desfazendo os grumos." },
+            { "ordem": 3, "descricao": "Adicione o vinho tinto e cozinhe até evaporar. Junte os tomates pelados amassados e o manjericão." },
+            { "ordem": 4, "descricao": "Tempere com sal e pimenta. Reduza o fogo e cozinhe por, no mínimo, 1 hora, com a panela semi-tampada." },
+            { "ordem": 5, "descricao": "Cozinhe o macarrão conforme as instruções da embalagem e sirva com o molho e queijo parmesão ralado." }
         ]
     },
     {
         "id": 7,
-        "nome": "Pão de Queijo",
-        "descricao": "Receita deliciosa de pão de queijo tradicional.",
-        "tempoDePreparo": 75,
-        "porcoes": 8,
-        "dificuldade": "Fácil",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "nome": "Pão de Queijo Mineiro",
+        "descricao": "A autêntica receita de pão de queijo de Minas Gerais, com polvilho escaldado, queijo canastra e uma casquinha crocante.",
+        "tempoDePreparo": 50,
+        "porcoes": 25,
+        "dificuldade": "Médio",
+        "categorias": [ "Lanche", "Café da Manhã", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "Polvilho",
-                "quantidade": 1.45,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Queijo ralado",
-                "quantidade": 2.8,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Ovos",
-                "quantidade": 1.5,
-                "unidade": "colheres de sopa"
-            }
+            { "nome": "polvilho azedo", "quantidade": 500, "unidade": "gramas" },
+            { "nome": "leite integral", "quantidade": 1, "unidade": "xícara" },
+            { "nome": "óleo", "quantidade": 0.5, "unidade": "xícara" },
+            { "nome": "água", "quantidade": 0.5, "unidade": "xícara" },
+            { "nome": "ovo", "quantidade": 2, "unidade": "unidades" },
+            { "nome": "queijo minas canastra (ou parmesão)", "quantidade": 2, "unidade": "xícaras" },
+            { "nome": "sal", "quantidade": 1, "unidade": "colher de chá" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) polvilho."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) queijo ralado."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Em uma panela, ferva o leite, a água, o óleo e o sal." },
+            { "ordem": 2, "descricao": "Em uma tigela grande, coloque o polvilho e despeje a mistura fervente por cima, mexendo com uma colher para escaldar o polvilho." },
+            { "ordem": 3, "descricao": "Deixe a massa amornar. Adicione os ovos um a um, sovando bem após cada adição." },
+            { "ordem": 4, "descricao": "Incorpore o queijo ralado e sove até a massa ficar lisa e homogênea." },
+            { "ordem": 5, "descricao": "Faça bolinhas e asse em forno pré-aquecido a 180°C por cerca de 30 minutos, ou até dourarem." }
         ]
     },
     {
         "id": 8,
-        "nome": "Vatapá",
-        "descricao": "Receita deliciosa de vatapá tradicional.",
-        "tempoDePreparo": 39,
+        "nome": "Vatapá Cremoso",
+        "descricao": "Prato de origem afro-brasileira, cremoso e rico, feito com pão, camarão, leite de coco e azeite de dendê.",
+        "tempoDePreparo": 60,
         "porcoes": 8,
         "dificuldade": "Médio",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "categorias": [ "Prato Principal", "Frutos do Mar", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "Pão amanhecido",
-                "quantidade": 2.49,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Leite de coco",
-                "quantidade": 2.5,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Camarão seco",
-                "quantidade": 2.0,
-                "unidade": "colheres de sopa"
-            }
+            { "nome": "pão francês amanhecido", "quantidade": 5, "unidade": "unidades" },
+            { "nome": "leite de coco", "quantidade": 500, "unidade": "ml" },
+            { "nome": "camarão seco e moído", "quantidade": 100, "unidade": "gramas" },
+            { "nome": "camarão fresco limpo", "quantidade": 300, "unidade": "gramas" },
+            { "nome": "cebola picada", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "castanha de caju moída", "quantidade": 0.5, "unidade": "xícara" },
+            { "nome": "amendoim torrado e moído", "quantidade": 0.5, "unidade": "xícara" },
+            { "nome": "azeite de dendê", "quantidade": 4, "unidade": "colheres de sopa" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) pão amanhecido."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) leite de coco."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Amoleça os pães no leite de coco. Bata no liquidificador até obter um creme liso." },
+            { "ordem": 2, "descricao": "Em uma panela, refogue a cebola em um pouco de azeite de dendê. Adicione os camarões frescos e refogue." },
+            { "ordem": 3, "descricao": "Despeje o creme de pão na panela, junte o camarão seco, a castanha e o amendoim." },
+            { "ordem": 4, "descricao": "Cozinhe em fogo baixo, mexendo sempre, até o creme engrossar e cozinhar bem (cerca de 15 minutos)." },
+            { "ordem": 5, "descricao": "Adicione o restante do azeite de dendê, misture e sirva quente com arroz e acarajé." }
         ]
     },
     {
         "id": 9,
-        "nome": "Cuscuz Nordestino",
-        "descricao": "Receita deliciosa de cuscuz nordestino tradicional.",
-        "tempoDePreparo": 40,
+        "nome": "Lasanha à Bolonhesa",
+        "descricao": "Camadas de massa, molho à bolonhesa rico, molho branco cremoso e muito queijo.",
+        "tempoDePreparo": 120,
         "porcoes": 8,
         "dificuldade": "Médio",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "categorias": [ "Prato Principal", "Massa" ],
         "ingredientes": [
-            {
-                "nome": "Flocão de milho",
-                "quantidade": 1.11,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Água",
-                "quantidade": 2.43,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Sal",
-                "quantidade": 0.87,
-                "unidade": "gramas"
-            }
+            { "nome": "massa de lasanha", "quantidade": 1, "unidade": "pacote (500g)" },
+            { "nome": "molho à bolonhesa", "quantidade": 1, "unidade": "receita" },
+            { "nome": "queijo muçarela fatiado", "quantidade": 400, "unidade": "gramas" },
+            { "nome": "queijo parmesão ralado", "quantidade": 100, "unidade": "gramas" },
+            { "nome": "manteiga", "quantidade": 2, "unidade": "colheres de sopa" },
+            { "nome": "farinha de trigo", "quantidade": 2, "unidade": "colheres de sopa" },
+            { "nome": "leite", "quantidade": 500, "unidade": "ml" },
+            { "nome": "noz-moscada", "quantidade": 1, "unidade": "pitada" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) flocão de milho."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) água."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Prepare o molho à bolonhesa conforme a receita (ID 6)." },
+            { "ordem": 2, "descricao": "Prepare o molho branco (bechamel): derreta a manteiga, junte a farinha e cozinhe por 1 minuto. Adicione o leite aos poucos, mexendo para não empelotar. Tempere com sal e noz-moscada." },
+            { "ordem": 3, "descricao": "Em um refratário, comece com uma camada de molho à bolonhesa." },
+            { "ordem": 4, "descricao": "Alterne camadas: massa de lasanha, molho à bolonhesa, molho branco e queijo muçarela." },
+            { "ordem": 5, "descricao": "Finalize com molho branco e cubra com queijo parmesão. Leve ao forno a 180°C por cerca de 30-40 minutos, ou até gratinar." }
         ]
     },
     {
         "id": 10,
-        "nome": "Brigadeiro",
-        "descricao": "Receita deliciosa de brigadeiro tradicional.",
-        "tempoDePreparo": 62,
-        "porcoes": 5,
+        "nome": "Estrogonofe de Frango",
+        "descricao": "Versão brasileira do clássico russo. Frango em cubos, creme de leite, champignon e ketchup.",
+        "tempoDePreparo": 30,
+        "porcoes": 4,
         "dificuldade": "Fácil",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "categorias": [ "Prato Principal" ],
         "ingredientes": [
-            {
-                "nome": "Leite condensado",
-                "quantidade": 1.72,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Chocolate em pó",
-                "quantidade": 2.1,
-                "unidade": "unidades"
-            },
-            {
-                "nome": "Manteiga",
-                "quantidade": 0.84,
-                "unidade": "colheres de sopa"
-            }
+            { "nome": "peito de frango em cubos", "quantidade": 500, "unidade": "gramas" },
+            { "nome": "creme de leite", "quantidade": 1, "unidade": "lata" },
+            { "nome": "champignon fatiado", "quantidade": 100, "unidade": "gramas" },
+            { "nome": "ketchup", "quantidade": 3, "unidade": "colheres de sopa" },
+            { "nome": "mostarda", "quantidade": 1, "unidade": "colher de sopa" },
+            { "nome": "cebola picada", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "alho picado", "quantidade": 2, "unidade": "dentes" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) leite condensado."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) chocolate em pó."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Tempere o frango com sal e pimenta. Em uma panela, doure o frango no azeite e reserve." },
+            { "ordem": 2, "descricao": "Na mesma panela, refogue a cebola e o alho." },
+            { "ordem": 3, "descricao": "Volte o frango para a panela, adicione o ketchup, a mostarda e os champignons. Misture bem." },
+            { "ordem": 4, "descricao": "Desligue o fogo, incorpore o creme de leite (com o soro) e misture." },
+            { "ordem": 5, "descricao": "Sirva imediatamente com arroz branco e batata palha." }
         ]
     },
     {
         "id": 11,
-        "nome": "Lasanha",
-        "descricao": "Receita deliciosa de lasanha tradicional.",
-        "tempoDePreparo": 32,
-        "porcoes": 7,
+        "nome": "Tapioca com Coco e Leite Condensado",
+        "descricao": "Uma sobremesa ou lanche rápido, simples e delicioso, típico do Nordeste.",
+        "tempoDePreparo": 10,
+        "porcoes": 1,
         "dificuldade": "Fácil",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "categorias": [ "Lanche", "Sobremesa", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "Massa de lasanha",
-                "quantidade": 1.11,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Carne moída",
-                "quantidade": 2.15,
-                "unidade": "unidades"
-            },
-            {
-                "nome": "Molho branco",
-                "quantidade": 2.44,
-                "unidade": "xícaras"
-            }
+            { "nome": "goma de tapioca hidratada", "quantidade": 4, "unidade": "colheres de sopa" },
+            { "nome": "coco ralado fresco ou de pacote", "quantidade": 2, "unidade": "colheres de sopa" },
+            { "nome": "leite condensado", "quantidade": 2, "unidade": "colheres de sopa" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) massa de lasanha."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) carne moída."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Peneire a goma de tapioca sobre uma frigideira antiaderente pré-aquecida em fogo médio, formando um disco uniforme." },
+            { "ordem": 2, "descricao": "Aguarde a massa se unir (cerca de 1-2 minutos)." },
+            { "ordem": 3, "descricao": "Espalhe o coco ralado sobre metade do disco." },
+            { "ordem": 4, "descricao": "Dobre a tapioca ao meio e pressione levemente." },
+            { "ordem": 5, "descricao": "Transfira para um prato e regue com leite condensado a gosto." }
         ]
     },
     {
         "id": 12,
-        "nome": "Pão de Queijo",
-        "descricao": "Receita deliciosa de pão de queijo tradicional.",
-        "tempoDePreparo": 64,
-        "porcoes": 8,
-        "dificuldade": "Médio",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "nome": "Feijão Tropeiro",
+        "descricao": "Prato rústico e completo da culinária mineira, com feijão, farinha de mandioca, linguiça, ovos e couve.",
+        "tempoDePreparo": 40,
+        "porcoes": 6,
+        "dificuldade": "Fácil",
+        "categorias": [ "Prato Principal", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "Polvilho",
-                "quantidade": 1.92,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Queijo ralado",
-                "quantidade": 2.78,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Ovos",
-                "quantidade": 2.39,
-                "unidade": "colheres de sopa"
-            }
+            { "nome": "feijão cozido (sem caldo)", "quantidade": 2, "unidade": "xícaras" },
+            { "nome": "farinha de mandioca crua", "quantidade": 1.5, "unidade": "xícaras" },
+            { "nome": "linguiça calabresa em rodelas", "quantidade": 200, "unidade": "gramas" },
+            { "nome": "bacon em cubos", "quantidade": 150, "unidade": "gramas" },
+            { "nome": "ovo", "quantidade": 3, "unidade": "unidades" },
+            { "nome": "couve fatiada finamente", "quantidade": 1, "unidade": "maço" },
+            { "nome": "cebola picada", "quantidade": 1, "unidade": "unidade" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) polvilho."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) queijo ralado."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Em uma panela grande, frite o bacon na própria gordura. Retire e reserve. Na mesma panela, frite a linguiça. Reserve." },
+            { "ordem": 2, "descricao": "Ainda na mesma gordura, refogue a cebola e o alho. Adicione os ovos e mexa como se fossem ovos mexidos." },
+            { "ordem": 3, "descricao": "Adicione o feijão cozido e misture. Em seguida, adicione a farinha de mandioca aos poucos, mexendo sempre." },
+            { "ordem": 4, "descricao": "Volte o bacon e a linguiça para a panela. Por último, adicione a couve e o cheiro-verde. Misture bem." },
+            { "ordem": 5, "descricao": "Sirva imediatamente." }
         ]
     },
     {
         "id": 13,
-        "nome": "Macarrão à Bolonhesa",
-        "descricao": "Receita deliciosa de macarrão à bolonhesa tradicional.",
-        "tempoDePreparo": 56,
-        "porcoes": 8,
-        "dificuldade": "Fácil",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "nome": "Feijoada Completa",
+        "descricao": "O prato mais famoso do Brasil. Uma mistura rica de feijão preto com diversas carnes de porco e boi.",
+        "tempoDePreparo": 240,
+        "porcoes": 10,
+        "dificuldade": "Difícil",
+        "categorias": [ "Prato Principal", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "Macarrão",
-                "quantidade": 3.0,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Carne moída",
-                "quantidade": 2.27,
-                "unidade": "unidades"
-            },
-            {
-                "nome": "Molho de tomate",
-                "quantidade": 1.96,
-                "unidade": "gramas"
-            }
+            { "nome": "feijão preto", "quantidade": 1, "unidade": "kg" },
+            { "nome": "carne seca", "quantidade": 300, "unidade": "gramas" },
+            { "nome": "costelinha de porco", "quantidade": 300, "unidade": "gramas" },
+            { "nome": "lombo de porco", "quantidade": 300, "unidade": "gramas" },
+            { "nome": "paio", "quantidade": 2, "unidade": "unidades" },
+            { "nome": "linguiça calabresa", "quantidade": 2, "unidade": "unidades" },
+            { "nome": "cebola picada", "quantidade": 2, "unidade": "unidades" },
+            { "nome": "folha de louro", "quantidade": 4, "unidade": "unidades" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) macarrão."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) carne moída."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Na véspera, coloque as carnes salgadas de molho, trocando a água várias vezes para dessalgar." },
+            { "ordem": 2, "descricao": "No dia, cozinhe o feijão com as folhas de louro. Em outra panela, cozinhe as carnes dessalgadas até ficarem macias." },
+            { "ordem": 3, "descricao": "Pique as carnes e as linguiças e junte tudo à panela do feijão." },
+            { "ordem": 4, "descricao": "Cozinhe em fogo baixo por pelo menos 1 hora, para apurar o sabor e engrossar o caldo." },
+            { "ordem": 5, "descricao": "Sirva com arroz branco, couve refogada, farofa e laranja fatiada." }
         ]
     },
     {
         "id": 14,
-        "nome": "Vatapá",
-        "descricao": "Receita deliciosa de vatapá tradicional.",
-        "tempoDePreparo": 67,
-        "porcoes": 5,
-        "dificuldade": "Difícil",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "nome": "Coxinha de Frango",
+        "descricao": "O salgado de festa mais amado do Brasil, com massa de batata e recheio cremoso de frango.",
+        "tempoDePreparo": 90,
+        "porcoes": 20,
+        "dificuldade": "Médio",
+        "categorias": [ "Salgado", "Lanche", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "Pão amanhecido",
-                "quantidade": 1.99,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Leite de coco",
-                "quantidade": 1.76,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Camarão seco",
-                "quantidade": 0.74,
-                "unidade": "gramas"
-            }
+            { "nome": "peito de frango cozido e desfiado", "quantidade": 500, "unidade": "gramas" },
+            { "nome": "caldo do cozimento do frango", "quantidade": 2, "unidade": "xícaras" },
+            { "nome": "farinha de trigo", "quantidade": 2, "unidade": "xícaras" },
+            { "nome": "manteiga", "quantidade": 2, "unidade": "colheres de sopa" },
+            { "nome": "requeijão cremoso", "quantidade": 100, "unidade": "gramas" },
+            { "nome": "ovo batido", "quantidade": 2, "unidade": "unidades (para empanar)" },
+            { "nome": "farinha de rosca", "quantidade": 2, "unidade": "xícaras (para empanar)" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) pão amanhecido."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) leite de coco."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Prepare o recheio refogando o frango desfiado com cebola, alho, tomate e cheiro-verde. Misture o requeijão e reserve." },
+            { "ordem": 2, "descricao": "Em uma panela, ferva o caldo do cozimento do frango com a manteiga. Adicione a farinha de uma só vez e mexa vigorosamente até a massa soltar do fundo da panela." },
+            { "ordem": 3, "descricao": "Sove a massa ainda morna em uma superfície untada até ficar lisa." },
+            { "ordem": 4, "descricao": "Pegue porções da massa, abra na mão, recheie e modele no formato de coxinha." },
+            { "ordem": 5, "descricao": "Passe as coxinhas no ovo batido e depois na farinha de rosca. Frite em óleo quente até dourar." }
         ]
     },
     {
         "id": 15,
-        "nome": "Brigadeiro",
-        "descricao": "Receita deliciosa de brigadeiro tradicional.",
-        "tempoDePreparo": 55,
-        "porcoes": 4,
-        "dificuldade": "Médio",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "nome": "Mousse de Maracujá",
+        "descricao": "Sobremesa fácil, rápida e aerada, com o azedinho característico do maracujá.",
+        "tempoDePreparo": 15,
+        "porcoes": 8,
+        "dificuldade": "Fácil",
+        "categorias": [ "Sobremesa" ],
         "ingredientes": [
-            {
-                "nome": "Leite condensado",
-                "quantidade": 1.26,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Chocolate em pó",
-                "quantidade": 1.77,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Manteiga",
-                "quantidade": 1.96,
-                "unidade": "colheres de sopa"
-            }
+            { "nome": "leite condensado", "quantidade": 1, "unidade": "lata" },
+            { "nome": "creme de leite", "quantidade": 1, "unidade": "lata" },
+            { "nome": "suco de maracujá concentrado", "quantidade": 1, "unidade": "lata (mesma medida)" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) leite condensado."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) chocolate em pó."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Coloque todos os ingredientes no liquidificador." },
+            { "ordem": 2, "descricao": "Bata por aproximadamente 3 minutos, até a mistura ficar bem homogênea e cremosa." },
+            { "ordem": 3, "descricao": "Despeje em uma travessa ou em taças individuais." },
+            { "ordem": 4, "descricao": "Leve à geladeira por no mínimo 4 horas antes de servir." },
+            { "ordem": 5, "descricao": "Opcional: decore com a polpa de 1 maracujá fresco por cima." }
         ]
     },
     {
         "id": 16,
-        "nome": "Brigadeiro",
-        "descricao": "Receita deliciosa de brigadeiro tradicional.",
-        "tempoDePreparo": 75,
-        "porcoes": 8,
-        "dificuldade": "Médio",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "nome": "Pudim de Leite Condensado",
+        "descricao": "A sobremesa mais tradicional dos lares brasileiros. Liso, cremoso e com uma calda de caramelo perfeita.",
+        "tempoDePreparo": 90,
+        "porcoes": 10,
+        "dificuldade": "Fácil",
+        "categorias": [ "Sobremesa" ],
         "ingredientes": [
-            {
-                "nome": "Leite condensado",
-                "quantidade": 0.92,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Chocolate em pó",
-                "quantidade": 2.34,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Manteiga",
-                "quantidade": 1.79,
-                "unidade": "gramas"
-            }
+            { "nome": "leite condensado", "quantidade": 1, "unidade": "lata" },
+            { "nome": "leite integral", "quantidade": 1, "unidade": "lata (mesma medida)" },
+            { "nome": "ovo", "quantidade": 3, "unidade": "unidades" },
+            { "nome": "açúcar (para a calda)", "quantidade": 1, "unidade": "xícara" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) leite condensado."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) chocolate em pó."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Prepare a calda: derreta o açúcar em uma panela em fogo baixo até formar um caramelo dourado. Despeje em uma forma de pudim, caramelizando o fundo e as laterais." },
+            { "ordem": 2, "descricao": "No liquidificador, bata o leite condensado, o leite e os ovos por 2 minutos." },
+            { "ordem": 3, "descricao": "Despeje a mistura do pudim na forma caramelizada." },
+            { "ordem": 4, "descricao": "Cubra a forma com papel alumínio e asse em banho-maria em forno pré-aquecido a 180°C por cerca de 1 hora e 30 minutos." },
+            { "ordem": 5, "descricao": "Deixe esfriar completamente e leve à geladeira por 6 horas antes de desenformar." }
         ]
     },
     {
         "id": 17,
-        "nome": "Brigadeiro",
-        "descricao": "Receita deliciosa de brigadeiro tradicional.",
-        "tempoDePreparo": 61,
-        "porcoes": 4,
+        "nome": "Bobó de Camarão",
+        "descricao": "Creme delicioso de mandioca com camarões refogados no leite de coco e azeite de dendê.",
+        "tempoDePreparo": 60,
+        "porcoes": 6,
         "dificuldade": "Médio",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "categorias": [ "Prato Principal", "Frutos do Mar", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "Leite condensado",
-                "quantidade": 1.54,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Chocolate em pó",
-                "quantidade": 2.49,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Manteiga",
-                "quantidade": 2.99,
-                "unidade": "gramas"
-            }
+            { "nome": "mandioca cozida e amassada", "quantidade": 1, "unidade": "kg" },
+            { "nome": "camarão fresco e limpo", "quantidade": 500, "unidade": "gramas" },
+            { "nome": "leite de coco", "quantidade": 200, "unidade": "ml" },
+            { "nome": "azeite de dendê", "quantidade": 2, "unidade": "colheres de sopa" },
+            { "nome": "cebola picada", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "pimentão picado", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "coentro picado", "quantidade": 0.5, "unidade": "xícara" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) leite condensado."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) chocolate em pó."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Tempere os camarões com sal, pimenta e limão." },
+            { "ordem": 2, "descricao": "No liquidificador, bata a mandioca cozida com um pouco da água do cozimento e o leite de coco até formar um creme liso." },
+            { "ordem": 3, "descricao": "Em uma panela, refogue a cebola e o pimentão no azeite de dendê. Adicione os camarões e cozinhe até ficarem rosados." },
+            { "ordem": 4, "descricao": "Despeje o creme de mandioca na panela com os camarões e cozinhe em fogo baixo, mexendo até ferver e engrossar." },
+            { "ordem": 5, "descricao": "Finalize com o coentro picado e sirva com arroz branco." }
         ]
     },
     {
         "id": 18,
-        "nome": "Pão de Queijo",
-        "descricao": "Receita deliciosa de pão de queijo tradicional.",
-        "tempoDePreparo": 54,
-        "porcoes": 4,
-        "dificuldade": "Médio",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "nome": "Galinhada",
+        "descricao": "Prato único e reconfortante, típico de Minas Gerais e Goiás, onde o arroz é cozido junto com o frango e fica bem amarelinho com açafrão.",
+        "tempoDePreparo": 70,
+        "porcoes": 8,
+        "dificuldade": "Fácil",
+        "categorias": [ "Prato Principal", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "Polvilho",
-                "quantidade": 2.3,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Queijo ralado",
-                "quantidade": 2.95,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Ovos",
-                "quantidade": 2.48,
-                "unidade": "unidades"
-            }
+            { "nome": "frango em pedaços (coxa e sobrecoxa)", "quantidade": 1, "unidade": "kg" },
+            { "nome": "arroz agulhinha", "quantidade": 2, "unidade": "xícaras" },
+            { "nome": "cebola picada", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "açafrão-da-terra (cúrcuma)", "quantidade": 1, "unidade": "colher de sopa" },
+            { "nome": "pimenta de cheiro", "quantidade": 2, "unidade": "unidades" },
+            { "nome": "milho verde", "quantidade": 1, "unidade": "lata" },
+            { "nome": "cheiro-verde picado", "quantidade": 1, "unidade": "xícara" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) polvilho."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) queijo ralado."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Tempere o frango com sal, pimenta e alho." },
+            { "ordem": 2, "descricao": "Em uma panela grande, doure bem os pedaços de frango em óleo quente. Reserve." },
+            { "ordem": 3, "descricao": "Na mesma panela, refogue a cebola. Adicione o arroz e o açafrão e refogue por mais um minuto." },
+            { "ordem": 4, "descricao": "Volte com os pedaços de frango para a panela. Cubra com água quente (cerca de 4 xícaras) e adicione a pimenta de cheiro." },
+            { "ordem": 5, "descricao": "Cozinhe em fogo baixo até o arroz ficar macio. Adicione o milho e o cheiro-verde nos minutos finais. Sirva quente." }
         ]
     },
     {
         "id": 19,
-        "nome": "Brigadeiro",
-        "descricao": "Receita deliciosa de brigadeiro tradicional.",
-        "tempoDePreparo": 59,
-        "porcoes": 4,
-        "dificuldade": "Fácil",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "nome": "Escondidinho de Mandioca com Carne Seca",
+        "descricao": "Um purê de mandioca cremoso cobrindo um recheio saboroso de carne seca, gratinado com queijo.",
+        "tempoDePreparo": 80,
+        "porcoes": 6,
+        "dificuldade": "Médio",
+        "categorias": [ "Prato Principal", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "Leite condensado",
-                "quantidade": 1.11,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Chocolate em pó",
-                "quantidade": 2.42,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Manteiga",
-                "quantidade": 2.54,
-                "unidade": "unidades"
-            }
+            { "nome": "mandioca", "quantidade": 1, "unidade": "kg" },
+            { "nome": "carne seca dessalgada e desfiada", "quantidade": 500, "unidade": "gramas" },
+            { "nome": "manteiga de garrafa (ou comum)", "quantidade": 2, "unidade": "colheres de sopa" },
+            { "nome": "cebola picada", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "queijo coalho ou parmesão ralado", "quantidade": 150, "unidade": "gramas" },
+            { "nome": "leite", "quantidade": 0.5, "unidade": "xícara" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) leite condensado."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) chocolate em pó."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Cozinhe a mandioca em água e sal até ficar muito macia. Retire as fibras centrais e amasse até virar um purê. Misture com a manteiga e o leite para dar cremosidade." },
+            { "ordem": 2, "descricao": "Prepare o recheio refogando a cebola e o alho em azeite, junte a carne seca desfiada e refogue bem. Adicione tomate e cheiro-verde a gosto." },
+            { "ordem": 3, "descricao": "Em um refratário, espalhe o recheio de carne seca." },
+            { "ordem": 4, "descricao": "Cubra com o purê de mandioca." },
+            { "ordem": 5, "descricao": "Polvilhe o queijo por cima e leve ao forno pré-aquecido a 200°C para gratinar por cerca de 20 minutos." }
         ]
     },
     {
         "id": 20,
-        "nome": "Cuscuz Nordestino",
-        "descricao": "Receita deliciosa de cuscuz nordestino tradicional.",
-        "tempoDePreparo": 84,
-        "porcoes": 5,
+        "nome": "Quindim",
+        "descricao": "Doce conventual português que se tornou um clássico brasileiro. Feito com muita gema, açúcar e coco.",
+        "tempoDePreparo": 60,
+        "porcoes": 12,
         "dificuldade": "Médio",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "categorias": [ "Sobremesa", "Doce" ],
         "ingredientes": [
-            {
-                "nome": "Flocão de milho",
-                "quantidade": 0.85,
-                "unidade": "unidades"
-            },
-            {
-                "nome": "Água",
-                "quantidade": 2.5,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Sal",
-                "quantidade": 1.11,
-                "unidade": "colheres de sopa"
-            }
+            { "nome": "gema de ovo peneirada", "quantidade": 10, "unidade": "unidades" },
+            { "nome": "açúcar", "quantidade": 1.5, "unidade": "xícaras" },
+            { "nome": "coco ralado fresco", "quantidade": 100, "unidade": "gramas" },
+            { "nome": "manteiga sem sal derretida", "quantidade": 1, "unidade": "colher de sopa" },
+            { "nome": "leite de coco", "quantidade": 50, "unidade": "ml" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) flocão de milho."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) água."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Peneire as gemas para retirar a película." },
+            { "ordem": 2, "descricao": "Em uma tigela, misture o açúcar e o coco ralado. Adicione o leite de coco e a manteiga derretida." },
+            { "ordem": 3, "descricao": "Incorpore as gemas peneiradas delicadamente à mistura." },
+            { "ordem": 4, "descricao": "Despeje a mistura em forminhas individuais untadas com manteiga e polvilhadas com açúcar." },
+            { "ordem": 5, "descricao": "Asse em banho-maria em forno pré-aquecido a 160°C por cerca de 40-50 minutos. Deixe esfriar para desenformar." }
         ]
     },
     {
         "id": 21,
-        "nome": "Vatapá",
-        "descricao": "Receita deliciosa de vatapá tradicional.",
-        "tempoDePreparo": 44,
-        "porcoes": 7,
-        "dificuldade": "Médio",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "nome": "Farofa de Banana",
+        "descricao": "Uma farofa agridoce que acompanha perfeitamente carnes assadas e churrasco.",
+        "tempoDePreparo": 15,
+        "porcoes": 6,
+        "dificuldade": "Fácil",
+        "categorias": [ "Acompanhamento", "Comida Brasileira" ],
         "ingredientes": [
-            {
-                "nome": "Pão amanhecido",
-                "quantidade": 1.45,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Leite de coco",
-                "quantidade": 1.39,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Camarão seco",
-                "quantidade": 1.95,
-                "unidade": "unidades"
-            }
+            { "nome": "banana nanica madura, mas firme", "quantidade": 3, "unidade": "unidades" },
+            { "nome": "farinha de mandioca flocada", "quantidade": 2, "unidade": "xícaras" },
+            { "nome": "bacon em cubos", "quantidade": 100, "unidade": "gramas" },
+            { "nome": "cebola picada", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "manteiga", "quantidade": 2, "unidade": "colheres de sopa" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) pão amanhecido."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) leite de coco."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Frite o bacon na própria gordura até ficar crocante. Retire e reserve." },
+            { "ordem": 2, "descricao": "Na gordura do bacon, adicione a manteiga e refogue a cebola até ficar transparente." },
+            { "ordem": 3, "descricao": "Adicione as bananas cortadas em rodelas e refogue delicadamente." },
+            { "ordem": 4, "descricao": "Junte a farinha de mandioca e mexa em fogo baixo até que fique levemente torrada." },
+            { "ordem": 5, "descricao": "Misture o bacon frito, acerte o sal e finalize com cheiro-verde." }
         ]
     },
     {
         "id": 22,
-        "nome": "Vatapá",
-        "descricao": "Receita deliciosa de vatapá tradicional.",
-        "tempoDePreparo": 76,
-        "porcoes": 5,
-        "dificuldade": "Difícil",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "nome": "Salpicão de Frango",
+        "descricao": "Salada cremosa e versátil, perfeita para festas e comemorações. Servida fria.",
+        "tempoDePreparo": 30,
+        "porcoes": 8,
+        "dificuldade": "Fácil",
+        "categorias": [ "Salada", "Acompanhamento" ],
         "ingredientes": [
-            {
-                "nome": "Pão amanhecido",
-                "quantidade": 0.74,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Leite de coco",
-                "quantidade": 0.74,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Camarão seco",
-                "quantidade": 2.24,
-                "unidade": "colheres de sopa"
-            }
+            { "nome": "peito de frango cozido e desfiado", "quantidade": 500, "unidade": "gramas" },
+            { "nome": "maionese", "quantidade": 1, "unidade": "xícara" },
+            { "nome": "cenoura ralada", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "milho verde em conserva", "quantidade": 1, "unidade": "lata" },
+            { "nome": "uva passa (opcional)", "quantidade": 0.5, "unidade": "xícara" },
+            { "nome": "maçã verde em cubos", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "batata palha", "quantidade": 1, "unidade": "pacote" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) pão amanhecido."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) leite de coco."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Em uma tigela grande, misture o frango desfiado, a cenoura, o milho, a uva passa e a maçã." },
+            { "ordem": 2, "descricao": "Adicione a maionese e misture bem até que todos os ingredientes estejam incorporados." },
+            { "ordem": 3, "descricao": "Tempere com sal, pimenta e um fio de azeite, se desejar." },
+            { "ordem": 4, "descricao": "Leve à geladeira por pelo menos 30 minutos para gelar." },
+            { "ordem": 5, "descricao": "Na hora de servir, cubra com uma camada generosa de batata palha." }
         ]
     },
     {
         "id": 23,
-        "nome": "Tapioca com Coco",
-        "descricao": "Receita deliciosa de tapioca com coco tradicional.",
-        "tempoDePreparo": 67,
+        "nome": "Bife à Parmegiana",
+        "descricao": "Bife empanado e frito, coberto com molho de tomate e queijo derretido, gratinado no forno.",
+        "tempoDePreparo": 45,
         "porcoes": 4,
         "dificuldade": "Médio",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "categorias": [ "Prato Principal" ],
         "ingredientes": [
-            {
-                "nome": "Goma de tapioca",
-                "quantidade": 1.28,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Coco ralado",
-                "quantidade": 0.53,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Leite condensado",
-                "quantidade": 1.3,
-                "unidade": "gramas"
-            }
+            { "nome": "bife de alcatra ou contrafilé", "quantidade": 4, "unidade": "unidades" },
+            { "nome": "molho de tomate caseiro", "quantidade": 2, "unidade": "xícaras" },
+            { "nome": "queijo muçarela fatiado", "quantidade": 200, "unidade": "gramas" },
+            { "nome": "ovo", "quantidade": 2, "unidade": "unidades" },
+            { "nome": "farinha de rosca", "quantidade": 1, "unidade": "xícara" },
+            { "nome": "queijo parmesão ralado", "quantidade": 50, "unidade": "gramas" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) goma de tapioca."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) coco ralado."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Tempere os bifes com sal e alho. Passe cada bife na farinha de trigo, depois nos ovos batidos e por último na farinha de rosca." },
+            { "ordem": 2, "descricao": "Frite os bifes empanados em óleo quente até dourarem dos dois lados. Escorra em papel toalha." },
+            { "ordem": 3, "descricao": "Em um refratário, espalhe um pouco de molho de tomate no fundo. Acomode os bifes fritos." },
+            { "ordem": 4, "descricao": "Cubra cada bife com mais molho de tomate e fatias de muçarela." },
+            { "ordem": 5, "descricao": "Salpique queijo parmesão e leve ao forno pré-aquecido a 200°C por 10-15 minutos para gratinar." }
         ]
     },
     {
         "id": 24,
-        "nome": "Vatapá",
-        "descricao": "Receita deliciosa de vatapá tradicional.",
-        "tempoDePreparo": 64,
-        "porcoes": 7,
-        "dificuldade": "Médio",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "nome": "Frango a Passarinho",
+        "descricao": "Pedaços de frango fritos e crocantes, temperados com alho e salsinha. Um clássico de boteco.",
+        "tempoDePreparo": 40,
+        "porcoes": 4,
+        "dificuldade": "Fácil",
+        "categorias": [ "Petisco", "Prato Principal" ],
         "ingredientes": [
-            {
-                "nome": "Pão amanhecido",
-                "quantidade": 2.62,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Leite de coco",
-                "quantidade": 1.62,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Camarão seco",
-                "quantidade": 0.94,
-                "unidade": "colheres de sopa"
-            }
+            { "nome": "frango em pedaços pequenos (passarinho)", "quantidade": 1, "unidade": "kg" },
+            { "nome": "alho picado ou frito", "quantidade": 1, "unidade": "cabeça" },
+            { "nome": "salsinha picada", "quantidade": 1, "unidade": "xícara" },
+            { "nome": "suco de limão", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "sal e pimenta do reino", "quantidade": 1, "unidade": "a gosto" },
+            { "nome": "óleo para fritar", "quantidade": 1, "unidade": "litro" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) pão amanhecido."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) leite de coco."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Tempere os pedaços de frango com sal, pimenta e suco de limão. Deixe marinar por 30 minutos." },
+            { "ordem": 2, "descricao": "Em uma panela funda, aqueça o óleo." },
+            { "ordem": 3, "descricao": "Frite os pedaços de frango aos poucos, até que fiquem bem dourados e cozidos por dentro." },
+            { "ordem": 4, "descricao": "Escorra em papel toalha." },
+            { "ordem": 5, "descricao": "Sirva o frango quente, salpicado com bastante alho frito e salsinha fresca." }
         ]
     },
     {
         "id": 25,
-        "nome": "Estrogonofe de Frango",
-        "descricao": "Receita deliciosa de estrogonofe de frango tradicional.",
-        "tempoDePreparo": 68,
-        "porcoes": 8,
+        "nome": "Caldo Verde",
+        "descricao": "Sopa portuguesa que se tornou tradição no Brasil, especialmente no inverno. Feita com batata, couve e linguiça.",
+        "tempoDePreparo": 50,
+        "porcoes": 6,
         "dificuldade": "Fácil",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "categorias": [ "Sopa" ],
         "ingredientes": [
-            {
-                "nome": "Frango",
-                "quantidade": 1.36,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Creme de leite",
-                "quantidade": 2.76,
-                "unidade": "unidades"
-            },
-            {
-                "nome": "Champignon",
-                "quantidade": 1.29,
-                "unidade": "unidades"
-            }
+            { "nome": "batata", "quantidade": 500, "unidade": "gramas" },
+            { "nome": "couve manteiga fatiada finamente", "quantidade": 1, "unidade": "maço" },
+            { "nome": "linguiça paio ou portuguesa em rodelas", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "cebola picada", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "alho picado", "quantidade": 2, "unidade": "dentes" },
+            { "nome": "azeite de oliva", "quantidade": 3, "unidade": "colheres de sopa" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) frango."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) creme de leite."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Cozinhe as batatas em água e sal até ficarem muito macias. Escorra, reservando a água, e amasse ou bata no liquidificador com parte da água do cozimento." },
+            { "ordem": 2, "descricao": "Em uma panela, frite a linguiça em rodelas no azeite. Retire e reserve." },
+            { "ordem": 3, "descricao": "Na mesma panela, refogue a cebola e o alho." },
+            { "ordem": 4, "descricao": "Despeje o creme de batata na panela e adicione as rodelas de linguiça. Deixe ferver." },
+            { "ordem": 5, "descricao": "Com o caldo fervendo, adicione a couve fatiada e cozinhe por apenas 2-3 minutos. Sirva imediatamente." }
         ]
     },
     {
         "id": 26,
-        "nome": "Lasanha",
-        "descricao": "Receita deliciosa de lasanha tradicional.",
-        "tempoDePreparo": 76,
-        "porcoes": 5,
-        "dificuldade": "Fácil",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "nome": "Empadão de Frango",
+        "descricao": "Uma torta salgada com massa que derrete na boca e recheio cremoso de frango.",
+        "tempoDePreparo": 90,
+        "porcoes": 8,
+        "dificuldade": "Médio",
+        "categorias": [ "Torta Salgada", "Lanche" ],
         "ingredientes": [
-            {
-                "nome": "Massa de lasanha",
-                "quantidade": 2.08,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Carne moída",
-                "quantidade": 0.83,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Molho branco",
-                "quantidade": 1.81,
-                "unidade": "unidades"
-            }
+            { "nome": "farinha de trigo", "quantidade": 3, "unidade": "xícaras" },
+            { "nome": "manteiga gelada em cubos", "quantidade": 200, "unidade": "gramas" },
+            { "nome": "gema de ovo", "quantidade": 1, "unidade": "unidade (para a massa)" },
+            { "nome": "gema de ovo", "quantidade": 1, "unidade": "unidade (para pincelar)" },
+            { "nome": "peito de frango cozido e desfiado", "quantidade": 400, "unidade": "gramas" },
+            { "nome": "requeijão cremoso", "quantidade": 200, "unidade": "gramas" },
+            { "nome": "azeitona picada", "quantidade": 0.5, "unidade": "xícara" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) massa de lasanha."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) carne moída."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Para a massa, misture a farinha e a manteiga com a ponta dos dedos até formar uma farofa. Adicione a gema e um pouco de água gelada, se necessário, para dar liga. Não sove. Leve à geladeira por 30 minutos." },
+            { "ordem": 2, "descricao": "Prepare o recheio misturando o frango desfiado, o requeijão, as azeitonas e outros temperos a gosto." },
+            { "ordem": 3, "descricao": "Divida a massa em duas partes. Abra uma parte e forre o fundo e as laterais de uma forma." },
+            { "ordem": 4, "descricao": "Coloque o recheio e cubra com a outra parte da massa, fechando bem as bordas." },
+            { "ordem": 5, "descricao": "Pincele com a gema e asse em forno pré-aquecido a 180°C por cerca de 40 minutos." }
         ]
     },
     {
         "id": 27,
-        "nome": "Moqueca Baiana",
-        "descricao": "Receita deliciosa de moqueca baiana tradicional.",
-        "tempoDePreparo": 72,
-        "porcoes": 6,
-        "dificuldade": "Difícil",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "nome": "Risoto de Palmito",
+        "descricao": "Um risoto cremoso e sofisticado, feito com arroz arbóreo e palmito.",
+        "tempoDePreparo": 35,
+        "porcoes": 4,
+        "dificuldade": "Médio",
+        "categorias": [ "Prato Principal", "Massa" ],
         "ingredientes": [
-            {
-                "nome": "Peixe",
-                "quantidade": 2.23,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Leite de coco",
-                "quantidade": 0.66,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Azeite de dendê",
-                "quantidade": 0.64,
-                "unidade": "xícaras"
-            }
+            { "nome": "arroz arbóreo ou carnaroli", "quantidade": 1.5, "unidade": "xícaras" },
+            { "nome": "palmito em conserva picado", "quantidade": 300, "unidade": "gramas" },
+            { "nome": "caldo de legumes quente", "quantidade": 1, "unidade": "litro" },
+            { "nome": "vinho branco seco", "quantidade": 0.5, "unidade": "xícara" },
+            { "nome": "cebola picada", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "manteiga gelada", "quantidade": 2, "unidade": "colheres de sopa" },
+            { "nome": "queijo parmesão ralado", "quantidade": 1, "unidade": "xícara" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) peixe."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) leite de coco."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Em uma panela, refogue a cebola em uma colher de manteiga. Adicione o arroz e refogue por 1 minuto (tostatura)." },
+            { "ordem": 2, "descricao": "Adicione o vinho branco e mexa até evaporar completamente." },
+            { "ordem": 3, "descricao": "Comece a adicionar o caldo de legumes quente, uma concha por vez, mexendo sempre e esperando o líquido ser absorvido antes de adicionar a próxima concha." },
+            { "ordem": 4, "descricao": "Quando o arroz estiver quase 'al dente', adicione o palmito picado e continue o cozimento." },
+            { "ordem": 5, "descricao": "Desligue o fogo. Adicione a manteiga gelada e o queijo parmesão para a 'mantecatura', mexendo vigorosamente para dar cremosidade. Sirva imediatamente." }
         ]
     },
     {
         "id": 28,
-        "nome": "Estrogonofe de Frango",
-        "descricao": "Receita deliciosa de estrogonofe de frango tradicional.",
-        "tempoDePreparo": 32,
-        "porcoes": 7,
-        "dificuldade": "Médio",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "nome": "Sopa de Abóbora com Gengibre",
+        "descricao": "Uma sopa aveludada, com o doce da abóbora e o toque picante do gengibre. Ótima para dias frios.",
+        "tempoDePreparo": 40,
+        "porcoes": 4,
+        "dificuldade": "Fácil",
+        "categorias": [ "Sopa" ],
         "ingredientes": [
-            {
-                "nome": "Frango",
-                "quantidade": 0.52,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Creme de leite",
-                "quantidade": 2.47,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Champignon",
-                "quantidade": 2.03,
-                "unidade": "unidades"
-            }
+            { "nome": "abóbora cabotiá em cubos", "quantidade": 800, "unidade": "gramas" },
+            { "nome": "gengibre fresco ralado", "quantidade": 1, "unidade": "colher de sopa" },
+            { "nome": "cebola picada", "quantidade": 1, "unidade": "unidade" },
+            { "nome": "caldo de legumes", "quantidade": 700, "unidade": "ml" },
+            { "nome": "creme de leite (opcional)", "quantidade": 100, "unidade": "ml" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) frango."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) creme de leite."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Em uma panela, refogue a cebola em um fio de azeite." },
+            { "ordem": 2, "descricao": "Adicione a abóbora e o gengibre e refogue por mais 5 minutos." },
+            { "ordem": 3, "descricao": "Cubra com o caldo de legumes e cozinhe até a abóbora ficar muito macia." },
+            { "ordem": 4, "descricao": "Bata tudo com um mixer ou no liquidificador até obter um creme liso." },
+            { "ordem": 5, "descricao": "Volte o creme para a panela, acerte o sal e a pimenta. Se desejar mais cremosidade, adicione o creme de leite sem deixar ferver. Sirva quente." }
         ]
     },
     {
         "id": 29,
-        "nome": "Feijão Tropeiro",
-        "descricao": "Receita deliciosa de feijão tropeiro tradicional.",
-        "tempoDePreparo": 41,
-        "porcoes": 5,
-        "dificuldade": "Médio",
-        "categorias": [
-            "Sobremesa"
-        ],
+        "nome": "Salada de Maionese Tradicional",
+        "descricao": "Conhecida também como salada de batata, é um acompanhamento clássico para churrascos e assados.",
+        "tempoDePreparo": 30,
+        "porcoes": 8,
+        "dificuldade": "Fácil",
+        "categorias": [ "Salada", "Acompanhamento" ],
         "ingredientes": [
-            {
-                "nome": "Feijão",
-                "quantidade": 0.77,
-                "unidade": "xícaras"
-            },
-            {
-                "nome": "Bacon",
-                "quantidade": 2.48,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Farinha de mandioca",
-                "quantidade": 1.22,
-                "unidade": "unidades"
-            }
+            { "nome": "batata cozida em cubos", "quantidade": 4, "unidade": "unidades grandes" },
+            { "nome": "cenoura cozida em cubos", "quantidade": 2, "unidade": "unidades" },
+            { "nome": "vagem cozida picada", "quantidade": 100, "unidade": "gramas" },
+            { "nome": "maionese de boa qualidade", "quantidade": 1.5, "unidade": "xícaras" },
+            { "nome": "ovo cozido picado", "quantidade": 2, "unidade": "unidades" },
+            { "nome": "cheiro-verde picado", "quantidade": 3, "unidade": "colheres de sopa" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) feijão."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) bacon."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Cozinhe a batata e a cenoura em água e sal até ficarem macias, mas sem desmanchar. Cozinhe a vagem separadamente." },
+            { "ordem": 2, "descricao": "Deixe os legumes esfriarem completamente." },
+            { "ordem": 3, "descricao": "Em uma tigela grande, misture delicadamente os legumes cozidos, o ovo picado e o cheiro-verde." },
+            { "ordem": 4, "descricao": "Adicione a maionese e incorpore com cuidado para não desmanchar as batatas." },
+            { "ordem": 5, "descricao": "Acerte o sal e a pimenta. Leve à geladeira até a hora de servir." }
         ]
     },
     {
         "id": 30,
-        "nome": "Estrogonofe de Frango",
-        "descricao": "Receita deliciosa de estrogonofe de frango tradicional.",
-        "tempoDePreparo": 59,
-        "porcoes": 8,
-        "dificuldade": "Médio",
-        "categorias": [
-            "Prato Principal"
-        ],
+        "nome": "Canjica Doce",
+        "descricao": "Doce cremoso de milho branco, típico das festas juninas, cozido com leite, leite de coco e açúcar.",
+        "tempoDePreparo": 120,
+        "porcoes": 10,
+        "dificuldade": "Fácil",
+        "categorias": [ "Sobremesa", "Doce", "Festa Junina" ],
         "ingredientes": [
-            {
-                "nome": "Frango",
-                "quantidade": 0.63,
-                "unidade": "colheres de sopa"
-            },
-            {
-                "nome": "Creme de leite",
-                "quantidade": 2.85,
-                "unidade": "gramas"
-            },
-            {
-                "nome": "Champignon",
-                "quantidade": 2.69,
-                "unidade": "colheres de sopa"
-            }
+            { "nome": "milho para canjica", "quantidade": 500, "unidade": "gramas" },
+            { "nome": "leite", "quantidade": 1, "unidade": "litro" },
+            { "nome": "leite de coco", "quantidade": 200, "unidade": "ml" },
+            { "nome": "leite condensado", "quantidade": 1, "unidade": "lata" },
+            { "nome": "coco ralado", "quantidade": 100, "unidade": "gramas" },
+            { "nome": "canela em pau", "quantidade": 2, "unidade": "unidades" },
+            { "nome": "cravo-da-índia", "quantidade": 5, "unidade": "unidades" }
         ],
         "passos": [
-            {
-                "ordem": 1,
-                "descricao": "Prepare o(a) frango."
-            },
-            {
-                "ordem": 2,
-                "descricao": "Adicione o(a) creme de leite."
-            },
-            {
-                "ordem": 3,
-                "descricao": "Misture bem e cozinhe."
-            }
+            { "ordem": 1, "descricao": "Deixe o milho de canjica de molho em água de um dia para o outro." },
+            { "ordem": 2, "descricao": "Escorra a água e cozinhe o milho em uma panela de pressão com água nova, a canela e o cravo, por cerca de 40 minutos após pegar pressão, ou até ficar macio." },
+            { "ordem": 3, "descricao": "Retire a pressão, escorra parte da água se houver excesso, e adicione o leite, o leite de coco e o leite condensado." },
+            { "ordem": 4, "descricao": "Cozinhe em fogo baixo, mexendo de vez em quando, até o caldo engrossar e ficar bem cremoso." },
+            { "ordem": 5, "descricao": "Adicione o coco ralado, misture e sirva quente ou fria, polvilhada com canela em pó." }
         ]
     }
 ]

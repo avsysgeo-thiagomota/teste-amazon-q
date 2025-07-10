@@ -1,5 +1,3 @@
-// ReceitaGrid.js
-
 Ext.ns('App.view');
 
 App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
@@ -18,7 +16,9 @@ App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
                 {header: 'Tempo (min)', width: 120, dataIndex: 'tempoDePreparo', sortable: true, align: 'right'},
                 {header: 'Porções', width: 100, dataIndex: 'porcoes', sortable: true, align: 'right'},
                 {
-                    xtype: 'actioncolumn', width: 50, align: 'center',
+                    xtype: 'actioncolumn',
+                    width: 50,
+                    align: 'center',
                     items: [
                         { icon: 'extjs/resources/images/default/dd/drop-add.gif', tooltip: 'Editar Receita', handler: this.onEdit, scope: this },
                         { xtype: 'spacer', width: 5 },
@@ -38,14 +38,12 @@ App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
         App.view.ReceitaGrid.superclass.initComponent.call(this);
     },
 
-    // *** PARTE ALTERADA: Lógica de atualização adicionada ***
     onNew: function() {
         var win = new App.view.ReceitaWindow();
         win.on('receitasalva', function() { this.store.reload(); }, this);
         win.show();
     },
 
-    // *** PARTE ALTERADA: Lógica de atualização adicionada ***
     onEdit: function(grid, rowIndex) {
         var record = grid.getStore().getAt(rowIndex);
         var win = new App.view.ReceitaWindow({ record: record });
@@ -59,7 +57,7 @@ App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
             if (btn === 'yes') {
                 grid.loadMask.show();
                 Ext.Ajax.request({
-                    url: 'receitas.jsp?action=deletar',
+                    url: 'receitas?action=deletar',
                     params: { id: record.get('id') },
                     success: function(response) {
                         grid.loadMask.hide();
@@ -78,3 +76,5 @@ App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
         });
     }
 });
+
+Ext.reg('receitagrid', App.view.ReceitaGrid);

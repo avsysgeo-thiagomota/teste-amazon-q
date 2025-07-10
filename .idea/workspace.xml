@@ -10,7 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b76de36-28a8-4f22-b86c-14cc4cce369a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/ReceitaServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/ReceitaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/ReceitaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/receitas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/receitas.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app/model/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app/model/models.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app/store/ReceitaStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app/store/ReceitaStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaGrid.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaWindow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/receitas.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,10 +82,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "Tomcat Server.Tomcat 9.0.106.executor": "Run",
+    "Tomcat Server.Tomcat 9.0.106.executor": "Debug",
     "Tomcat Server.Toncat.executor": "Debug",
     "Tomcat Server.Unnamed.executor": "Run",
-    "git-widget-placeholder": "increment-interface",
+    "git-widget-placeholder": "ConnctBackAndFront",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
