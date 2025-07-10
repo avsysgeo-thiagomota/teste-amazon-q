@@ -62,7 +62,7 @@ sequenceDiagram
     Tomcat (Java Servlet)->>Database: 3. Processa e persiste os dados (INSERT/UPDATE)
     Database-->>Tomcat (Java Servlet): 4. Confirma a persistência
     Tomcat (Java Servlet)->>Browser (ExtJS): 5. Envia resposta HTTP com JSON <br> `{"success":true, "message":"Salvo com sucesso!"}`
-    Note right of Browser (ExtJS): 6. ExtJS exibe notificação (ex: Ext.Msg) ao usuário.
+    Note left of Browser (ExtJS): 6. ExtJS exibe notificação (ex: Ext.Msg) ao usuário.
 
 ```
 
@@ -73,12 +73,12 @@ sequenceDiagram
 3.  **Requisição AJAX**: O método `submit()` faz uma requisição AJAX (POST) para a URL configurada no `FormPanel` (ex: `/seu-app/salvarDados`), enviando os dados dos campos do formulário no corpo da requisição.
 4.  **Servlet Java**: O Servlet correspondente recebe os dados do formulário, valida-os e executa a lógica de negócios para salvar as informações no banco de dados.
 5.  **Resposta de Sucesso/Falha**: O Servlet retorna uma resposta JSON indicando o resultado da operação, por exemplo: `{ "success": true, "message": "Dados salvos com sucesso!" }` ou `{ "success": false, "errors": {"campo": "Mensagem de erro"} }`.
-6.  **Callback do ExtJS**: A submissão no ExtJS é configurada com callbacks de `success` e `failure`. Com base na resposta do servidor, o callback apropriado é executado, permitindo, por exemplo, exibir uma mensagem de sucesso ao usuário com `Ext.Msg` ou marcar os campos do formulário com erros retornados pelo backend.
+6.  **Callback do ExtJS**: A submissão no ExtJS é configurada com callbacks de `success` e `failure`. Com base na resposta do servidor, o callback apropriado é executado, permitindo, por exemplo, exibir uma mensagem de sucesso ao usuário com `Ext.Msg` ou erro.
 
 ## 4\. Deploy no Tomcat (.war)
 
 A aplicação é empacotada como um arquivo **WAR** (Web Application Archive) para deploy no Apache Tomcat.
 
 1.  **Estrutura do Projeto**: O projeto Java deve seguir a estrutura padrão de uma aplicação web para que possa ser empacotado corretamente. Os arquivos ExtJS (bibliotecas e código da aplicação) são incluídos como recursos estáticos, geralmente dentro de um diretório como `src/main/webapp/extjs`.
-2.  **Build**: O processo de build (usando Maven ou Gradle, por exemplo) compila as classes Java, agrupa os arquivos JSP, os arquivos de configuração (`web.xml`) e os recursos estáticos (JS, CSS) em um único arquivo `.war`.
-3.  **Deploy**: O arquivo `.war` gerado é então copiado para o diretório `webapps` do Tomcat. O Tomcat automaticamente descompacta e implanta a aplicação, tornando-a acessível pela URL configurada (ex: `http://localhost:8080/nome-do-projeto`).
+2.  **Build**: O processo de build (usando Maven) compila as classes Java, agrupa os arquivos JSP, os arquivos de configuração (`web.xml`) e os recursos estáticos (JS, CSS) em um único arquivo `.war`.
+3.  **Deploy**: O arquivo `.war` gerado é então copiado para o diretório `webapps` do Tomcat. O Tomcat descompacta e implanta a aplicação, tornando-a acessível pela URL configurada (ex: `http://localhost:8080/nome-do-projeto`).
