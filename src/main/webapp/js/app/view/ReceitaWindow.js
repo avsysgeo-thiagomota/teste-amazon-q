@@ -138,6 +138,9 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
                 return store.getRange().map(function(rec) { return rec.data; });
             };
             var formValues = form.getValues();
+            if (formValues.id === "") {
+                delete formValues.id;
+            }
             formValues.ingredientes = getStoreData(this.ingredientesStore);
             formValues.passos = getStoreData(this.passosStore);
             var categoriasStr = formValues.categorias || "";

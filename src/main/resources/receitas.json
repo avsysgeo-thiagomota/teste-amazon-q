@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        
         "nome": "Bolo de Cenoura com Cobertura de Chocolate",
         "descricao": "Um clássico da culinária caseira brasileira. Fofinho, úmido e com uma generosa cobertura de brigadeiro mole.",
         "tempoDePreparo": 60,
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "id": 2,
+        
         "nome": "Arroz de Carreteiro",
         "descricao": "Receita tradicional gaúcha, forte e saborosa, feita com carne seca e arroz.",
         "tempoDePreparo": 50,
@@ -48,7 +48,7 @@
         ]
     },
     {
-        "id": 3,
+        
         "nome": "Brigadeiro Tradicional",
         "descricao": "O clássico docinho de festa brasileiro, perfeito para enrolar ou comer de colher.",
         "tempoDePreparo": 25,
@@ -69,7 +69,7 @@
         ]
     },
     {
-        "id": 4,
+        
         "nome": "Cuscuz Nordestino Simples",
         "descricao": "Base da culinária nordestina, perfeito para o café da manhã ou como acompanhamento, servido com manteiga ou leite.",
         "tempoDePreparo": 20,
@@ -90,7 +90,7 @@
         ]
     },
     {
-        "id": 5,
+        
         "nome": "Moqueca Baiana de Peixe",
         "descricao": "Um prato emblemático da Bahia, com peixe, leite de coco, azeite de dendê e pimentões.",
         "tempoDePreparo": 45,
@@ -116,7 +116,7 @@
         ]
     },
     {
-        "id": 6,
+        
         "nome": "Macarrão à Bolonhesa Clássico",
         "descricao": "Uma receita italiana que conquistou o mundo. Molho de carne cozido lentamente para apurar o sabor.",
         "tempoDePreparo": 90,
@@ -142,7 +142,7 @@
         ]
     },
     {
-        "id": 7,
+        
         "nome": "Pão de Queijo Mineiro",
         "descricao": "A autêntica receita de pão de queijo de Minas Gerais, com polvilho escaldado, queijo canastra e uma casquinha crocante.",
         "tempoDePreparo": 50,
@@ -167,7 +167,7 @@
         ]
     },
     {
-        "id": 8,
+        
         "nome": "Vatapá Cremoso",
         "descricao": "Prato de origem afro-brasileira, cremoso e rico, feito com pão, camarão, leite de coco e azeite de dendê.",
         "tempoDePreparo": 60,
@@ -193,7 +193,7 @@
         ]
     },
     {
-        "id": 9,
+        
         "nome": "Lasanha à Bolonhesa",
         "descricao": "Camadas de massa, molho à bolonhesa rico, molho branco cremoso e muito queijo.",
         "tempoDePreparo": 120,
@@ -219,7 +219,7 @@
         ]
     },
     {
-        "id": 10,
+        
         "nome": "Estrogonofe de Frango",
         "descricao": "Versão brasileira do clássico russo. Frango em cubos, creme de leite, champignon e ketchup.",
         "tempoDePreparo": 30,
@@ -244,7 +244,7 @@
         ]
     },
     {
-        "id": 11,
+        
         "nome": "Tapioca com Coco e Leite Condensado",
         "descricao": "Uma sobremesa ou lanche rápido, simples e delicioso, típico do Nordeste.",
         "tempoDePreparo": 10,
@@ -265,7 +265,7 @@
         ]
     },
     {
-        "id": 12,
+        
         "nome": "Feijão Tropeiro",
         "descricao": "Prato rústico e completo da culinária mineira, com feijão, farinha de mandioca, linguiça, ovos e couve.",
         "tempoDePreparo": 40,
@@ -290,7 +290,7 @@
         ]
     },
     {
-        "id": 13,
+        
         "nome": "Feijoada Completa",
         "descricao": "O prato mais famoso do Brasil. Uma mistura rica de feijão preto com diversas carnes de porco e boi.",
         "tempoDePreparo": 240,
@@ -316,7 +316,7 @@
         ]
     },
     {
-        "id": 14,
+        
         "nome": "Coxinha de Frango",
         "descricao": "O salgado de festa mais amado do Brasil, com massa de batata e recheio cremoso de frango.",
         "tempoDePreparo": 90,
@@ -341,7 +341,7 @@
         ]
     },
     {
-        "id": 15,
+        
         "nome": "Mousse de Maracujá",
         "descricao": "Sobremesa fácil, rápida e aerada, com o azedinho característico do maracujá.",
         "tempoDePreparo": 15,
@@ -362,7 +362,7 @@
         ]
     },
     {
-        "id": 16,
+        
         "nome": "Pudim de Leite Condensado",
         "descricao": "A sobremesa mais tradicional dos lares brasileiros. Liso, cremoso e com uma calda de caramelo perfeita.",
         "tempoDePreparo": 90,
@@ -384,7 +384,7 @@
         ]
     },
     {
-        "id": 17,
+        
         "nome": "Bobó de Camarão",
         "descricao": "Creme delicioso de mandioca com camarões refogados no leite de coco e azeite de dendê.",
         "tempoDePreparo": 60,
@@ -409,7 +409,7 @@
         ]
     },
     {
-        "id": 18,
+        
         "nome": "Galinhada",
         "descricao": "Prato único e reconfortante, típico de Minas Gerais e Goiás, onde o arroz é cozido junto com o frango e fica bem amarelinho com açafrão.",
         "tempoDePreparo": 70,
@@ -434,7 +434,7 @@
         ]
     },
     {
-        "id": 19,
+        
         "nome": "Escondidinho de Mandioca com Carne Seca",
         "descricao": "Um purê de mandioca cremoso cobrindo um recheio saboroso de carne seca, gratinado com queijo.",
         "tempoDePreparo": 80,
@@ -458,7 +458,7 @@
         ]
     },
     {
-        "id": 20,
+        
         "nome": "Quindim",
         "descricao": "Doce conventual português que se tornou um clássico brasileiro. Feito com muita gema, açúcar e coco.",
         "tempoDePreparo": 60,
@@ -481,7 +481,7 @@
         ]
     },
     {
-        "id": 21,
+        
         "nome": "Farofa de Banana",
         "descricao": "Uma farofa agridoce que acompanha perfeitamente carnes assadas e churrasco.",
         "tempoDePreparo": 15,
@@ -504,7 +504,7 @@
         ]
     },
     {
-        "id": 22,
+        
         "nome": "Salpicão de Frango",
         "descricao": "Salada cremosa e versátil, perfeita para festas e comemorações. Servida fria.",
         "tempoDePreparo": 30,
@@ -529,7 +529,7 @@
         ]
     },
     {
-        "id": 23,
+        
         "nome": "Bife à Parmegiana",
         "descricao": "Bife empanado e frito, coberto com molho de tomate e queijo derretido, gratinado no forno.",
         "tempoDePreparo": 45,
@@ -553,7 +553,7 @@
         ]
     },
     {
-        "id": 24,
+        
         "nome": "Frango a Passarinho",
         "descricao": "Pedaços de frango fritos e crocantes, temperados com alho e salsinha. Um clássico de boteco.",
         "tempoDePreparo": 40,
@@ -577,7 +577,7 @@
         ]
     },
     {
-        "id": 25,
+        
         "nome": "Caldo Verde",
         "descricao": "Sopa portuguesa que se tornou tradição no Brasil, especialmente no inverno. Feita com batata, couve e linguiça.",
         "tempoDePreparo": 50,
@@ -601,7 +601,7 @@
         ]
     },
     {
-        "id": 26,
+        
         "nome": "Empadão de Frango",
         "descricao": "Uma torta salgada com massa que derrete na boca e recheio cremoso de frango.",
         "tempoDePreparo": 90,
@@ -626,7 +626,7 @@
         ]
     },
     {
-        "id": 27,
+        
         "nome": "Risoto de Palmito",
         "descricao": "Um risoto cremoso e sofisticado, feito com arroz arbóreo e palmito.",
         "tempoDePreparo": 35,
@@ -651,7 +651,7 @@
         ]
     },
     {
-        "id": 28,
+        
         "nome": "Sopa de Abóbora com Gengibre",
         "descricao": "Uma sopa aveludada, com o doce da abóbora e o toque picante do gengibre. Ótima para dias frios.",
         "tempoDePreparo": 40,
@@ -674,7 +674,7 @@
         ]
     },
     {
-        "id": 29,
+        
         "nome": "Salada de Maionese Tradicional",
         "descricao": "Conhecida também como salada de batata, é um acompanhamento clássico para churrascos e assados.",
         "tempoDePreparo": 30,
@@ -698,7 +698,7 @@
         ]
     },
     {
-        "id": 30,
+        
         "nome": "Canjica Doce",
         "descricao": "Doce cremoso de milho branco, típico das festas juninas, cozido com leite, leite de coco e açúcar.",
         "tempoDePreparo": 120,

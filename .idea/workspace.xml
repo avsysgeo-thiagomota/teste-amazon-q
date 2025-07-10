@@ -10,7 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b76de36-28a8-4f22-b86c-14cc4cce369a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/ReceitaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/ReceitaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/receitas.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/receitas.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaWindow.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +67,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Debug",
     "JavaScript Debug.Unnamed JavaScript.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -221,5 +224,21 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/avsytem/controller/ReceitaServlet.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.apache.catalina.connector.ResponseFacade" memberName="response" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
