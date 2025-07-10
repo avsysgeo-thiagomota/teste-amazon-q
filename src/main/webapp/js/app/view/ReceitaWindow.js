@@ -142,10 +142,11 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
                 url: 'receitas',
                 params: { jsonData: Ext.encode(formValues) },
                 waitMsg: 'Salvando a receita...',
-                success: function(form, action) {
-                    Ext.Msg.alert('Sucesso', 'Receita salva com sucesso!');
-                    this.fireEvent('receitasalva', this, action.result);
-                    this.close();
+                success: function(form, action){
+                    Ext.MessageBox.alert('Sucesso', 'Receita salva com sucesso!', (form, action)=>{
+                        this.fireEvent('receitasalva', this, action.result);
+                        this.close();
+                    })
                 }.createDelegate(this),
                 failure: function(form, action) {
                     Ext.Msg.alert('Erro', 'Ocorreu um erro ao salvar:<br/>' + (action.result ? action.result.message : 'Erro desconhecido.'));
