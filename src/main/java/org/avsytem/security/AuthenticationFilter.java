@@ -18,8 +18,8 @@ public class AuthenticationFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) res;
         HttpSession session = request.getSession(false); // false = não cria uma nova sessão
 
-        String loginURI = request.getContextPath() + "/login.jsp";
-        String loginServletURI = request.getContextPath() + "/login";
+        String loginURI = request.getContextPath() + "/index.jsp";
+        String loginServletURI = request.getContextPath() + "/index";
 
         boolean loggedIn = session != null && session.getAttribute("username") != null;
         boolean loginRequest = request.getRequestURI().equals(loginURI) || request.getRequestURI().equals(loginServletURI);

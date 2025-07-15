@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             // Validação:
             // 1. O usuário existe (storedHash não é nulo)?
             // 2. A senha fornecida corresponde ao hash armazenado?
-            if (storedHash != null && BCrypt.checkpw(password, storedHash)) {
+            if (BCrypt.checkpw(password, storedHash)) {
                 // Sucesso na autenticação
                 // Em uma aplicação real, você criaria uma sessão de usuário aqui.
                 HttpSession session = request.getSession();
