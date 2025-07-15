@@ -10,9 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b76de36-28a8-4f22-b86c-14cc4cce369a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/security/AuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaWindow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -31,13 +36,14 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/pom.xml" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/avsytem/controller/LoginServlet.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/avsytem/dao/UserDAO.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/avsytem/security/AuthenticationFilter.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/index.jsp" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" root2="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/js/app-loader.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/js/app/model/Receita.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/js/app/store/Receitas.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaGrid.js" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaWindow.js" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/receitas.jsp" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" root2="SKIP_INSPECTION" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -69,6 +75,7 @@
   "keyToString": {
     "Application.Main.executor": "Debug",
     "JavaScript Debug.Unnamed JavaScript.executor": "Debug",
+    "Maven.teste-amazon-q [clean].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
@@ -76,16 +83,16 @@
     "Tomcat Server.Tomcat 9.0.106.executor": "Debug",
     "Tomcat Server.Toncat.executor": "Debug",
     "Tomcat Server.Unnamed.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Amazon-Cognito",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -93,6 +100,11 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Thiago Mota\Documents\GitHub\teste-amazon-q\src\main\webapp\css" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+    </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.106">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -220,6 +232,8 @@
       <workItem from="1751655549270" duration="1786000" />
       <workItem from="1752061884242" duration="4641000" />
       <workItem from="1752150000730" duration="5604000" />
+      <workItem from="1752587422593" duration="958000" />
+      <workItem from="1752588401516" duration="4944000" />
     </task>
     <servers />
   </component>
@@ -233,18 +247,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/avsytem/controller/ReceitaServlet.java</url>
           <line>56</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaGrid.js</url>
-          <line>2</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaGrid.js</url>
-          <line>6</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

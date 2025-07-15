@@ -1,0 +1,38 @@
+package org.avsytem.security;
+
+import java.io.IOException;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class AuthenticationFilter implements Filter {
+
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest request = (HttpServletRequest) req;
+        HttpServletResponse response = (HttpServletResponse) res;
+        HttpSession session = request.getSession(false); // false = não cria uma nova sessão
+
+        String loginURI = request.getContextPath() + "/login.jsp";
+        String loginServletURI = request.getContextPath() + "/login";
+
+        boolean loggedIn = session != null && session.getAttribute("username") != null;
+        boolean loginRequest = request.getRequestURI().equals(loginURI) || request.getRequestURI().equals(loginServletURI);
+
+        if (loggedIn || loginRequest) {
+            // Se já está logado ou está tentando logar, continua a requisição
+            chain.doFilter(request, response);
+        } else {
+            // Se não está logado e não está na página de login, redireciona para o login
+            response.sendRedirect(loginURI);
+        }
+    }
+
+    public void init(FilterConfig fConfig) throws ServletException {}
+    public void destroy() {}
+}

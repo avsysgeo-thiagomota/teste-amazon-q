@@ -38,7 +38,14 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.19.1</version>
 		</dependency>
+		<!--Criptografia-->
+		<dependency>
+			<groupId>org.mindrot</groupId>
+			<artifactId>jbcrypt</artifactId>
+			<version>0.4</version>
+		</dependency>
 	</dependencies>
+
 
 	<build>
 		<finalName>teste-amazon-q</finalName>
