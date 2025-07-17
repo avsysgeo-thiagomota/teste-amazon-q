@@ -14,7 +14,7 @@ App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
                 {header: 'Nome', id: 'nome_col', dataIndex: 'nome', sortable: true},
                 {header: 'Dificuldade', width: 120, dataIndex: 'dificuldade', sortable: true},
                 {header: 'Tempo (min)', width: 120, dataIndex: 'tempoDePreparo', sortable: true, align: 'right'},
-                {header: 'PorÃ§Ãµes', width: 100, dataIndex: 'porcoes', sortable: true, align: 'right'},
+                {header: 'Porcões', width: 100, dataIndex: 'porcoes', sortable: true, align: 'right'},
                 {
                     xtype: 'actioncolumn',
                     width: 50,
@@ -27,7 +27,21 @@ App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
                 }
             ],
             viewConfig: { forceFit: true, autoExpandColumn: 'nome_col' },
-            tbar: [{ text: 'Nova Receita', iconCls: 'x-btn-text-icon-add', handler: this.onNew, scope: this }],
+            tbar: [{ text: 'Nova Receita', iconCls: 'x-btn-text-icon-add', handler: this.onNew, scope: this },
+                '->',
+                {
+                    text: 'Configurações',
+                    iconCls: 'x-icon-config',
+                    handler: function() {
+                        new App.view.ConfiguracoesWindow().show();
+                    }
+                },
+                {
+                    text: 'Logout',
+                    iconCls: 'x-icon-logout',
+                    handler: this.onLogout,
+                    scope: this
+                }],
             bbar: new Ext.PagingToolbar({
                 pageSize: 30, store: this.store, displayInfo: true,
                 displayMsg: 'Mostrando receitas {0} - {1} de {2}',
@@ -40,7 +54,7 @@ App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
 
     onNew: function() {
         var win = new App.view.ReceitaWindow();
-        win.on('receitasalva', function() { this.store.reload(); }, this);
+        win.on('receitasalva', null, this);
         win.show();
     },
 
@@ -51,9 +65,27 @@ App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
         win.show();
     },
 
+    onLogout: function() {
+        Ext.Msg.confirm('Confirmação', 'Deseja realmente sair do sistema?', function(btn) {
+            if (btn === 'yes') {
+                Ext.Ajax.request({
+                    url: 'logout', // URL do nosso novo servlet
+                    method: 'POST',
+                    success: function(response) {
+                        // Após o sucesso, redireciona para a página de login
+                        window.location = 'login.jsp';
+                    },
+                    failure: function(response) {
+                        Ext.Msg.alert('Erro', 'Ocorreu um erro ao tentar sair. Tente novamente.');
+                    }
+                });
+            }
+        });
+    },
+
     onDelete: function(grid, rowIndex) {
         var record = grid.getStore().getAt(rowIndex);
-        Ext.Msg.confirm('Confirmar ExclusÃ£o', 'Tem certeza que deseja deletar a receita "' + record.get('nome') + '"?', function(btn) {
+        Ext.Msg.confirm('Confirmar Exclusão', 'Tem certeza que deseja deletar a receita "' + record.get('nome') + '"?', function(btn) {
             if (btn === 'yes') {
                 grid.loadMask.show();
                 Ext.Ajax.request({
@@ -69,7 +101,7 @@ App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
                     },
                     failure: function() {
                         grid.loadMask.hide();
-                        Ext.Msg.alert('Erro', 'Erro de comunicaÃ§Ã£o com o servidor.');
+                        Ext.Msg.alert('Erro', 'Erro de comunicação com o servidor.');
                     }
                 });
             }

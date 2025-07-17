@@ -3,10 +3,8 @@ Ext.ns('App.view');
 App.view.ReceitaWindow = Ext.extend(Ext.Window, {
     title: 'Nova Receita',
     width: 700,
-    height: 620,
-    layout: 'fit',
+    height:'auto',
     modal: true,
-
     initComponent: function() {
         this.ingredientesStore = new Ext.data.JsonStore({ fields: App.model.Ingrediente });
         this.passosStore = new Ext.data.JsonStore({ fields: App.model.Passo, sortInfo: { field: 'ordem', direction: 'ASC' } });
@@ -32,7 +30,7 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
             selModel: new Ext.grid.RowSelectionModel({singleSelect:true}),
             columns: [
                 {header: 'Ordem', dataIndex: 'ordem', width: 60, sortable: true, editor: new Ext.form.NumberField({allowBlank: false, allowDecimals: false})},
-                {header: 'DescriÃ§Ã£o', dataIndex: 'descricao', editor: new Ext.form.TextField({allowBlank: false})}
+                {header: 'Descrição', dataIndex: 'descricao', editor: new Ext.form.TextField({allowBlank: false})}
             ],
             tbar: [{ text: 'Adicionar', iconCls: 'x-btn-text-icon-add', handler: this.onAddPasso, scope: this }, '-', { text: 'Remover', iconCls: 'x-btn-text-icon-delete', handler: this.onRemovePasso, scope: this }],
             viewConfig: { forceFit: true }
@@ -44,13 +42,13 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
             items: [
                 { xtype: 'hidden', name: 'id' },
                 { xtype: 'textfield', fieldLabel: 'Nome', name: 'nome', allowBlank: false },
-                { xtype: 'textarea', fieldLabel: 'DescriÃ§Ã£o', name: 'descricao', height: 60 },
+                { xtype: 'textarea', fieldLabel: 'Descrição', name: 'descricao', height: 60 },
                 {
                     xtype: 'container', layout:'column', border: false,
                     defaults: { columnWidth: .33, layout: 'form', border: false },
                     items: [
                         { items: { xtype: 'numberfield', fieldLabel: 'Tempo (min)', name: 'tempoDePreparo', anchor:'95%' } },
-                        { items: { xtype: 'numberfield', fieldLabel: 'PorÃ§Ãµes', name: 'porcoes', anchor:'95%' } },
+                        { items: { xtype: 'numberfield', fieldLabel: 'Porções', name: 'porcoes', anchor:'95%' } },
                         { items: { xtype: 'textfield', fieldLabel: 'Dificuldade', name: 'dificuldade', anchor:'95%' } }
                     ]
                 },
@@ -69,12 +67,13 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
 
         this.addEvents('receitasalva');
         App.view.ReceitaWindow.superclass.initComponent.call(this);
+        App.view.ConfiguracoesWindow.initComponent.call(this);
 
         if (this.record) {
             this.setTitle('Editar Receita: ' + this.record.get('nome'));
             this.formPanel.getForm().loadRecord(this.record);
 
-            // Garante que as stores estejam vazias antes de carregar para evitar duplicaÃ§Ã£o
+            // Garante que as stores estejam vazias antes de carregar para evitar duplicação
             this.ingredientesStore.removeAll();
             this.passosStore.removeAll();
 
@@ -104,7 +103,7 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
         var grid = btn.findParentByType('editorgrid');
         var record = grid.getSelectionModel().getSelected();
         if (record) { grid.getStore().remove(record); }
-        else { Ext.Msg.alert('AtenÃ§Ã£o', 'Selecione um ingrediente para remover.'); }
+        else { Ext.Msg.alert('Atenção', 'Selecione um ingrediente para remover.'); }
     },
 
     onAddPasso: function(btn){
@@ -122,7 +121,7 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
         var grid = btn.findParentByType('editorgrid');
         var record = grid.getSelectionModel().getSelected();
         if (record) { grid.getStore().remove(record); }
-        else { Ext.Msg.alert('AtenÃ§Ã£o', 'Selecione um passo para remover.'); }
+        else { Ext.Msg.alert('Atenção', 'Selecione um passo para remover.'); }
     },
 
     onSave: function() {

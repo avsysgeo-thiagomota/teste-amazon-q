@@ -1,8 +1,9 @@
 /*
- * Estilos customizados para a aplicaÃ§Ã£o de Receitas
+ * Estilos customizados para a aplicação de Receitas
  */
 
-/* Adiciona uma margem horizontal aos Ã­cones na ActionColumn */
+/* Adiciona uma margem horizontal aos ícones na ActionColumn
+C:\Users\Thiago Mota\Documents\GitHub\teste-amazon-q\src\main\webapp\extjs\resources\images*/
 .action-icon-custom {
     margin-right: 6px;
     margin-left: 6px; /* 0 para cima/baixo, 3px para esquerda/direita */

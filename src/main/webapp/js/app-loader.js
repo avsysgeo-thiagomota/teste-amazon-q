@@ -2,6 +2,7 @@
 Ext.onReady(function() {
     // Carrega os arquivos da aplicação na ordem correta de dependência
     Ext.Loader.load([
+        'js/app/view/ConfiguracoesWindow.js',
         'js/app/model/models.js',
         'js/app/store/ReceitaStore.js',
         'js/app/view/ReceitaWindow.js',

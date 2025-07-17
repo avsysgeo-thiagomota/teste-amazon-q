@@ -13,7 +13,9 @@ import javax.servlet.http.HttpSession;
 
 public class AuthenticationFilter implements Filter {
 
-    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException
+    {
+        req.setCharacterEncoding("ISO-8859-1");
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
         HttpSession session = request.getSession(false); // false = não cria uma nova sessão

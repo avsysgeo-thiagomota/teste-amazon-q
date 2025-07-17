@@ -26803,9 +26803,7 @@ Ext.data.DirectStore = Ext.extend(Ext.data.Store, {
 Ext.reg('directstore', Ext.data.DirectStore);
 
 Ext.Direct = Ext.extend(Ext.util.Observable, {
-    
 
-    
     exceptions: {
         TRANSPORT: 'xhr',
         PARSE: 'parse',
@@ -26813,7 +26811,6 @@ Ext.Direct = Ext.extend(Ext.util.Observable, {
         SERVER: 'exception'
     },
 
-    
     constructor: function(){
         this.addEvents(
             

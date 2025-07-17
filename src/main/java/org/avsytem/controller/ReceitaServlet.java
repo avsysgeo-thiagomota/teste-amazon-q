@@ -26,8 +26,8 @@ public class ReceitaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
+        
+        response.setContentType("application/json; charset=ISO-8859-1");
 
         try (Connection conn = new PostgresConnection().createConnection()) {
             ReceitaDAO dao = new ReceitaDAO(conn);
@@ -49,11 +49,10 @@ public class ReceitaServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
         String action = request.getParameter("action");
-        response.setContentType("application/json");
-        response.setCharacterEncoding("UTF-8");
-
+        response.setContentType("application/json; charset=ISO-8859-1");
         try (Connection conn = new PostgresConnection().createConnection()) {
             ReceitaDAO dao = new ReceitaDAO(conn);
             String jsonPayload = request.getParameter("jsonData");
