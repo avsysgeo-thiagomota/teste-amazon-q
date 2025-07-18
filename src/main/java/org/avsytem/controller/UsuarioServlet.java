@@ -15,9 +15,31 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.sql.DataSource;
+
 public class UsuarioServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private Gson gson = new Gson();
+    private Gson gson;
+    private UserDAO userDAO;
+
+    @Override
+    public void init() throws ServletException {
+        gson = new Gson();
+        try {
+            Context initContext = new InitialContext();
+            Context envContext = (Context) initContext.lookup("java:/comp/env");
+            DataSource dataSource = (DataSource) envContext.lookup("jdbc/PostgresDB");
+            this.userDAO = new UserDAO(dataSource);
+
+        } catch (NamingException e) {
+            throw new ServletException("Erro crítico: Não foi possível encontrar o DataSource via JNDI.", e);
+        }
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,9 +55,8 @@ public class UsuarioServlet extends HttpServlet {
 
         JsonObject userData = gson.fromJson(sb.toString(), JsonObject.class);
 
-        try (Connection conn = new PostgresConnection().createConnection())
+        try 
         {
-            UserDAO userDAO = new UserDAO(conn);
             userDAO.adicionar(userData.get("nome_completo").getAsString(), userData.get("email").getAsString(), userData.get("username").getAsString(), userData.get("senha").getAsString());
 
             response.getWriter().write("{\"success\": true, \"message\": \"Usuário cadastrado com sucesso!\"}");
@@ -78,8 +99,8 @@ public class UsuarioServlet extends HttpServlet {
 
         String username = (String) session.getAttribute("username");
 
-        try (Connection conn = new PostgresConnection().createConnection()) {
-            UserDAO userDAO = new UserDAO(conn);
+        try  {
+            
             if (userDAO.deletarPorUsername(username)) {
                 session.invalidate(); // Invalida a sessão após deletar
                 response.getWriter().write("{\"success\": true, \"message\": \"Conta excluída com sucesso.\"}");

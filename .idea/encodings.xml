@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/css/app-styles.css" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/extjs/ext-all-debug.js" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/js/app-loader.js" charset="ISO-8859-1" />

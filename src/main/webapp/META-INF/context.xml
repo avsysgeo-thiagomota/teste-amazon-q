@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Resource
+            name="jdbc/PostgresDB"
+            auth="Container"
+            type="javax.sql.DataSource"
+            driverClassName="org.postgresql.Driver"
+            url="jdbc:postgresql://teste-amazon-q-avsystemgeo.i.aivencloud.com:11460/defaultdb"
+            username="avnadmin"
+            password="AVNS_ztKbhpL69gsaVK_rfUQ"
+            maxTotal="20"
+            maxIdle="10"
+            maxWaitMillis="10000"
+    />
+</Context>

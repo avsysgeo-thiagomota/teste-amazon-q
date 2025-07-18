@@ -1,292 +1,243 @@
 package org.avsytem.dao;
 
-import java.io.IOException;
-import java.io.InputStream;
+import org.avsytem.model.Ingrediente;
+import org.avsytem.model.Passo;
+import org.avsytem.model.Receita;
+
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.avsytem.model.Ingrediente;
-import org.avsytem.model.Passo;
-import org.avsytem.model.Receita;
-
 /**
  * DAO (Data Access Object) para a entidade Receita.
- * Lida com todas as operações de banco de dados para receitas,
- * incluindo a sincronização de seus detalhes (ingredientes e passos).
+ * Lida com todas as operações de banco de dados para receitas de forma otimizada,
+ * utilizando um DataSource para gerenciar um pool de conexões.
  */
 public class ReceitaDAO {
 
     private static final Logger LOGGER = Logger.getLogger(ReceitaDAO.class.getName());
 
-    // Definição da estrutura do banco (mantendo seus nomes de coluna originais)
-    private static final String CREATE_TABLE_RECEITAS = "CREATE TABLE IF NOT EXISTS receitas (id SERIAL PRIMARY KEY, nome VARCHAR(255) NOT NULL, descricao TEXT, tempo_preparo_min INT, porcoes INT, dificuldade VARCHAR(50));";
-    private static final String CREATE_TABLE_INGREDIENTES = "CREATE TABLE IF NOT EXISTS ingredientes (id SERIAL PRIMARY KEY, receita_id INT REFERENCES receitas(id) ON DELETE CASCADE, nome VARCHAR(255) NOT NULL, quantidade DOUBLE PRECISION, unidade VARCHAR(50));";
-    private static final String CREATE_TABLE_PASSOS = "CREATE TABLE IF NOT EXISTS passos (id SERIAL PRIMARY KEY, receita_id INT REFERENCES receitas(id) ON DELETE CASCADE, ordem INT NOT NULL, descricao TEXT NOT NULL);";
+    // --- QUERIES SQL COMO CONSTANTES PARA MELHOR MANUTENÇÃO ---
+    private static final String INSERT_RECEITA = "INSERT INTO receitas (nome, descricao, tempo_preparo_min, porcoes, dificuldade) VALUES (?, ?, ?, ?, ?)";
+    private static final String INSERT_INGREDIENTE = "INSERT INTO ingredientes (receita_id, nome, quantidade, unidade) VALUES (?, ?, ?, ?)";
+    private static final String INSERT_PASSO = "INSERT INTO passos (receita_id, ordem, descricao) VALUES (?, ?, ?)";
 
-    private Connection conn;
+    private static final String UPDATE_RECEITA = "UPDATE receitas SET nome = ?, descricao = ?, tempo_preparo_min = ?, porcoes = ?, dificuldade = ? WHERE id = ?";
 
-    public ReceitaDAO(Connection conn) {
-        this.conn = conn;
+    private static final String DELETE_RECEITA = "DELETE FROM receitas WHERE id = ?";
+    private static final String DELETE_INGREDIENTES_BY_RECEITA_ID = "DELETE FROM ingredientes WHERE receita_id = ?";
+    private static final String DELETE_PASSOS_BY_RECEITA_ID = "DELETE FROM passos WHERE receita_id = ?";
+
+    private static final String SELECT_ALL_RECEITAS_JOINED = "SELECT " +
+            "r.id AS receita_id, r.nome AS receita_nome, r.descricao AS receita_descricao, " +
+            "r.tempo_preparo_min, r.porcoes, r.dificuldade, " +
+            "i.nome AS ingrediente_nome, i.quantidade, i.unidade, " +
+            "p.ordem AS passo_ordem, p.descricao AS passo_descricao " +
+            "FROM receitas r " +
+            "LEFT JOIN ingredientes i ON r.id = i.receita_id " +
+            "LEFT JOIN passos p ON r.id = p.receita_id " +
+            "ORDER BY r.nome ASC, p.ordem ASC";
+
+
+    private final DataSource dataSource;
+
+    /**
+     * Construtor que recebe o DataSource. A injeção do DataSource
+     * é feita na camada que gerencia o ciclo de vida da aplicação (ex: no Servlet).
+     * @param dataSource O pool de conexões a ser usado.
+     */
+    public ReceitaDAO(DataSource dataSource) {
+        this.dataSource = dataSource;
     }
 
-    public void criarEstruturaBanco() {
-        try (Statement stmt = conn.createStatement()) {
-            conn.setAutoCommit(false);
-            stmt.execute(CREATE_TABLE_RECEITAS);
-            stmt.execute(CREATE_TABLE_INGREDIENTES);
-            stmt.execute(CREATE_TABLE_PASSOS);
-            conn.commit();
-            LOGGER.info("Estrutura do banco de dados verificada/criada com sucesso.");
-        } catch (SQLException e) {
-            LOGGER.log(Level.SEVERE, "Erro ao criar estrutura do banco. Executando rollback.", e);
-            try {
-                conn.rollback();
-            } catch (SQLException ex) {
-                LOGGER.log(Level.SEVERE, "Erro crítico ao tentar executar rollback.", ex);
-            }
-        } finally {
-            try {
-                if (conn != null && !conn.isClosed()) {
-                    conn.setAutoCommit(true);
+    /**
+     * Lista todas as receitas com seus ingredientes e passos em uma única e eficiente consulta.
+     * Resolve o problema de N+1 queries.
+     * @return Uma lista de todas as receitas.
+     * @throws SQLException Se ocorrer um erro no banco de dados.
+     */
+    public List<Receita> listar() throws SQLException {
+        Map<Integer, Receita> mapaDeReceitas = new LinkedHashMap<>();
+
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(SELECT_ALL_RECEITAS_JOINED);
+             ResultSet rs = stmt.executeQuery()) {
+
+            while (rs.next()) {
+                int receitaId = rs.getInt("receita_id");
+                Receita receitaAtual = mapaDeReceitas.get(receitaId);
+
+                if (receitaAtual == null) {
+                    receitaAtual = new Receita();
+                    receitaAtual.setId(receitaId);
+                    receitaAtual.setNome(rs.getString("receita_nome"));
+                    receitaAtual.setDescricao(rs.getString("receita_descricao"));
+                    receitaAtual.setTempoDePreparo(rs.getInt("tempo_preparo_min"));
+                    receitaAtual.setPorcoes(rs.getInt("porcoes"));
+                    receitaAtual.setDificuldade(rs.getString("dificuldade"));
+                    mapaDeReceitas.put(receitaId, receitaAtual);
                 }
-            } catch (SQLException e) {
-                LOGGER.log(Level.SEVERE, "Erro ao restaurar auto-commit da conexão.", e);
-            }
-        }
-    }
 
-    public boolean popularDadosIniciais() {
-        try (Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM receitas")) {
-            if (rs.next() && rs.getInt(1) > 0) {
-                LOGGER.info("O banco de dados já contém receitas. A população inicial não será executada.");
-                return true;
-            }
-        } catch (SQLException e) {
-            LOGGER.log(Level.WARNING, "Não foi possível verificar a existência de receitas. Continuando com a população.", e);
-        }
+                if (rs.getString("ingrediente_nome") != null) {
+                    Ingrediente ingrediente = new Ingrediente(
+                            rs.getString("ingrediente_nome"),
+                            rs.getDouble("quantidade"),
+                            rs.getString("unidade")
+                    );
+                    if (!receitaAtual.getIngredientes().contains(ingrediente)) {
+                        receitaAtual.getIngredientes().add(ingrediente);
+                    }
+                }
 
-        try (InputStream inputStream = ReceitaDAO.class.getClassLoader().getResourceAsStream("receitas.json")) {
-            if (inputStream == null) {
-                LOGGER.severe("Arquivo 'receitas.json' não encontrado no classpath!");
-                return false;
-            }
-            ObjectMapper mapper = new ObjectMapper();
-            List<Receita> receitas = mapper.readValue(inputStream, new TypeReference<List<Receita>>() {});
-            LOGGER.info("Populando o banco de dados com " + receitas.size() + " receitas do JSON.");
-            for (Receita receita : receitas) {
-                this.adicionar(receita);
-            }
-            LOGGER.info("População de dados iniciais concluída.");
-            return true;
-        } catch (IOException | SQLException e) {
-            LOGGER.log(Level.SEVERE, "Falha ao popular o banco de dados com dados iniciais.", e);
-            return false;
-        }
-    }
-
-    public void adicionar(Receita receita) throws SQLException {
-        
-        String sqlInsertReceita = "INSERT INTO receitas (nome, descricao, tempo_preparo_min, porcoes, dificuldade) VALUES (?, ?, ?, ?, ?)";
-
-        try {
-            conn.setAutoCommit(false);
-            try (PreparedStatement psReceita = conn.prepareStatement(sqlInsertReceita, Statement.RETURN_GENERATED_KEYS)) {
-                psReceita.setString(1, receita.getNome());
-                psReceita.setString(2, receita.getDescricao());
-                
-                psReceita.setInt(3, receita.getTempoDePreparo()); // O model usa getTempoDePreparo()
-                psReceita.setInt(4, receita.getPorcoes());
-                psReceita.setString(5, receita.getDificuldade());
-                psReceita.executeUpdate();
-
-                try (ResultSet generatedKeys = psReceita.getGeneratedKeys()) {
-                    if (generatedKeys.next()) {
-                        receita.setId(generatedKeys.getInt(1));
-                    } else {
-                        throw new SQLException("Falha ao criar receita, nenhum ID obtido.");
+                if (rs.getString("passo_descricao") != null) {
+                    Passo passo = new Passo(
+                            rs.getInt("passo_ordem"),
+                            rs.getString("passo_descricao")
+                    );
+                    if (!receitaAtual.getPassos().contains(passo)) {
+                        receitaAtual.getPassos().add(passo);
                     }
                 }
             }
-            inserirIngredientes(receita);
-            inserirPassos(receita);
-            conn.commit();
-        } catch (SQLException e) {
-            conn.rollback();
-            throw e;
-        } finally {
-            conn.setAutoCommit(true);
         }
+        return new ArrayList<>(mapaDeReceitas.values());
     }
 
-    public void atualizar(Receita receita) throws SQLException {
-        
-        String sqlUpdateReceita = "UPDATE receitas SET nome = ?, descricao = ?, tempo_preparo_min = ?, porcoes = ?, dificuldade = ? WHERE id = ?";
+    /**
+     * Adiciona uma nova receita e seus detalhes (ingredientes e passos) em uma única transação.
+     * @param receita O objeto Receita a ser salvo.
+     * @throws SQLException Se ocorrer um erro no banco de dados.
+     */
+    public void adicionar(Receita receita) throws SQLException {
+        try (Connection conn = dataSource.getConnection()) {
+            try {
+                conn.setAutoCommit(false);
 
-        try {
-            conn.setAutoCommit(false);
-            try (PreparedStatement psReceita = conn.prepareStatement(sqlUpdateReceita)) {
-                psReceita.setString(1, receita.getNome());
-                psReceita.setString(2, receita.getDescricao());
-                
-                psReceita.setInt(3, receita.getTempoDePreparo());
-                psReceita.setInt(4, receita.getPorcoes());
-                psReceita.setString(5, receita.getDificuldade());
-                psReceita.setInt(6, receita.getId());
-                psReceita.executeUpdate();
-            }
+                try (PreparedStatement psReceita = conn.prepareStatement(INSERT_RECEITA, Statement.RETURN_GENERATED_KEYS)) {
+                    psReceita.setString(1, receita.getNome());
+                    psReceita.setString(2, receita.getDescricao());
+                    psReceita.setInt(3, receita.getTempoDePreparo());
+                    psReceita.setInt(4, receita.getPorcoes());
+                    psReceita.setString(5, receita.getDificuldade());
+                    psReceita.executeUpdate();
 
-            deletarIngredientesPorReceitaId(receita.getId());
-            deletarPassosPorReceitaId(receita.getId());
-            inserirIngredientes(receita);
-            inserirPassos(receita);
-            conn.commit();
-        } catch (SQLException e) {
-            conn.rollback();
-            throw e;
-        } finally {
-            conn.setAutoCommit(true);
-        }
-    }
+                    try (ResultSet generatedKeys = psReceita.getGeneratedKeys()) {
+                        if (generatedKeys.next()) {
+                            receita.setId(generatedKeys.getInt(1));
+                        } else {
+                            throw new SQLException("Falha ao criar receita, nenhum ID obtido.");
+                        }
+                    }
+                }
 
-    public List<Receita> listar() throws SQLException {
-        List<Receita> receitas = new ArrayList<>();
-        String sql = "SELECT * FROM receitas ORDER BY nome ASC";
+                inserirIngredientesEmLote(conn, receita.getId(), receita.getIngredientes());
+                inserirPassosEmLote(conn, receita.getId(), receita.getPassos());
 
-        try (Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-            while (rs.next()) {
-                Receita receita = new Receita();
-                receita.setId(rs.getInt("id"));
-                receita.setNome(rs.getString("nome"));
-                receita.setDescricao(rs.getString("descricao"));
-                
-                receita.setTempoDePreparo(rs.getInt("tempo_preparo_min"));
-                receita.setPorcoes(rs.getInt("porcoes"));
-                receita.setDificuldade(rs.getString("dificuldade"));
-
-                receita.setIngredientes(buscarIngredientesPorReceitaId(receita.getId()));
-                receita.setPassos(buscarPassosPorReceitaId(receita.getId()));
-
-                receitas.add(receita);
-            }
-        }
-        return receitas;
-    }
-
-    public boolean deletar(int receitaId) throws SQLException {
-        String sql = "DELETE FROM receitas WHERE id = ?";
-        try {
-            conn.setAutoCommit(false);
-            deletarIngredientesPorReceitaId(receitaId);
-            deletarPassosPorReceitaId(receitaId);
-
-            try(PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setInt(1, receitaId);
-                int affectedRows = ps.executeUpdate();
                 conn.commit();
-                return affectedRows > 0;
+            } catch (SQLException e) {
+                conn.rollback();
+                LOGGER.log(Level.SEVERE, "Falha ao adicionar receita. Rollback executado.", e);
+                throw e;
             }
-        } catch (SQLException e) {
-            conn.rollback();
-            throw e;
-        } finally {
-            conn.setAutoCommit(true);
         }
     }
 
-    // ===================================================================
-    // MÉTODOS AUXILIARES (Sem alterações necessárias aqui)
-    // ===================================================================
+    /**
+     * Atualiza uma receita existente e seus detalhes.
+     * A estratégia é deletar os detalhes antigos e inserir os novos em lote.
+     * @param receita O objeto Receita com os dados atualizados.
+     * @throws SQLException Se ocorrer um erro no banco de dados.
+     */
+    public void atualizar(Receita receita) throws SQLException {
+        try (Connection conn = dataSource.getConnection()) {
+            try {
+                conn.setAutoCommit(false);
 
-    private void inserirIngredientes(Receita receita) throws SQLException {
-        if (receita.getIngredientes() == null || receita.getIngredientes().isEmpty()) {
-            return;
+                try (PreparedStatement psReceita = conn.prepareStatement(UPDATE_RECEITA)) {
+                    psReceita.setString(1, receita.getNome());
+                    psReceita.setString(2, receita.getDescricao());
+                    psReceita.setInt(3, receita.getTempoDePreparo());
+                    psReceita.setInt(4, receita.getPorcoes());
+                    psReceita.setString(5, receita.getDificuldade());
+                    psReceita.setInt(6, receita.getId());
+                    psReceita.executeUpdate();
+                }
+
+                deletarDetalhes(conn, receita.getId());
+                inserirIngredientesEmLote(conn, receita.getId(), receita.getIngredientes());
+                inserirPassosEmLote(conn, receita.getId(), receita.getPassos());
+
+                conn.commit();
+            } catch (SQLException e) {
+                conn.rollback();
+                LOGGER.log(Level.SEVERE, "Falha ao atualizar receita. Rollback executado.", e);
+                throw e;
+            }
         }
-        String sql = "INSERT INTO ingredientes (nome, quantidade, unidade, receita_id) VALUES (?, ?, ?, ?)";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
-            for (Ingrediente ingrediente : receita.getIngredientes()) {
-                ps.setString(1, ingrediente.getNome());
-                ps.setDouble(2, ingrediente.getQuantidade());
-                ps.setString(3, ingrediente.getUnidade());
-                ps.setInt(4, receita.getId());
+    }
+
+    /**
+     * Deleta uma receita do banco de dados usando seu ID.
+     * Confia no 'ON DELETE CASCADE' configurado no banco para remover os detalhes.
+     * @param receitaId O ID da receita a ser deletada.
+     * @return true se a receita foi deletada, false caso contrário.
+     * @throws SQLException Se ocorrer um erro no banco de dados.
+     */
+    public boolean deletar(int receitaId) throws SQLException {
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement ps = conn.prepareStatement(DELETE_RECEITA)) {
+            ps.setInt(1, receitaId);
+            int affectedRows = ps.executeUpdate();
+            return affectedRows > 0;
+        }
+    }
+
+    // --- MÉTODOS PRIVADOS AUXILIARES ---
+
+    private void inserirIngredientesEmLote(Connection conn, int receitaId, List<Ingrediente> ingredientes) throws SQLException {
+        if (ingredientes == null || ingredientes.isEmpty()) return;
+
+        try (PreparedStatement ps = conn.prepareStatement(INSERT_INGREDIENTE)) {
+            for (Ingrediente ingrediente : ingredientes) {
+                ps.setInt(1, receitaId);
+                ps.setString(2, ingrediente.getNome());
+                ps.setDouble(3, ingrediente.getQuantidade());
+                ps.setString(4, ingrediente.getUnidade());
                 ps.addBatch();
             }
             ps.executeBatch();
         }
     }
 
-    private void inserirPassos(Receita receita) throws SQLException {
-        if (receita.getPassos() == null || receita.getPassos().isEmpty()) {
-            return;
-        }
-        String sql = "INSERT INTO passos (ordem, descricao, receita_id) VALUES (?, ?, ?)";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
-            for (Passo passo : receita.getPassos()) {
-                ps.setInt(1, passo.getOrdem());
-                ps.setString(2, passo.getDescricao());
-                ps.setInt(3, receita.getId());
+    private void inserirPassosEmLote(Connection conn, int receitaId, List<Passo> passos) throws SQLException {
+        if (passos == null || passos.isEmpty()) return;
+
+        try (PreparedStatement ps = conn.prepareStatement(INSERT_PASSO)) {
+            for (Passo passo : passos) {
+                ps.setInt(1, receitaId);
+                ps.setInt(2, passo.getOrdem());
+                ps.setString(3, passo.getDescricao());
                 ps.addBatch();
             }
             ps.executeBatch();
         }
     }
 
-    private List<Ingrediente> buscarIngredientesPorReceitaId(int receitaId) throws SQLException {
-        List<Ingrediente> ingredientes = new ArrayList<>();
-        String sql = "SELECT * FROM ingredientes WHERE receita_id = ?";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setInt(1, receitaId);
-            try (ResultSet rs = ps.executeQuery()) {
-                while (rs.next()) {
-                    Ingrediente ingrediente = new Ingrediente();
-                    ingrediente.setNome(rs.getString("nome"));
-                    ingrediente.setQuantidade(rs.getDouble("quantidade"));
-                    ingrediente.setUnidade(rs.getString("unidade"));
-                    ingredientes.add(ingrediente);
-                }
-            }
-        }
-        return ingredientes;
-    }
-
-    private List<Passo> buscarPassosPorReceitaId(int receitaId) throws SQLException {
-        List<Passo> passos = new ArrayList<>();
-        String sql = "SELECT * FROM passos WHERE receita_id = ? ORDER BY ordem ASC";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setInt(1, receitaId);
-            try (ResultSet rs = ps.executeQuery()) {
-                while (rs.next()) {
-                    Passo passo = new Passo();
-                    passo.setOrdem(rs.getInt("ordem"));
-                    passo.setDescricao(rs.getString("descricao"));
-                    passos.add(passo);
-                }
-            }
-        }
-        return passos;
-    }
-
-    private void deletarIngredientesPorReceitaId(int receitaId) throws SQLException {
-        String sql = "DELETE FROM ingredientes WHERE receita_id = ?";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+    private void deletarDetalhes(Connection conn, int receitaId) throws SQLException {
+        try (PreparedStatement ps = conn.prepareStatement(DELETE_INGREDIENTES_BY_RECEITA_ID)) {
             ps.setInt(1, receitaId);
             ps.executeUpdate();
         }
-    }
-
-    private void deletarPassosPorReceitaId(int receitaId) throws SQLException {
-        String sql = "DELETE FROM passos WHERE receita_id = ?";
-        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(DELETE_PASSOS_BY_RECEITA_ID)) {
             ps.setInt(1, receitaId);
             ps.executeUpdate();
         }

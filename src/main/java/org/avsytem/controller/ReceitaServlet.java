@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,13 +15,30 @@ import org.avsytem.model.Receita;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.sql.DataSource;
+
 public class ReceitaServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private Gson gson;
+    private ReceitaDAO dao;
 
     @Override
     public void init() throws ServletException {
         gson = new GsonBuilder().setPrettyPrinting().create();
+        try {
+            Context initContext = new InitialContext();
+            Context envContext = (Context) initContext.lookup("java:/comp/env");
+            DataSource dataSource = (DataSource) envContext.lookup("jdbc/PostgresDB");
+            this.dao = new ReceitaDAO(dataSource);
+
+        } catch (NamingException e) {
+            throw new ServletException("Erro crítico: Não foi possível encontrar o DataSource via JNDI.", e);
+        }
     }
 
     @Override
@@ -29,8 +47,7 @@ public class ReceitaServlet extends HttpServlet {
         
         response.setContentType("application/json; charset=ISO-8859-1");
 
-        try (Connection conn = new PostgresConnection().createConnection()) {
-            ReceitaDAO dao = new ReceitaDAO(conn);
+        try  {
 
             if ("listar".equals(action)) {
                 List<Receita> receitas = dao.listar();
@@ -53,8 +70,7 @@ public class ReceitaServlet extends HttpServlet {
     {
         String action = request.getParameter("action");
         response.setContentType("application/json; charset=ISO-8859-1");
-        try (Connection conn = new PostgresConnection().createConnection()) {
-            ReceitaDAO dao = new ReceitaDAO(conn);
+        try  {
             String jsonPayload = request.getParameter("jsonData");
 
             if (jsonPayload != null) {

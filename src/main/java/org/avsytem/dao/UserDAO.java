@@ -2,17 +2,36 @@ package org.avsytem.dao;
 
 import org.mindrot.jbcrypt.BCrypt;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
+/**
+ * DAO para a entidade Usuario.
+ * Lida com operações de banco de dados para usuários de forma otimizada,
+ * utilizando um DataSource para gerenciar um pool de conexões.
+ */
 public class UserDAO {
 
-    private final Connection connection;
+    private static final Logger LOGGER = Logger.getLogger(UserDAO.class.getName());
 
-    public UserDAO(Connection connection) {
-        this.connection = connection;
+    // 1. As queries são definidas como constantes para clareza e manutenção.
+    private static final String INSERT_USER_SQL = "INSERT INTO usuarios (nome_completo, email, username, password_hash) VALUES (?, ?, ?, ?)";
+    private static final String GET_HASH_SQL = "SELECT password_hash FROM usuarios WHERE username = ? AND ativo = true";
+    private static final String DELETE_USER_SQL = "DELETE FROM usuarios WHERE username = ?";
+
+    // 2. O DAO armazena a referência ao pool de conexões.
+    private final DataSource dataSource;
+
+    /**
+     * Construtor que recebe o DataSource.
+     * @param dataSource O pool de conexões a ser usado.
+     */
+    public UserDAO(DataSource dataSource) {
+        this.dataSource = dataSource;
     }
 
     /**
@@ -24,16 +43,16 @@ public class UserDAO {
      * @throws SQLException se ocorrer um erro no banco, como username duplicado.
      */
     public void adicionar(String nomeCompleto, String email, String username, String plainTextPassword) throws SQLException {
-        // Gera o "sal" e o hash da senha usando BCrypt
         String hashedPassword = BCrypt.hashpw(plainTextPassword, BCrypt.gensalt());
 
-        String sql = "INSERT INTO usuarios (nome_completo, email, username, password_hash) VALUES (?, ?, ?, ?)";
+        // 3. O método obtém, usa e fecha sua própria conexão do pool.
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(INSERT_USER_SQL)) {
 
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
             pstmt.setString(1, nomeCompleto);
             pstmt.setString(2, email);
             pstmt.setString(3, username);
-            pstmt.setString(4, hashedPassword); // Salva a senha criptografada
+            pstmt.setString(4, hashedPassword);
             pstmt.executeUpdate();
         }
     }
@@ -43,8 +62,10 @@ public class UserDAO {
      * Retorna o hash se o usuário for encontrado e estiver ativo, caso contrário, null.
      */
     public String getPasswordHashByUsername(String username) throws SQLException {
-        String sql = "SELECT password_hash FROM usuarios WHERE username = ? AND ativo = true";
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+        // 3. O método obtém, usa e fecha sua própria conexão do pool.
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(GET_HASH_SQL)) {
+
             pstmt.setString(1, username);
 
             try (ResultSet rs = pstmt.executeQuery()) {
@@ -56,13 +77,20 @@ public class UserDAO {
         return null; // Usuário não encontrado ou inativo
     }
 
+    /**
+     * Deleta um usuário do banco de dados pelo seu username.
+     * @param username O nome de usuário a ser deletado.
+     * @return true se um usuário foi deletado, false caso contrário.
+     * @throws SQLException se ocorrer um erro no banco.
+     */
     public boolean deletarPorUsername(String username) throws SQLException {
-        String sql = "DELETE FROM usuarios WHERE username = ?";
-        try (PreparedStatement pstmt = connection.prepareStatement(sql)) {
+        // 3. O método obtém, usa e fecha sua própria conexão do pool.
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(DELETE_USER_SQL)) {
+
             pstmt.setString(1, username);
             int affectedRows = pstmt.executeUpdate();
-            return affectedRows > 0; // Retorna true se uma linha foi deletada
+            return affectedRows > 0;
         }
     }
-
 }

@@ -2,6 +2,7 @@ package org.avsytem.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Receita {
@@ -83,6 +84,34 @@ public class Receita {
 
     public void setPassos(List<Passo> passos) {
         this.passos = passos;
+    }
+
+    /**
+     * Compara este objeto Receita com outro.
+     * @return true se todos os campos, incluindo o conteúdo das listas, forem iguais.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Receita receita = (Receita) o;
+        return id == receita.id &&
+                tempoDePreparo == receita.tempoDePreparo &&
+                porcoes == receita.porcoes &&
+                Objects.equals(nome, receita.nome) &&
+                Objects.equals(descricao, receita.descricao) &&
+                Objects.equals(dificuldade, receita.dificuldade) &&
+                Objects.equals(ingredientes, receita.ingredientes) && // A lista de ingredientes deve ser igual
+                Objects.equals(passos, receita.passos);               // A lista de passos deve ser igual
+    }
+
+    /**
+     * Gera um código hash para o objeto Receita.
+     * @return um valor int que representa o objeto.
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nome, descricao, tempoDePreparo, porcoes, dificuldade, ingredientes, passos);
     }
 
     @Override

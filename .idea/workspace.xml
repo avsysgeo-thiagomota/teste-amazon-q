@@ -10,32 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b76de36-28a8-4f22-b86c-14cc4cce369a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/LogoutServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/UsuarioServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/app/view/ConfiguracoesWindow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/app/view/UsuarioWindow.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/LoginServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/ReceitaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/ReceitaServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/UsuarioServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/ReceitaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/ReceitaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/security/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/security/AuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/app.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/app-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/app-styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/extjs/adapter/ext/ext-base-debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/extjs/adapter/ext/ext-base-debug.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/extjs/ext-all-debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/extjs/ext-all-debug.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app-loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app-loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaGrid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/model/Ingrediente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/model/Ingrediente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/model/Passo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/model/Passo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/model/Receita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/model/Receita.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaWindow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +45,7 @@
     <setting file="file://$PROJECT_DIR$/src/main/java/org/avsytem/Main.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/org/avsytem/controller/LoginServlet.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/org/avsytem/controller/LogoutServlet.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/avsytem/controller/ReceitaServlet.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/org/avsytem/controller/UsuarioServlet.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/org/avsytem/dao/ReceitaDAO.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/java/org/avsytem/dao/UserDAO.java" root0="SKIP_INSPECTION" />
@@ -115,6 +102,7 @@
     &quot;Tomcat Server.Unnamed.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Amazon-Cognito&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Thiago Mota/Documents/GitHub/teste-amazon-q/src/main/resources/META-INF&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -127,11 +115,15 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Thiago Mota\Documents\GitHub\teste-amazon-q\src\main\resources\META-INF" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Thiago Mota\Documents\GitHub\teste-amazon-q\src\main\webapp\META-INF" />
+      <recent name="C:\Users\Thiago Mota\Documents\GitHub\teste-amazon-q\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\Thiago Mota\Documents\GitHub\teste-amazon-q\src\main\webapp\js" />
       <recent name="C:\Users\Thiago Mota\Documents\GitHub\teste-amazon-q\src\main\webapp" />
       <recent name="C:\Users\Thiago Mota\Documents\GitHub\teste-amazon-q\src\main\webapp\js\app" />
-      <recent name="C:\Users\Thiago Mota\Documents\GitHub\teste-amazon-q\src\main\webapp\css" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -143,20 +135,17 @@
     <option name="openRunningConfigInTab" value="true" />
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.106" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.106" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
-      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+    <configuration name="Tomcat 9.0.106" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.106" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="teste-amazon-q:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/teste_amazon_q_war_exploded" />
+            <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="fb58c008-78ac-4e98-9939-09b251529997" />
-        <option name="DEPLOY_TOMCAT_APPS" value="true" />
-        <option name="PRESERVE_SESSIONS" value="true" />
+        <option name="BASE_DIRECTORY_NAME" value="1ffa5d7c-7f8c-4f98-a7a0-4ad30a5a6984" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -164,7 +153,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="49896" />
+        <option name="DEBUG_PORT" value="63623" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -334,6 +323,8 @@
       <workItem from="1752769771993" duration="2088000" />
       <workItem from="1752772240409" duration="4935000" />
       <workItem from="1752777206390" duration="417000" />
+      <workItem from="1752835689809" duration="7608000" />
+      <workItem from="1752843791994" duration="69000" />
     </task>
     <servers />
   </component>

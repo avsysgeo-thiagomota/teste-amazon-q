@@ -67,7 +67,6 @@ App.view.ReceitaWindow = Ext.extend(Ext.Window, {
 
         this.addEvents('receitasalva');
         App.view.ReceitaWindow.superclass.initComponent.call(this);
-        App.view.ConfiguracoesWindow.initComponent.call(this);
 
         if (this.record) {
             this.setTitle('Editar Receita: ' + this.record.get('nome'));
