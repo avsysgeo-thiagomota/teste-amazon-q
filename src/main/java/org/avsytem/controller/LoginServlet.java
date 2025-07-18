@@ -50,11 +50,12 @@ public class LoginServlet extends HttpServlet
                 response.getWriter().write("{\"success\": false, \"message\": \"Usuário ou senha inválidos.\"}");
             }
             else {
-                if (BCrypt.checkpw(password, storedHash)) {
-                    // Sucesso na autenticação
-                    // Em uma aplicação real, você criaria uma sessão de usuário aqui.
+                if (BCrypt.checkpw(password, storedHash))
+                {
+                    int userId = userDAO.getIdByUsername(username);
                     HttpSession session = request.getSession();
                     session.setAttribute("username", username);
+                    session.setAttribute("usuario_id", userId);
 
                     response.getWriter().write("{\"success\": true}");
                 }

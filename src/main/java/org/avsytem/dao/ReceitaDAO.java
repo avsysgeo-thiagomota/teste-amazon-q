@@ -27,7 +27,7 @@ public class ReceitaDAO {
     private static final Logger LOGGER = Logger.getLogger(ReceitaDAO.class.getName());
 
     // --- QUERIES SQL COMO CONSTANTES PARA MELHOR MANUTENÇÃO ---
-    private static final String INSERT_RECEITA = "INSERT INTO receitas (nome, descricao, tempo_preparo_min, porcoes, dificuldade) VALUES (?, ?, ?, ?, ?)";
+    private static final String INSERT_RECEITA = "INSERT INTO receitas (nome, descricao, tempo_preparo_min, porcoes, dificuldade, usuario_id) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String INSERT_INGREDIENTE = "INSERT INTO ingredientes (receita_id, nome, quantidade, unidade) VALUES (?, ?, ?, ?)";
     private static final String INSERT_PASSO = "INSERT INTO passos (receita_id, ordem, descricao) VALUES (?, ?, ?)";
 
@@ -37,7 +37,7 @@ public class ReceitaDAO {
     private static final String DELETE_INGREDIENTES_BY_RECEITA_ID = "DELETE FROM ingredientes WHERE receita_id = ?";
     private static final String DELETE_PASSOS_BY_RECEITA_ID = "DELETE FROM passos WHERE receita_id = ?";
 
-    private static final String SELECT_ALL_RECEITAS_JOINED = "SELECT " +
+    private static final String SELECT_ALL_RECEITAS_JOINED = "SELECT " + // <-- NOVA CONSTANTE
             "r.id AS receita_id, r.nome AS receita_nome, r.descricao AS receita_descricao, " +
             "r.tempo_preparo_min, r.porcoes, r.dificuldade, " +
             "i.nome AS ingrediente_nome, i.quantidade, i.unidade, " +
@@ -45,6 +45,7 @@ public class ReceitaDAO {
             "FROM receitas r " +
             "LEFT JOIN ingredientes i ON r.id = i.receita_id " +
             "LEFT JOIN passos p ON r.id = p.receita_id " +
+            "WHERE r.usuario_id = ? " +
             "ORDER BY r.nome ASC, p.ordem ASC";
 
 
@@ -60,51 +61,68 @@ public class ReceitaDAO {
     }
 
     /**
-     * Lista todas as receitas com seus ingredientes e passos em uma única e eficiente consulta.
-     * Resolve o problema de N+1 queries.
-     * @return Uma lista de todas as receitas.
-     * @throws SQLException Se ocorrer um erro no banco de dados.
+     * Lista todas as receitas de um usuário específico. A estrutura foi ajustada
+     * para garantir que o parâmetro do usuário seja definido ANTES da execução da query.
+     * @param usuarioId O ID do usuário.
+     * @return Uma lista de receitas do usuário.
+     * @throws SQLException
      */
-    public List<Receita> listar() throws SQLException {
+    public List<Receita> listar(int usuarioId) throws SQLException {
         Map<Integer, Receita> mapaDeReceitas = new LinkedHashMap<>();
 
+        // A query agora está aqui para maior clareza
+        String sql = "SELECT " +
+                "r.id AS receita_id, r.nome AS receita_nome, r.descricao AS receita_descricao, " +
+                "r.tempo_preparo_min, r.porcoes, r.dificuldade, " +
+                "i.nome AS ingrediente_nome, i.quantidade, i.unidade, " +
+                "p.ordem AS passo_ordem, p.descricao AS passo_descricao " +
+                "FROM receitas r " +
+                "LEFT JOIN ingredientes i ON r.id = i.receita_id " +
+                "LEFT JOIN passos p ON r.id = p.receita_id " +
+                "WHERE r.usuario_id = ? " + // Filtro por usuário
+                "ORDER BY r.nome ASC, p.ordem ASC";
+
         try (Connection conn = dataSource.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(SELECT_ALL_RECEITAS_JOINED);
-             ResultSet rs = stmt.executeQuery()) {
+             PreparedStatement stmt = conn.prepareStatement(sql)) { // 1. Prepara o statement
 
-            while (rs.next()) {
-                int receitaId = rs.getInt("receita_id");
-                Receita receitaAtual = mapaDeReceitas.get(receitaId);
+            stmt.setInt(1, usuarioId); // 2. Define o parâmetro (O PASSO QUE FALTAVA)
 
-                if (receitaAtual == null) {
-                    receitaAtual = new Receita();
-                    receitaAtual.setId(receitaId);
-                    receitaAtual.setNome(rs.getString("receita_nome"));
-                    receitaAtual.setDescricao(rs.getString("receita_descricao"));
-                    receitaAtual.setTempoDePreparo(rs.getInt("tempo_preparo_min"));
-                    receitaAtual.setPorcoes(rs.getInt("porcoes"));
-                    receitaAtual.setDificuldade(rs.getString("dificuldade"));
-                    mapaDeReceitas.put(receitaId, receitaAtual);
-                }
+            try (ResultSet rs = stmt.executeQuery()) { // 3. Executa a query
+                while (rs.next()) {
+                    int receitaId = rs.getInt("receita_id");
+                    Receita receitaAtual = mapaDeReceitas.get(receitaId);
 
-                if (rs.getString("ingrediente_nome") != null) {
-                    Ingrediente ingrediente = new Ingrediente(
-                            rs.getString("ingrediente_nome"),
-                            rs.getDouble("quantidade"),
-                            rs.getString("unidade")
-                    );
-                    if (!receitaAtual.getIngredientes().contains(ingrediente)) {
-                        receitaAtual.getIngredientes().add(ingrediente);
+                    if (receitaAtual == null) {
+                        receitaAtual = new Receita();
+                        receitaAtual.setId(receitaId);
+                        receitaAtual.setNome(rs.getString("receita_nome"));
+                        receitaAtual.setDescricao(rs.getString("receita_descricao"));
+                        receitaAtual.setTempoDePreparo(rs.getInt("tempo_preparo_min"));
+                        receitaAtual.setPorcoes(rs.getInt("porcoes"));
+                        receitaAtual.setDificuldade(rs.getString("dificuldade"));
+                        mapaDeReceitas.put(receitaId, receitaAtual);
                     }
-                }
 
-                if (rs.getString("passo_descricao") != null) {
-                    Passo passo = new Passo(
-                            rs.getInt("passo_ordem"),
-                            rs.getString("passo_descricao")
-                    );
-                    if (!receitaAtual.getPassos().contains(passo)) {
-                        receitaAtual.getPassos().add(passo);
+                    // Lógica para ingredientes e passos permanece a mesma...
+                    if (rs.getString("ingrediente_nome") != null) {
+                        Ingrediente ingrediente = new Ingrediente(
+                                rs.getString("ingrediente_nome"),
+                                rs.getDouble("quantidade"),
+                                rs.getString("unidade")
+                        );
+                        if (!receitaAtual.getIngredientes().contains(ingrediente)) {
+                            receitaAtual.getIngredientes().add(ingrediente);
+                        }
+                    }
+
+                    if (rs.getString("passo_descricao") != null) {
+                        Passo passo = new Passo(
+                                rs.getInt("passo_ordem"),
+                                rs.getString("passo_descricao")
+                        );
+                        if (!receitaAtual.getPassos().contains(passo)) {
+                            receitaAtual.getPassos().add(passo);
+                        }
                     }
                 }
             }
@@ -113,7 +131,7 @@ public class ReceitaDAO {
     }
 
     /**
-     * Adiciona uma nova receita e seus detalhes (ingredientes e passos) em uma única transação.
+     * Adiciona uma nova receita associada a um usuário.
      * @param receita O objeto Receita a ser salvo.
      * @throws SQLException Se ocorrer um erro no banco de dados.
      */
@@ -121,13 +139,13 @@ public class ReceitaDAO {
         try (Connection conn = dataSource.getConnection()) {
             try {
                 conn.setAutoCommit(false);
-
                 try (PreparedStatement psReceita = conn.prepareStatement(INSERT_RECEITA, Statement.RETURN_GENERATED_KEYS)) {
                     psReceita.setString(1, receita.getNome());
                     psReceita.setString(2, receita.getDescricao());
                     psReceita.setInt(3, receita.getTempoDePreparo());
                     psReceita.setInt(4, receita.getPorcoes());
                     psReceita.setString(5, receita.getDificuldade());
+                    psReceita.setInt(6, receita.getUsuario_id());
                     psReceita.executeUpdate();
 
                     try (ResultSet generatedKeys = psReceita.getGeneratedKeys()) {

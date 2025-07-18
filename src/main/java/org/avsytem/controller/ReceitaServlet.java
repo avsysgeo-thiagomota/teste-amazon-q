@@ -6,9 +6,8 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
+
 import org.avsytem.dao.ReceitaDAO;
 import org.avsytem.database.PostgresConnection;
 import org.avsytem.model.Receita;
@@ -43,22 +42,34 @@ public class ReceitaServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String action = request.getParameter("action");
-        
         response.setContentType("application/json; charset=ISO-8859-1");
 
-        try  {
-
+        try
+        {
             if ("listar".equals(action)) {
-                List<Receita> receitas = dao.listar();
-                String jsonResponse = String.format("{\"total\": %d, \"receitas\": %s}",
-                        receitas.size(), gson.toJson(receitas));
+                HttpSession session = request.getSession(false);
+                Integer usuarioId = (Integer) session.getAttribute("usuario_id");
+
+                if (usuarioId == null) {
+                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                    response.getWriter().write("{\"success\": false, \"message\": \"Sessão inválida ou expirada.\"}");
+                    return;
+                }
+
+                List<Receita> receitas = dao.listar(usuarioId);
+                String jsonResponse = String.format("{\"total\": %d, \"receitas\": %s}", receitas.size(), gson.toJson(receitas));
                 response.getWriter().write(jsonResponse);
-            } else {
+            }
+            else
+            {
                 response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                 response.getWriter().write("{\"success\": false, \"message\": \"Ação inválida ou não especificada.\"}");
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e)
+        {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             response.getWriter().write("{\"success\": false, \"message\": \"Erro no banco de dados.\"}");
             e.printStackTrace();
@@ -70,16 +81,33 @@ public class ReceitaServlet extends HttpServlet {
     {
         String action = request.getParameter("action");
         response.setContentType("application/json; charset=ISO-8859-1");
-        try  {
+        try
+        {
             String jsonPayload = request.getParameter("jsonData");
+
+            HttpSession session = request.getSession(false);
+            if (session == null || session.getAttribute("usuario_id") == null) {
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.getWriter().write("{\"success\": false, \"message\": \"Sessão inválida para salvar. Faça o login novamente.\"}");
+                return;
+            }
+            Integer usuarioId = (Integer) session.getAttribute("usuario_id");
 
             if (jsonPayload != null) {
                 Receita receita = gson.fromJson(jsonPayload, Receita.class);
-                if (receita.getId() == 0) {
-                    dao.adicionar(receita);
-                } else {
-                    dao.atualizar(receita);
+                receita.setUsuario_id(usuarioId);
+
+                if (usuarioId == null) {
+                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                    response.getWriter().write("{\"success\": false, \"message\": \"Sessão inválida para salvar.\"}");
+                    return;
                 }
+
+                if (receita.getId() == 0)
+                    dao.adicionar(receita);
+                else
+                    dao.atualizar(receita);
+
                 response.getWriter().write("{\"success\": true, \"message\": \"Receita salva com sucesso!\"}");
 
             } else if ("deletar".equals(action)) {

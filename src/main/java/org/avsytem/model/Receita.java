@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 public class Receita {
 
     private int id;
+    private int usuario_id;
     private String nome;
     private String descricao;
     private int tempoDePreparo; // em minutos
@@ -21,6 +22,12 @@ public class Receita {
         this.passos = new ArrayList<>();
     }
 
+    public int getUsuario_id(){
+        return usuario_id;
+    }
+    public void setUsuario_id(int usuario_id){
+        this.usuario_id = usuario_id;
+    }
     // Getters e Setters para todos os campos...
     public int getId() {
         return id;

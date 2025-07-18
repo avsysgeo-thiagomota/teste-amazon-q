@@ -93,4 +93,25 @@ public class UserDAO {
             return affectedRows > 0;
         }
     }
+
+    /**
+     * Busca o ID de um usuário pelo seu username.
+     * @param username O nome de usuário.
+     * @return O ID do usuário ou -1 se não for encontrado.
+     * @throws SQLException
+     */
+    public int getIdByUsername(String username) throws SQLException {
+        String sql = "SELECT id FROM usuarios WHERE username = ? AND ativo = true";
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, username);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("id");
+                }
+            }
+        }
+        return -1; // Retorna -1 se o usuário não for encontrado
+    }
 }

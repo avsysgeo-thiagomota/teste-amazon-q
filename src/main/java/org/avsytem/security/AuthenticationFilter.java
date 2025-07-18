@@ -23,16 +23,18 @@ public class AuthenticationFilter implements Filter {
         String loginURI = request.getContextPath() + "/index.jsp";
         String loginServletURI = request.getContextPath() + "/index";
 
-        boolean loggedIn = session != null && session.getAttribute("username") != null;
+        boolean loggedIn = session != null
+                && session.getAttribute("username") != null
+                && session.getAttribute("usuario_id") != null;
+
         boolean loginRequest = request.getRequestURI().equals(loginURI) || request.getRequestURI().equals(loginServletURI);
 
-        if (loggedIn || loginRequest) {
-            // Se já está logado ou está tentando logar, continua a requisição
+        // Se já está logado ou está tentando logar, continua a requisição
+        if (loggedIn || loginRequest)
             chain.doFilter(request, response);
-        } else {
-            // Se não está logado e não está na página de login, redireciona para o login
+        // Se não está logado e não está na página de login, redireciona para o login
+        else
             response.sendRedirect(loginURI);
-        }
     }
 
     public void init(FilterConfig fConfig) throws ServletException {}
