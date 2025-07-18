@@ -54,7 +54,7 @@ App.view.ReceitaGrid = Ext.extend(Ext.grid.GridPanel, {
 
     onNew: function() {
         var win = new App.view.ReceitaWindow();
-        win.on('receitasalva', null, this);
+        win.on('receitasalva', function() { this.store.reload(); }, this);
         win.show();
     },
 

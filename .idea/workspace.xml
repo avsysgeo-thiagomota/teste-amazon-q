@@ -10,13 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b76de36-28a8-4f22-b86c-14cc4cce369a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/ReceitaServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/ReceitaServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/ReceitaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/ReceitaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/model/Receita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/model/Receita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/security/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/security/AuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaGrid.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -334,7 +327,7 @@
       <workItem from="1752835689809" duration="7608000" />
       <workItem from="1752843791994" duration="69000" />
       <workItem from="1752845529315" duration="47000" />
-      <workItem from="1752845600262" duration="5975000" />
+      <workItem from="1752845600262" duration="6612000" />
     </task>
     <servers />
   </component>
@@ -356,13 +349,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaGrid.js</url>
-          <line>30</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/main/webapp/js/app/view/ReceitaGrid.js</url>
-          <line>8</line>
+          <line>6</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
