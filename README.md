@@ -78,7 +78,23 @@ sequenceDiagram
 5. **Resposta de Sucesso/Falha**: O Servlet retorna uma resposta JSON indicando o resultado da operação, por exemplo: `{ "success": true, "message": "Dados salvos com sucesso!" }` ou `{ "success": false, "errors": {"campo": "Mensagem de erro"} }`.
 6. **Callback do ExtJS**: A submissão no ExtJS é configurada com callbacks de `success` e `failure`. Com base na resposta do servidor, o callback apropriado é executado, permitindo, por exemplo, exibir uma mensagem de sucesso ao usuário com `Ext.Msg` ou tratar os erros.
 
-## 4\. Deploy no Tomcat (.war)
+
+## 4\. Autenticação
+
+A aplicação implementa um sistema de autenticação robusto com as seguintes características:
+
+- **Interface de Login**: Desenvolvida com ExtJS, permite ao usuário inserir seu nome de usuário e senha.
+- **Processamento no Backend**:
+    - O `LoginServlet` processa a requisição e valida as credenciais usando o DAO (`UserDAO`).
+    - As senhas são protegidas com hashing utilizando o algoritmo `BCrypt`.
+- **Sessão HTTP**: Ao autenticar-se com sucesso, uma sessão é criada e o usuário tem acesso às funcionalidades protegidas.
+- **Proteção de Rotas**:
+    - O `AuthenticationFilter` garante que apenas usuários autenticados possam acessar as rotas protegidas da aplicação.
+    - Usuários não autenticados são redirecionados automaticamente para a tela de login (`index.jsp`).
+
+Este mecanismo reflete práticas comuns em sistemas legados com JSP/Servlets, fornecendo controle de acesso baseado em sessão e segurança de senha com hash.
+
+## 5\. Deploy no Tomcat (.war)
 
 A aplicação é empacotada como um arquivo **WAR** (Web Application Archive) para deploy no Apache Tomcat.
 
@@ -90,16 +106,25 @@ A aplicação é empacotada como um arquivo **WAR** (Web Application Archive) para 
 
 A conexão com o banco de dados é centralizada e configurável:
 
-* **Configurações**: Todas as credenciais de conexão (URL, usuário, senha) estão no arquivo `src/main/resources/database.properties`.
-* **Conexão**: A classe `PostgresConnection` lê esse arquivo para estabelecer a conexão JDBC com o banco de dados PostgreSQL.
+* **Conexão**: É configurada em `src/main/webapp/META-INF/context.xml`. O tomcat gerencia as coneções e acessos ao database.
 * **Driver**: O `pom.xml` inclui a dependência do driver JDBC do PostgreSQL, que é essencial para a comunicação.
 
 #### Database Configuration
 
 ```
-db.url=localhost
-db.port=11460
-db.banco=defaultdb
-db.user=user
-db.password=dbpassword
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Resource
+            name="jdbc/PostgresDB"
+            auth="Container"
+            type="javax.sql.DataSource"
+            driverClassName="org.postgresql.Driver"
+            url="jdbc:postgresql://localhost:4589/database"
+            username="user"
+            password="senha"
+            maxTotal="20"
+            maxIdle="10"
+            maxWaitMillis="10000"
+    />
+</Context>
 ```
