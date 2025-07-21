@@ -3,7 +3,6 @@ package org.avsytem.controller;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import org.avsytem.dao.UserDAO;
-import org.avsytem.database.PostgresConnection;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

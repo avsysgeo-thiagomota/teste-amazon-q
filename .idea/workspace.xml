@@ -11,10 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7b76de36-28a8-4f22-b86c-14cc4cce369a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/database/PostgresConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/receitas.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/avsytem/controller/UsuarioServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -320,7 +317,7 @@
       <workItem from="1752843791994" duration="69000" />
       <workItem from="1752845529315" duration="47000" />
       <workItem from="1752845600262" duration="6612000" />
-      <workItem from="1752858710264" duration="5225000" />
+      <workItem from="1752858710264" duration="7543000" />
     </task>
     <servers />
   </component>
