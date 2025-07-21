@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
 import org.avsytem.dao.ReceitaDAO;
-import org.avsytem.database.PostgresConnection;
+import org.avsytem.dao.ReceitaDAO;
 import org.avsytem.model.Receita;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

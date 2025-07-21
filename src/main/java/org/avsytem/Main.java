@@ -1,7 +1,6 @@
 package org.avsytem;
 
 import org.avsytem.dao.ReceitaDAO;
-import org.avsytem.database.PostgresConnection;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Connection;
