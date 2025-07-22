@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import javax.naming.NamingException;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
@@ -29,15 +30,16 @@ public class ReceitaServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         gson = new GsonBuilder().setPrettyPrinting().create();
-        try {
-            Context initContext = new InitialContext();
-            Context envContext = (Context) initContext.lookup("java:/comp/env");
-            DataSource dataSource = (DataSource) envContext.lookup("jdbc/PostgresDB");
-            this.dao = new ReceitaDAO(dataSource);
-
-        } catch (NamingException e) {
-            throw new ServletException("Erro crítico: Não foi possível encontrar o DataSource via JNDI.", e);
+        // 1. Pega o ServletContext (disponível em qualquer servlet)
+        ServletContext servletContext = getServletContext();
+        // 2. Pega o atributo "dataSource" que o nosso Listener armazenou
+        DataSource dataSource = (DataSource) servletContext.getAttribute("dataSource");
+        // Validação importante
+        if (dataSource == null) {
+            throw new ServletException("DataSource não encontrado no ServletContext. O AppLifecycleListener falhou ao iniciar?");
         }
+        // 3. Cria o DAO com a instância compartilhada do DataSource
+        this.dao = new ReceitaDAO(dataSource);
     }
 
     @Override

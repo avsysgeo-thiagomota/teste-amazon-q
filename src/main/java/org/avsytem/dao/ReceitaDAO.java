@@ -37,7 +37,7 @@ public class ReceitaDAO {
     private static final String DELETE_INGREDIENTES_BY_RECEITA_ID = "DELETE FROM ingredientes WHERE receita_id = ?";
     private static final String DELETE_PASSOS_BY_RECEITA_ID = "DELETE FROM passos WHERE receita_id = ?";
 
-    private static final String SELECT_ALL_RECEITAS_JOINED = "SELECT " + // <-- NOVA CONSTANTE
+    private static final String SELECT_ALL_RECEITAS_JOINED = "SELECT " +
             "r.id AS receita_id, r.nome AS receita_nome, r.descricao AS receita_descricao, " +
             "r.tempo_preparo_min, r.porcoes, r.dificuldade, " +
             "i.nome AS ingrediente_nome, i.quantidade, i.unidade, " +
