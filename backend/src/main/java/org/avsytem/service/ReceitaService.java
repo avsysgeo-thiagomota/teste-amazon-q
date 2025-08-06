@@ -28,35 +28,35 @@ public class ReceitaService {
         return receitaRepository.findAll();
     }
 
-    public List<Receita> findByUsuarioId(Long usuarioId) {
+    public List<Receita> findByUsuarioId(Integer usuarioId) {
         return receitaRepository.findByUsuarioId(usuarioId);
     }
 
-    public List<Receita> findByUsuarioIdWithDetails(Long usuarioId) {
+    public List<Receita> findByUsuarioIdWithDetails(Integer usuarioId) {
         return receitaRepository.findByUsuarioIdWithDetails(usuarioId);
     }
 
-    public Optional<Receita> findById(Long id) {
+    public Optional<Receita> findById(Integer id) {
         return receitaRepository.findById(id);
     }
 
-    public Optional<Receita> findByIdWithDetails(Long id) {
+    public Optional<Receita> findByIdWithDetails(Integer id) {
         return receitaRepository.findByIdWithDetails(id);
     }
 
-    public List<Receita> findByUsuarioIdAndNomeContaining(Long usuarioId, String nome) {
+    public List<Receita> findByUsuarioIdAndNomeContaining(Integer usuarioId, String nome) {
         return receitaRepository.findByUsuarioIdAndNomeContaining(usuarioId, nome);
     }
 
-    public List<Receita> findByUsuarioIdAndDificuldade(Long usuarioId, String dificuldade) {
+    public List<Receita> findByUsuarioIdAndDificuldade(Integer usuarioId, String dificuldade) {
         return receitaRepository.findByUsuarioIdAndDificuldade(usuarioId, dificuldade);
     }
 
-    public Long countByUsuarioId(Long usuarioId) {
+    public Long countByUsuarioId(Integer usuarioId) {
         return receitaRepository.countByUsuarioId(usuarioId);
     }
 
-    public Receita save(ReceitaRequest receitaRequest, Long usuarioId) {
+    public Receita save(ReceitaRequest receitaRequest, Integer usuarioId) {
         Usuario usuario = usuarioRepository.findById(usuarioId)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado com id: " + usuarioId));
 
@@ -96,7 +96,7 @@ public class ReceitaService {
         return receitaRepository.save(receita);
     }
 
-    public Receita update(Long id, ReceitaRequest receitaRequest, Long usuarioId) {
+    public Receita update(Integer id, ReceitaRequest receitaRequest, Integer usuarioId) {
         Receita receita = receitaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Receita não encontrada com id: " + id));
 
@@ -140,7 +140,7 @@ public class ReceitaService {
         return receitaRepository.save(receita);
     }
 
-    public void deleteById(Long id, Long usuarioId) {
+    public void deleteById(Integer id, Integer usuarioId) {
         Receita receita = receitaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Receita não encontrada com id: " + id));
 

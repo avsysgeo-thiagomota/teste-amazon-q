@@ -11,7 +11,7 @@ public class Ingrediente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @NotBlank(message = "Nome do ingrediente é obrigatório")
     @Size(max = 255, message = "Nome deve ter no máximo 255 caracteres")
@@ -39,11 +39,11 @@ public class Ingrediente {
     }
 
     // Getters and Setters
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -80,7 +80,7 @@ public class Ingrediente {
     }
 
     // Convenience method to get receita_id for JSON serialization
-    public Long getReceitaId() {
+    public Integer getReceitaId() {
         return receita != null ? receita.getId() : null;
     }
 }

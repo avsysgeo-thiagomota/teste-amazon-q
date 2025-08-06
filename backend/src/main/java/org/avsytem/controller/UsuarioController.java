@@ -30,7 +30,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getUsuarioById(@PathVariable Long id) {
+    public ResponseEntity<?> getUsuarioById(@PathVariable Integer id) {
         Optional<Usuario> usuario = usuarioService.findById(id);
         if (usuario.isPresent()) {
             return ResponseEntity.ok(usuario.get());
@@ -56,7 +56,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateUsuario(@PathVariable Long id, 
+    public ResponseEntity<?> updateUsuario(@PathVariable Integer id, 
                                          @Valid @RequestBody UsuarioRequest usuarioRequest,
                                          Authentication authentication) {
         try {
@@ -82,7 +82,7 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteUsuario(@PathVariable Long id, Authentication authentication) {
+    public ResponseEntity<?> deleteUsuario(@PathVariable Integer id, Authentication authentication) {
         try {
             // Users can only delete their own profile
             Usuario currentUser = (Usuario) authentication.getPrincipal();
@@ -107,7 +107,7 @@ public class UsuarioController {
 
     @PostMapping("/{id}/activate")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<?> activateUsuario(@PathVariable Long id) {
+    public ResponseEntity<?> activateUsuario(@PathVariable Integer id) {
         try {
             usuarioService.activateUser(id);
             

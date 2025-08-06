@@ -4,7 +4,7 @@ public class JwtResponse {
 
     private String token;
     private String type = "Bearer";
-    private Long id;
+    private Integer id;
     private String username;
     private String nomeCompleto;
     private String email;
@@ -12,7 +12,7 @@ public class JwtResponse {
     // Constructors
     public JwtResponse() {}
 
-    public JwtResponse(String token, Long id, String username, String nomeCompleto, String email) {
+    public JwtResponse(String token, Integer id, String username, String nomeCompleto, String email) {
         this.token = token;
         this.id = id;
         this.username = username;
@@ -37,11 +37,11 @@ public class JwtResponse {
         this.type = type;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -10,22 +10,23 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface ReceitaRepository extends JpaRepository<Receita, Long> {
+public interface ReceitaRepository extends JpaRepository<Receita, Integer> {
 
-    List<Receita> findByUsuarioId(Long usuarioId);
+    @Query("SELECT r FROM Receita r WHERE r.usuario.id = :usuarioId")
+    List<Receita> findByUsuarioId(@Param("usuarioId") Integer usuarioId);
 
     @Query("SELECT r FROM Receita r WHERE r.usuario.id = :usuarioId AND r.nome LIKE %:nome%")
-    List<Receita> findByUsuarioIdAndNomeContaining(@Param("usuarioId") Long usuarioId, @Param("nome") String nome);
+    List<Receita> findByUsuarioIdAndNomeContaining(@Param("usuarioId") Integer usuarioId, @Param("nome") String nome);
 
     @Query("SELECT r FROM Receita r WHERE r.usuario.id = :usuarioId AND r.dificuldade = :dificuldade")
-    List<Receita> findByUsuarioIdAndDificuldade(@Param("usuarioId") Long usuarioId, @Param("dificuldade") String dificuldade);
+    List<Receita> findByUsuarioIdAndDificuldade(@Param("usuarioId") Integer usuarioId, @Param("dificuldade") String dificuldade);
 
     @Query("SELECT r FROM Receita r LEFT JOIN FETCH r.ingredientes LEFT JOIN FETCH r.passos WHERE r.id = :id")
-    Optional<Receita> findByIdWithDetails(@Param("id") Long id);
+    Optional<Receita> findByIdWithDetails(@Param("id") Integer id);
 
     @Query("SELECT r FROM Receita r LEFT JOIN FETCH r.ingredientes LEFT JOIN FETCH r.passos WHERE r.usuario.id = :usuarioId")
-    List<Receita> findByUsuarioIdWithDetails(@Param("usuarioId") Long usuarioId);
+    List<Receita> findByUsuarioIdWithDetails(@Param("usuarioId") Integer usuarioId);
 
     @Query("SELECT COUNT(r) FROM Receita r WHERE r.usuario.id = :usuarioId")
-    Long countByUsuarioId(@Param("usuarioId") Long usuarioId);
+    Long countByUsuarioId(@Param("usuarioId") Integer usuarioId);
 }

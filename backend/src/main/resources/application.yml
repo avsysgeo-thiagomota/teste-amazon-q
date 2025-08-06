@@ -8,19 +8,24 @@ spring:
     name: receitas-api
   
   datasource:
-    url: jdbc:postgresql://localhost:5432/receitas_db
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://teste-amazon-q-avsystemgeo.i.aivencloud.com:11460/defaultdb
+    username: avnadmin
+    password: AVNS_ztKbhpL69gsaVK_rfUQ
     driver-class-name: org.postgresql.Driver
   
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: none
     show-sql: false
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
+  
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
   
   security:
     user:

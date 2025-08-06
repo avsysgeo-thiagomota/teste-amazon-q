@@ -63,11 +63,30 @@ public class WebSecurityConfig {
             .csrf(csrf -> csrf.disable())
             .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .authorizeHttpRequests(auth -> 
-                auth.requestMatchers("/auth/**").permitAll()
+            .authorizeHttpRequests(auth -> {
+                auth
+                    // Allow all auth endpoints (with and without /api prefix)
+                    .requestMatchers("/auth/**").permitAll()
+                    .requestMatchers("/api/auth/**").permitAll()
+                    
+                    // Allow test endpoints
+                    .requestMatchers("/test/**").permitAll()
+                    .requestMatchers("/api/test/**").permitAll()
+                    
+                    // Allow actuator endpoints
                     .requestMatchers("/actuator/**").permitAll()
-                    .anyRequest().authenticated()
-            );
+                    .requestMatchers("/api/actuator/**").permitAll()
+                    
+                    // Allow error endpoint
+                    .requestMatchers("/error").permitAll()
+                    .requestMatchers("/api/error").permitAll()
+                    
+                    // Allow OPTIONS requests for CORS
+                    .requestMatchers("OPTIONS", "/**").permitAll()
+                    
+                    // All other requests need authentication
+                    .anyRequest().authenticated();
+            });
 
         http.authenticationProvider(authenticationProvider());
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);

@@ -23,7 +23,15 @@ public class AuthEntryPointJwt implements AuthenticationEntryPoint {
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response,
                          AuthenticationException authException) throws IOException, ServletException {
-        logger.error("Unauthorized error: {}", authException.getMessage());
+        
+        String requestURI = request.getRequestURI();
+        String method = request.getMethod();
+        
+        logger.error("Unauthorized access attempt:");
+        logger.error("  - URI: {}", requestURI);
+        logger.error("  - Method: {}", method);
+        logger.error("  - Exception: {}", authException.getMessage());
+        logger.error("  - Exception Type: {}", authException.getClass().getSimpleName());
 
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
@@ -31,8 +39,10 @@ public class AuthEntryPointJwt implements AuthenticationEntryPoint {
         final Map<String, Object> body = new HashMap<>();
         body.put("status", HttpServletResponse.SC_UNAUTHORIZED);
         body.put("error", "Unauthorized");
-        body.put("message", authException.getMessage());
-        body.put("path", request.getServletPath());
+        body.put("message", "Full authentication is required to access this resource");
+        body.put("path", requestURI);
+        body.put("method", method);
+        body.put("debug", "Check if endpoint is properly configured in WebSecurityConfig");
 
         final ObjectMapper mapper = new ObjectMapper();
         mapper.writeValue(response.getOutputStream(), body);

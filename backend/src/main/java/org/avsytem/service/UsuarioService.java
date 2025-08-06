@@ -29,7 +29,7 @@ public class UsuarioService {
         return usuarioRepository.findAllActive();
     }
 
-    public Optional<Usuario> findById(Long id) {
+    public Optional<Usuario> findById(Integer id) {
         return usuarioRepository.findById(id);
     }
 
@@ -67,7 +67,7 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-    public Usuario update(Long id, UsuarioRequest usuarioRequest) {
+    public Usuario update(Integer id, UsuarioRequest usuarioRequest) {
         Usuario usuario = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado com id: " + id));
 
@@ -94,7 +94,7 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-    public void deleteById(Long id) {
+    public void deleteById(Integer id) {
         Usuario usuario = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado com id: " + id));
         
@@ -103,7 +103,7 @@ public class UsuarioService {
         usuarioRepository.save(usuario);
     }
 
-    public void activateUser(Long id) {
+    public void activateUser(Integer id) {
         Usuario usuario = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado com id: " + id));
         

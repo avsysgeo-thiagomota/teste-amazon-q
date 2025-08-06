@@ -11,7 +11,7 @@ public class Passo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @NotNull(message = "Ordem do passo é obrigatória")
     @Column(nullable = false)
@@ -36,11 +36,11 @@ public class Passo {
     }
 
     // Getters and Setters
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -69,7 +69,7 @@ public class Passo {
     }
 
     // Convenience method to get receita_id for JSON serialization
-    public Long getReceitaId() {
+    public Integer getReceitaId() {
         return receita != null ? receita.getId() : null;
     }
 }

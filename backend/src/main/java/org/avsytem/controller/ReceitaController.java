@@ -29,7 +29,7 @@ public class ReceitaController {
                                                        @RequestParam(required = false) String dificuldade,
                                                        @RequestParam(defaultValue = "false") boolean withDetails) {
         Usuario currentUser = (Usuario) authentication.getPrincipal();
-        Long usuarioId = currentUser.getId();
+        Integer usuarioId = currentUser.getId();
 
         List<Receita> receitas;
 
@@ -47,7 +47,7 @@ public class ReceitaController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getReceitaById(@PathVariable Long id, Authentication authentication) {
+    public ResponseEntity<?> getReceitaById(@PathVariable Integer id, Authentication authentication) {
         Usuario currentUser = (Usuario) authentication.getPrincipal();
         Optional<Receita> receita = receitaService.findByIdWithDetails(id);
 
@@ -86,7 +86,7 @@ public class ReceitaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateReceita(@PathVariable Long id,
+    public ResponseEntity<?> updateReceita(@PathVariable Integer id,
                                          @Valid @RequestBody ReceitaRequest receitaRequest,
                                          Authentication authentication) {
         try {
@@ -106,7 +106,7 @@ public class ReceitaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteReceita(@PathVariable Long id, Authentication authentication) {
+    public ResponseEntity<?> deleteReceita(@PathVariable Integer id, Authentication authentication) {
         try {
             Usuario currentUser = (Usuario) authentication.getPrincipal();
             receitaService.deleteById(id, currentUser.getId());
