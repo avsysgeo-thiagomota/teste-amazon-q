@@ -6,7 +6,9 @@ import jakarta.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "receitas")
@@ -38,7 +40,7 @@ public class Receita {
     private Usuario usuario;
 
     @OneToMany(mappedBy = "receita", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    private List<Ingrediente> ingredientes = new ArrayList<>();
+    private Set<Ingrediente> ingredientes = new HashSet<>();
 
     @OneToMany(mappedBy = "receita", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     private List<Passo> passos = new ArrayList<>();
@@ -133,11 +135,11 @@ public class Receita {
         this.usuario = usuario;
     }
 
-    public List<Ingrediente> getIngredientes() {
+    public Set<Ingrediente> getIngredientes() {
         return ingredientes;
     }
 
-    public void setIngredientes(List<Ingrediente> ingredientes) {
+    public void setIngredientes(Set<Ingrediente> ingredientes) {
         this.ingredientes = ingredientes;
     }
 

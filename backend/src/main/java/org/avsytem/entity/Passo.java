@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.Objects;
 
 @Entity
 @Table(name = "passos")
@@ -71,5 +72,18 @@ public class Passo {
     // Convenience method to get receita_id for JSON serialization
     public Integer getReceitaId() {
         return receita != null ? receita.getId() : null;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Passo passo = (Passo) o;
+        return Objects.equals(id, passo.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

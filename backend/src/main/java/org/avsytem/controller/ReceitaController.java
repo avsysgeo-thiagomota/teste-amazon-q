@@ -2,6 +2,8 @@ package org.avsytem.controller;
 
 import jakarta.validation.Valid;
 import org.avsytem.dto.ReceitaRequest;
+import org.avsytem.dto.ReceitaResponse;
+import org.avsytem.dto.ReceitaSummaryResponse;
 import org.avsytem.entity.Receita;
 import org.avsytem.entity.Usuario;
 import org.avsytem.service.ReceitaService;
@@ -14,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -24,7 +27,7 @@ public class ReceitaController {
     private ReceitaService receitaService;
 
     @GetMapping
-    public ResponseEntity<List<Receita>> getAllReceitas(Authentication authentication,
+    public ResponseEntity<List<ReceitaSummaryResponse>> getAllReceitas(Authentication authentication,
                                                        @RequestParam(required = false) String nome,
                                                        @RequestParam(required = false) String dificuldade,
                                                        @RequestParam(defaultValue = "false") boolean withDetails) {
@@ -37,13 +40,15 @@ public class ReceitaController {
             receitas = receitaService.findByUsuarioIdAndNomeContaining(usuarioId, nome);
         } else if (dificuldade != null && !dificuldade.trim().isEmpty()) {
             receitas = receitaService.findByUsuarioIdAndDificuldade(usuarioId, dificuldade);
-        } else if (withDetails) {
-            receitas = receitaService.findByUsuarioIdWithDetails(usuarioId);
         } else {
             receitas = receitaService.findByUsuarioId(usuarioId);
         }
 
-        return ResponseEntity.ok(receitas);
+        List<ReceitaSummaryResponse> receitaResponses = receitas.stream()
+                .map(ReceitaSummaryResponse::new)
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(receitaResponses);
     }
 
     @GetMapping("/{id}")
@@ -58,7 +63,8 @@ public class ReceitaController {
                 error.put("message", "Você não tem permissão para visualizar esta receita");
                 return ResponseEntity.badRequest().body(error);
             }
-            return ResponseEntity.ok(receita.get());
+            ReceitaResponse receitaResponse = new ReceitaResponse(receita.get());
+            return ResponseEntity.ok(receitaResponse);
         } else {
             Map<String, String> error = new HashMap<>();
             error.put("message", "Receita não encontrada");
@@ -75,7 +81,7 @@ public class ReceitaController {
 
             Map<String, Object> response = new HashMap<>();
             response.put("message", "Receita criada com sucesso!");
-            response.put("receita", receita);
+            response.put("receita", new ReceitaResponse(receita));
 
             return ResponseEntity.ok(response);
         } catch (RuntimeException e) {
@@ -95,7 +101,7 @@ public class ReceitaController {
 
             Map<String, Object> response = new HashMap<>();
             response.put("message", "Receita atualizada com sucesso!");
-            response.put("receita", receita);
+            response.put("receita", new ReceitaResponse(receita));
 
             return ResponseEntity.ok(response);
         } catch (RuntimeException e) {

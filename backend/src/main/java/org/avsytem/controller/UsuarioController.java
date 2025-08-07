@@ -2,6 +2,7 @@ package org.avsytem.controller;
 
 import jakarta.validation.Valid;
 import org.avsytem.dto.UsuarioRequest;
+import org.avsytem.dto.UsuarioResponse;
 import org.avsytem.entity.Usuario;
 import org.avsytem.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -24,16 +26,20 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @GetMapping
-    public ResponseEntity<List<Usuario>> getAllUsuarios() {
+    public ResponseEntity<List<UsuarioResponse>> getAllUsuarios() {
         List<Usuario> usuarios = usuarioService.findAllActive();
-        return ResponseEntity.ok(usuarios);
+        List<UsuarioResponse> usuarioResponses = usuarios.stream()
+                .map(UsuarioResponse::new)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(usuarioResponses);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getUsuarioById(@PathVariable Integer id) {
         Optional<Usuario> usuario = usuarioService.findById(id);
         if (usuario.isPresent()) {
-            return ResponseEntity.ok(usuario.get());
+            UsuarioResponse usuarioResponse = new UsuarioResponse(usuario.get());
+            return ResponseEntity.ok(usuarioResponse);
         } else {
             Map<String, String> error = new HashMap<>();
             error.put("message", "Usuário não encontrado");
@@ -47,7 +53,8 @@ public class UsuarioController {
         Optional<Usuario> usuario = usuarioService.findByUsername(username);
         
         if (usuario.isPresent()) {
-            return ResponseEntity.ok(usuario.get());
+            UsuarioResponse usuarioResponse = new UsuarioResponse(usuario.get());
+            return ResponseEntity.ok(usuarioResponse);
         } else {
             Map<String, String> error = new HashMap<>();
             error.put("message", "Usuário não encontrado");
