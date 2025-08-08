@@ -21,11 +21,18 @@ public interface ReceitaRepository extends JpaRepository<Receita, Integer> {
     @Query("SELECT r FROM Receita r WHERE r.usuario.id = :usuarioId AND r.dificuldade = :dificuldade")
     List<Receita> findByUsuarioIdAndDificuldade(@Param("usuarioId") Integer usuarioId, @Param("dificuldade") String dificuldade);
 
-    @Query("SELECT r FROM Receita r LEFT JOIN FETCH r.ingredientes LEFT JOIN FETCH r.passos WHERE r.id = :id")
-    Optional<Receita> findByIdWithDetails(@Param("id") Integer id);
+    // Separate queries to avoid MultipleBagFetchException
+    @Query("SELECT r FROM Receita r LEFT JOIN FETCH r.ingredientes WHERE r.id = :id")
+    Optional<Receita> findByIdWithIngredientes(@Param("id") Integer id);
 
-    @Query("SELECT r FROM Receita r LEFT JOIN FETCH r.ingredientes LEFT JOIN FETCH r.passos WHERE r.usuario.id = :usuarioId")
-    List<Receita> findByUsuarioIdWithDetails(@Param("usuarioId") Integer usuarioId);
+    @Query("SELECT r FROM Receita r LEFT JOIN FETCH r.passos WHERE r.id = :id")
+    Optional<Receita> findByIdWithPassos(@Param("id") Integer id);
+
+    @Query("SELECT r FROM Receita r LEFT JOIN FETCH r.ingredientes WHERE r.usuario.id = :usuarioId")
+    List<Receita> findByUsuarioIdWithIngredientes(@Param("usuarioId") Integer usuarioId);
+
+    @Query("SELECT r FROM Receita r LEFT JOIN FETCH r.passos WHERE r.usuario.id = :usuarioId")
+    List<Receita> findByUsuarioIdWithPassos(@Param("usuarioId") Integer usuarioId);
 
     @Query("SELECT COUNT(r) FROM Receita r WHERE r.usuario.id = :usuarioId")
     Long countByUsuarioId(@Param("usuarioId") Integer usuarioId);

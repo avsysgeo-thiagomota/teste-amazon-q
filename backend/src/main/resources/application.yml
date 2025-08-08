@@ -8,9 +8,9 @@ spring:
     name: receitas-api
   
   datasource:
-    url: jdbc:postgresql://teste-amazon-q-avsystemgeo.i.aivencloud.com:11460/defaultdb
+    url: jdbc:postgresql://avsystem-avsystemgeo.d.aivencloud.com:11460/defaultdb
     username: avnadmin
-    password: AVNS_ztKbhpL69gsaVK_rfUQ
+    password: AVNS_0P5_JD5g-JrupRYRyrj
     driver-class-name: org.postgresql.Driver
   
   jpa:

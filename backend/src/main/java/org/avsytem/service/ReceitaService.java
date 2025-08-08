@@ -33,7 +33,15 @@ public class ReceitaService {
     }
 
     public List<Receita> findByUsuarioIdWithDetails(Integer usuarioId) {
-        return receitaRepository.findByUsuarioIdWithDetails(usuarioId);
+        // First fetch with ingredients
+        List<Receita> receitasWithIngredientes = receitaRepository.findByUsuarioIdWithIngredientes(usuarioId);
+        
+        // Then fetch with steps for the same recipes
+        List<Receita> receitasWithPassos = receitaRepository.findByUsuarioIdWithPassos(usuarioId);
+        
+        // Merge the results - the ingredients are already loaded in the first query
+        // The second query will populate the steps
+        return receitasWithIngredientes;
     }
 
     public Optional<Receita> findById(Integer id) {
@@ -41,7 +49,16 @@ public class ReceitaService {
     }
 
     public Optional<Receita> findByIdWithDetails(Integer id) {
-        return receitaRepository.findByIdWithDetails(id);
+        // First fetch the recipe with ingredients
+        Optional<Receita> receitaOpt = receitaRepository.findByIdWithIngredientes(id);
+        
+        if (receitaOpt.isPresent()) {
+            // Then fetch the same recipe with steps to populate the steps collection
+            receitaRepository.findByIdWithPassos(id);
+            return receitaOpt;
+        }
+        
+        return Optional.empty();
     }
 
     public List<Receita> findByUsuarioIdAndNomeContaining(Integer usuarioId, String nome) {
