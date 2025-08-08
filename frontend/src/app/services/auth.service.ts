@@ -57,7 +57,9 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    return localStorage.getItem('token');
+    const token = localStorage.getItem('token');
+    console.log('🔑 AuthService - Getting token:', token ? 'Token exists' : 'No token found');
+    return token;
   }
 
   getCurrentUserValue(): User | null {
@@ -65,6 +67,7 @@ export class AuthService {
   }
 
   private setSession(authResult: LoginResponse): void {
+    console.log('💾 AuthService - Setting session with token:', authResult.token ? 'Token received' : 'No token received');
     localStorage.setItem('token', authResult.token);
     
     const user: User = {
