@@ -93,7 +93,7 @@ public class AuthController {
             }
         } catch (Exception e) {
             Map<String, String> error = new HashMap<>();
-            error.put("message", "Erro ao renovar token");
+            error.put("message", "Erro ao renovar token " + e.getMessage());
             return ResponseEntity.badRequest().body(error);
         }
     }
