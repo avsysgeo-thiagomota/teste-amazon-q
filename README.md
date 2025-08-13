@@ -6,19 +6,21 @@ Este projeto é uma aplicação web desenvolvida com o framework `ExtJS 3.4` e `Jav
 
 1\. Arvore de arquivos da pasta corrente :
 Listagem de caminhos de pasta
+```
 C:.
-?   .gitignore (Arquivo git pra não rastrear pastas e arquivos que não são exenciais)
+?  .gitignore (Arquivo git pra não rastrear pastas e arquivos que não são exenciais)
 ?   mvnw       (Aquivo Maven)
 ?   mvnw.cmd   (Aquivo Maven)
 ?   pom.xml    (Contém informações sobre o projeto e os detalhes de configuração usados pelo Maven)
 ?   README.md  (Arquivo de apresentação do projeto)
 |
-????.mvn        (Maven Files)
+???.mvn        (Maven Files)
 ?
-????Files
+???Files
 ?       ConfigureDatabase.sql (Tabelas e dados do projeto)
 ?
-????src (Código fonte Do projeto melhor descrito em [Arquitetura do projeto piloto](./src/ARQUITETURA.md))
+???src (Código fonte Do projeto melhor descrito em [Arquitetura do projeto piloto](./src/ARQUITETURA.md))
+```
 
 2\. [Arquitetura do projeto piloto](./src/ARQUITETURA.md)
 
