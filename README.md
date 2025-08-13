@@ -5,7 +5,6 @@
 Este projeto é uma aplicação web desenvolvida com o framework `ExtJS 3.4` e `Java 8`. A aplicação é renderizada em páginas `JSP` e é executada em um servidor `Apache Tomcat 9`. O objetivo é simular um ambiente com tecnologias e versões semelhantes a aplicação principal da empresa para testes de migração e modernização do sistema.
 
 1\. Arvore de arquivos da pasta corrente :
-Listagem de caminhos de pasta
 ```
 C:.
 │  .gitignore (Arquivo git pra não rastrear pastas e arquivos que não são exenciais)
