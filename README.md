@@ -19,7 +19,7 @@ C:.
 ├──Files
 │       ConfigureDatabase.sql (Tabelas e dados do projeto)
 │
-├──src (Código fonte Do projeto melhor descrito em [Arquitetura do projeto piloto](./src/ARQUITETURA.md))
+├──src (Código fonte Do projeto melhor descrito em Arquitetura do projeto piloto)
 ```
 
 2\. [Arquitetura do projeto piloto](./src/ARQUITETURA.md)
