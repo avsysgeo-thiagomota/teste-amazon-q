@@ -1,29 +1,29 @@
 # Teste Amazon Q
 
-## Descrição
+## DescriÃ§Ã£o
 
-Este projeto é uma aplicação web desenvolvida com o framework `ExtJS 3.4` e `Java 8`. A aplicação é renderizada em páginas `JSP` e é executada em um servidor `Apache Tomcat 9`. O objetivo é simular um ambiente com tecnologias e versões semelhantes a aplicação principal da empresa para testes de migração e modernização do sistema.
+Este projeto Ã© uma aplicaÃ§Ã£o web desenvolvida com o framework `ExtJS 3.4` e `Java 8`. A aplicaÃ§Ã£o Ã© renderizada em pÃ¡ginas `JSP` e Ã© executada em um servidor `Apache Tomcat 9`. O objetivo Ã© simular um ambiente com tecnologias e versÃµes semelhantes a aplicaÃ§Ã£o principal da empresa para testes de migraÃ§Ã£o e modernizaÃ§Ã£o do sistema.
 
 1\. Arvore de arquivos da pasta corrente :
 Listagem de caminhos de pasta
 ```
 C:.
-?  .gitignore (Arquivo git pra não rastrear pastas e arquivos que não são exenciais)
-?   mvnw       (Aquivo Maven)
-?   mvnw.cmd   (Aquivo Maven)
-?   pom.xml    (Contém informações sobre o projeto e os detalhes de configuração usados pelo Maven)
-?   README.md  (Arquivo de apresentação do projeto)
+â”‚  .gitignore (Arquivo git pra nÃ£o rastrear pastas e arquivos que nÃ£o sÃ£o exenciais)
+â”‚   mvnw       (Aquivo Maven)
+â”‚   mvnw.cmd   (Aquivo Maven)
+â”‚   pom.xml    (ContÃ©m informaÃ§Ãµes sobre o projeto e os detalhes de configuraÃ§Ã£o usados pelo Maven)
+â”‚   README.md  (Arquivo de apresentaÃ§Ã£o do projeto)
 |
-???.mvn        (Maven Files)
-?
-???Files
-?       ConfigureDatabase.sql (Tabelas e dados do projeto)
-?
-???src (Código fonte Do projeto melhor descrito em [Arquitetura do projeto piloto](./src/ARQUITETURA.md))
+â”œâ”€â”€.mvn        (Maven Files)
+â”‚
+â”œâ”€â”€Files
+â”‚       ConfigureDatabase.sql (Tabelas e dados do projeto)
+â”‚
+â”œâ”€â”€src (CÃ³digo fonte Do projeto melhor descrito em [Arquitetura do projeto piloto](./src/ARQUITETURA.md))
 ```
 
 2\. [Arquitetura do projeto piloto](./src/ARQUITETURA.md)
 
 ### Onde queremos chegar
 
-A ideia e estudar o processo de conversão/mpdernização de software via Amazon Q com esse programa. Para então aplicar no projeto priciapal da empresa. A aplicação principal da empresa é legada. Tem um padrão de projeto próprio e de descrever grandes e complexos processos.
+A ideia e estudar o processo de conversÃ£o/mpdernizaÃ§Ã£o de software via Amazon Q com esse programa. Para entÃ£o aplicar no projeto priciapal da empresa. A aplicaÃ§Ã£o principal da empresa Ã© legada. Tem um padrÃ£o de projeto prÃ³prio e de descrever grandes e complexos processos.
