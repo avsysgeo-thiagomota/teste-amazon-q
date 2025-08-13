@@ -1,5 +1,8 @@
 
---Execute o script pra criar e popular os dados
+--Tabelas do banco de dados usada pelo projeto:
+/**********************************************************************************************/
+--Criação das Tabelas
+
 
 CREATE TABLE usuarios (
 	id serial4 NOT NULL,
