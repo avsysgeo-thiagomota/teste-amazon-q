@@ -21,7 +21,7 @@ C:.
 ├──src (Código fonte Do projeto melhor descrito em Arquitetura do projeto piloto)
 ```
 
-2\. [Arquitetura do projeto piloto](./src/ARQUITETURA.md)
+2\. [Documentação do projeto piloto](./src/DOCUMENTACAO_CODIGO.md)
 
 ### Onde queremos chegar
 
