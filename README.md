@@ -23,6 +23,16 @@ C:.
 
 2\. [Documentação do projeto piloto](./src/DOCUMENTACAO_CODIGO.md)
 
+3\. [Wiki de tentativas](https://github.com/avsysgeo-thiagomota/teste-amazon-q/wiki)
+
 ### Onde queremos chegar
 
 A ideia e estudar o processo de conversão/mpdernização de software via Amazon Q com esse programa. Para então aplicar no projeto priciapal da empresa. A aplicação principal da empresa é legada. Tem um padrão de projeto próprio e de descrever grandes e complexos processos.
+
+### Conclusão
+
+As tentativas realizadas permitiram compreender melhor o processo de utilização da ferramenta, evidenciando sua eficácia para apoiar atividades cotidianas e promover maior eficiência. Contudo, no contexto de conversão de projetos, observou-se que a realização manual, aliada a recursos de conversão, correção e geração de código fornecidos pelo Amazon Q, mostra-se mais adequada. Essa combinação torna o trabalho mais ágil e eficiente, especialmente dentro da realidade analisada.
+
+Verificou-se que, independentemente da qualidade da conversão automática, quase sempre há necessidade de adaptações ou de instruções técnicas adicionais para direcionar corretamente a ferramenta. Nesse sentido, a aprendizagem de tecnologias complementares, como Angular, revelou-se relevante para compreender os problemas e efetuar ajustes no código gerado.
+
+Constatou-se também que a utilização do Amazon Q apresenta benefícios adicionais no aspecto da segurança e da governança de código, uma vez que evita o armazenamento de informações sensíveis em contas pessoais ou ambientes externos à organização. Para fins de desenvolvimento, a ferramenta mostrou-se bastante útil; entretanto, no caso da migração entre tecnologias, não foi possível concluir que a conversão totalmente automatizada seja superior à abordagem manual com suporte pontual da inteligência artificial.
