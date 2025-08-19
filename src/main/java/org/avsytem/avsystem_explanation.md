@@ -1,0 +1,1 @@
+Este diretório e seus subdiretórios contêm a lógica de negócio da aplicação
